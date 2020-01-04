@@ -4,9 +4,9 @@ function checker(altText) {
   // make alt text lowercase to solve for case insensitivity
   altText = altText.toLowerCase();
   let warning = [
-    ...rules.checkForbidden(altText),
-    ...rules.checkForbiddenStart(altText),
-    ...rules.checkForbiddenEnd(altText),
+    ...rules.checkClue(altText),
+    ...rules.checkClueStart(altText),
+    ...rules.checkClueEnd(altText),
     ...rules.checkLength(altText),
     ...rules.checkOnlySpace(altText)
   ];
