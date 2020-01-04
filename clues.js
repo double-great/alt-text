@@ -1,4 +1,4 @@
-const clues = {
+module.exports = {
   match: {
     fn: (item, altText) => altText.includes(item),
     message: value => `Alt text should not contain "${value}".`,
@@ -42,5 +42,3 @@ const clues = {
     ]
   }
 };
-
-module.exports = clues;
