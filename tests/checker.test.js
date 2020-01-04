@@ -8,6 +8,12 @@ test("checker", assert => {
   );
 
   assert.equal(
+    checker("A SCREENSHOT OF A DOG."),
+    'Alt text should not contain "screenshot of".',
+    "forbidden matching is case insensitive"
+  );
+
+  assert.equal(
     checker("A screenshot of a dog"),
     'Alt text should not contain "screenshot of". Alt text should end in a period.',
     "can have more than one warning"

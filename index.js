@@ -2,6 +2,8 @@ const forbidden = require("./lib/forbidden");
 const forbiddenStartsWith = require("./lib/forbidden-startswith");
 
 function checker(altText) {
+  // make alt text lowercase to solve for case insensitivity
+  altText = altText.toLowerCase();
   // store warning for the alt text
   let warning = [];
   // check if alt text matches any item in forbidden
