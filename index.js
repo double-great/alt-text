@@ -5,8 +5,6 @@ function checker(altText) {
   altText = altText.toLowerCase();
   let warning = [
     ...rules.checkClue(altText),
-    ...rules.checkClueStart(altText),
-    ...rules.checkClueEnd(altText),
     ...rules.checkLength(altText),
     ...rules.checkOnlySpace(altText)
   ];
