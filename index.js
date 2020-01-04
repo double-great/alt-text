@@ -1,4 +1,5 @@
 const forbidden = require("./lib/forbidden");
+const forbiddenStartsWith = require("./lib/forbidden-startswith");
 
 function checker(altText) {
   // store warning for the alt text
@@ -8,6 +9,14 @@ function checker(altText) {
     forbidden.reduce((arr, item) => {
       if (altText.includes(item))
         arr.push(`Alt text should not contain "${item}".`);
+      return arr;
+    }, [])
+  );
+  // check if alt text matches any item in forbidden-startswith
+  warning = warning.concat(
+    forbiddenStartsWith.reduce((arr, item) => {
+      if (altText.startsWith(item))
+        arr.push(`Alt text should not begin with "${item}".`);
       return arr;
     }, [])
   );
