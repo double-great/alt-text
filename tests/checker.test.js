@@ -29,5 +29,17 @@ test("checker", assert => {
 
   assert.equal(checker(" "), "Alt text must not only contain a space.");
 
+  assert.equal(
+    checker("spacer image."),
+    'Alt text should not begin with "spacer".'
+  );
+
+  assert.equal(checker("A child holding a photograph."), undefined);
+
+  assert.equal(
+    checker("An inhaler with a spacer connected to the mouthpiece."),
+    undefined
+  );
+
   assert.end();
 });
