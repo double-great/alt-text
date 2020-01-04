@@ -14,8 +14,8 @@ test("checker", assert => {
   );
 
   assert.equal(
-    checker("A screenshot of a dog"),
-    'Alt text should not contain "screenshot of". Alt text should end in a period.',
+    checker("A screenshot of a dog.jpg"),
+    'Alt text should not contain "screenshot of". Alt text should not end with ".jpg".',
     "can have more than one warning"
   );
 
@@ -37,7 +37,7 @@ test("checker", assert => {
 
   assert.equal(
     checker("spacer image."),
-    'Alt text should not begin with "spacer".'
+    'Alt text should not start with "spacer".'
   );
 
   assert.equal(checker("A child holding a photograph."), undefined);
@@ -45,6 +45,13 @@ test("checker", assert => {
   assert.equal(
     checker("An inhaler with a spacer connected to the mouthpiece."),
     undefined
+  );
+
+  assert.equal(checker("DSC_0010.jpg"), 'Alt text should not end with ".jpg".');
+
+  assert.equal(
+    checker("placeholder graphic"),
+    'Alt text should not end with "graphic".'
   );
 
   assert.end();
