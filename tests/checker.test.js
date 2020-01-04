@@ -10,7 +10,7 @@ test("checker", assert => {
   assert.equal(
     checker("A SCREENSHOT OF A DOG."),
     'Alt text should not contain "screenshot of".',
-    "forbidden matching is case insensitive"
+    "clue matching is case insensitive"
   );
 
   assert.equal(

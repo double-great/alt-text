@@ -1,25 +1,26 @@
-const forbidden = require("./lib/forbidden");
-const forbiddenStartsWith = require("./lib/forbidden-startswith");
-const forbiddenEndsWith = require("./lib/forbidden-endswith");
+const clues = require("./clues");
+const cluesMatch = clues.match;
+const cluesStartsWith = clues.startWith;
+const cluesEndsWith = clues.endWith;
 
-function checkForbidden(altText) {
-  return forbidden.reduce((arr, item) => {
+function checkClue(altText) {
+  return cluesMatch.reduce((arr, item) => {
     if (altText.includes(item))
       arr.push(`Alt text should not contain "${item}".`);
     return arr;
   }, []);
 }
 
-function checkForbiddenStart(altText) {
-  return forbiddenStartsWith.reduce((arr, item) => {
+function checkClueStart(altText) {
+  return cluesStartsWith.reduce((arr, item) => {
     if (altText.startsWith(item))
       arr.push(`Alt text should not start with "${item}".`);
     return arr;
   }, []);
 }
 
-function checkForbiddenEnd(altText) {
-  return forbiddenEndsWith.reduce((arr, item) => {
+function checkClueEnd(altText) {
+  return cluesEndsWith.reduce((arr, item) => {
     if (altText.endsWith(item))
       arr.push(`Alt text should not end with "${item}".`);
     return arr;
@@ -43,9 +44,9 @@ function checkPeriod(altText, warning) {
 }
 
 module.exports = {
-  checkForbidden,
-  checkForbiddenStart,
-  checkForbiddenEnd,
+  checkClue,
+  checkClueStart,
+  checkClueEnd,
   checkLength,
   checkOnlySpace,
   checkPeriod

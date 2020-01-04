@@ -1,0 +1,32 @@
+{
+  "match": [
+    "picture of",
+    "photo of",
+    "photograph of",
+    "image of",
+    "graphic of",
+    "screenshot of",
+    "photo:",
+    "photographer:"
+  ],
+  "endWith": [
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".png",
+    ".svg",
+    ".webp",
+    "image",
+    "graphic"
+  ],
+  "startWith": [
+    "picture",
+    "photo",
+    "photograph",
+    "photographer",
+    "image",
+    "graphic",
+    "screenshot",
+    "spacer"
+  ]
+}
