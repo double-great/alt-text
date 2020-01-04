@@ -27,5 +27,7 @@ test("checker", assert => {
     "Alt text should be fewer than 100 characters."
   );
 
+  assert.equal(checker(" "), "Alt text must not only contain a space.");
+
   assert.end();
 });
