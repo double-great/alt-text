@@ -1,16 +1,16 @@
 const rules = require("./rules");
 
-function checker(altText) {
+function altText(alt) {
   // make alt text lowercase to solve for case insensitivity
-  altText = altText.toLowerCase();
+  alt = alt.toLowerCase();
   let warning = [
-    ...rules.checkClue(altText),
-    ...rules.checkLength(altText),
-    ...rules.checkOnlySpace(altText)
+    ...rules.checkClue(alt),
+    ...rules.checkLength(alt),
+    ...rules.checkOnlySpace(alt)
   ];
-  warning = [...warning, ...rules.checkPeriod(altText, warning)];
+  warning = [...warning, ...rules.checkPeriod(alt, warning)];
   // if warning has length, return it.
   return warning.length ? warning.join(" ") : undefined;
 }
 
-module.exports = checker;
+module.exports = altText;
