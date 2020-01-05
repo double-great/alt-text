@@ -1,28 +1,15 @@
 const clues = require("./clues");
-const cluesMatch = clues.match;
-const cluesStartsWith = clues.startWith;
-const cluesEndsWith = clues.endWith;
+
+function filterClues(clue, altText) {
+  return clue.rules.reduce((arr, item) => {
+    if (clue.fn(item, altText)) arr.push(clue.message(item));
+    return arr;
+  }, []);
+}
 
 function checkClue(altText) {
-  return cluesMatch.reduce((arr, item) => {
-    if (altText.includes(item))
-      arr.push(`Alt text should not contain "${item}".`);
-    return arr;
-  }, []);
-}
-
-function checkClueStart(altText) {
-  return cluesStartsWith.reduce((arr, item) => {
-    if (altText.startsWith(item))
-      arr.push(`Alt text should not start with "${item}".`);
-    return arr;
-  }, []);
-}
-
-function checkClueEnd(altText) {
-  return cluesEndsWith.reduce((arr, item) => {
-    if (altText.endsWith(item))
-      arr.push(`Alt text should not end with "${item}".`);
+  return Object.keys(clues).reduce((arr, item) => {
+    arr = [...arr, ...filterClues(clues[item], altText)];
     return arr;
   }, []);
 }
@@ -45,8 +32,6 @@ function checkPeriod(altText, warning) {
 
 module.exports = {
   checkClue,
-  checkClueStart,
-  checkClueEnd,
   checkLength,
   checkOnlySpace,
   checkPeriod
