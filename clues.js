@@ -1,6 +1,6 @@
 module.exports = {
   match: {
-    fn: (item, altText) => altText.includes(item),
+    fn: (item, alt) => alt.includes(item),
     message: value => `Alt text should not contain "${value}".`,
     rules: [
       "picture of",
@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   endWith: {
-    fn: (item, altText) => altText.endsWith(item),
+    fn: (item, alt) => alt.endsWith(item),
     message: value => `Alt text should not end with "${value}".`,
     rules: [
       ".jpg",
@@ -28,7 +28,7 @@ module.exports = {
     ]
   },
   startWith: {
-    fn: (item, altText) => altText.startsWith(item),
+    fn: (item, alt) => alt.startsWith(item),
     message: value => `Alt text should not start with "${value}".`,
     rules: [
       "picture",

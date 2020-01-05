@@ -1,31 +1,31 @@
 const clues = require("./clues");
 
-function filterClues(clue, altText) {
+function filterClues(clue, alt) {
   return clue.rules.reduce((arr, item) => {
-    if (clue.fn(item, altText)) arr.push(clue.message(item));
+    if (clue.fn(item, alt)) arr.push(clue.message(item));
     return arr;
   }, []);
 }
 
-function checkClue(altText) {
+function checkClue(alt) {
   return Object.keys(clues).reduce((arr, item) => {
-    arr = [...arr, ...filterClues(clues[item], altText)];
+    arr = [...arr, ...filterClues(clues[item], alt)];
     return arr;
   }, []);
 }
 
-function checkLength(altText) {
-  return altText.length > 100
+function checkLength(alt) {
+  return alt.length > 100
     ? ["Alt text should be fewer than 100 characters."]
     : [];
 }
 
-function checkOnlySpace(altText) {
-  return altText == " " ? ["Alt text must not only contain a space."] : [];
+function checkOnlySpace(alt) {
+  return alt == " " ? ["Alt text must not only contain a space."] : [];
 }
 
-function checkPeriod(altText, warning) {
-  return !altText.endsWith(".") && altText.length > 1 && !warning.length
+function checkPeriod(alt, warning) {
+  return !alt.endsWith(".") && alt.length > 1 && !warning.length
     ? ["Alt text should end in a period."]
     : [];
 }
