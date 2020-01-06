@@ -1,5 +1,5 @@
 module.exports = {
-  match: {
+  contains: {
     fn: (item, alt) => alt.includes(item),
     message: value => `Alt text should not contain "${value}".`,
     rules: [

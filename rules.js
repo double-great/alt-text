@@ -24,8 +24,8 @@ function checkOnlySpace(alt) {
   return alt == " " ? ["Alt text must not only contain a space."] : [];
 }
 
-function checkPeriod(alt, warning) {
-  return !alt.endsWith(".") && alt.length > 1 && !warning.length
+function checkPeriod(alt) {
+  return !alt.endsWith(".") && alt.length > 1
     ? ["Alt text should end in a period."]
     : [];
 }
