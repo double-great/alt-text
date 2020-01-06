@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   exactMatch: {
-    fn: (item, alt) => alt == item,
+    fn: (item, alt) => item == alt.trim(),
     message: value => `Alt text should not be "${value}".`,
     rules: [
       "image",
