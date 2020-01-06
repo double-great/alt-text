@@ -16,7 +16,9 @@ function checkClue(alt) {
 
 function checkLength(alt) {
   return alt.length > 100
-    ? ["Alt text should be fewer than 100 characters."]
+    ? [
+        `Alt text length should be less than 100 characters, it is currently ${alt.length} characters.`
+      ]
     : [];
 }
 
