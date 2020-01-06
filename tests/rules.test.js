@@ -26,6 +26,18 @@ test("[rules] checkClue.startWith", assert => {
   assert.end();
 });
 
+test("[rules] checkClue.exactMatch", assert => {
+  assert.deepEqual(rules.checkClue("logo"), ['Alt text should not be "logo".']);
+  assert.end();
+});
+
+test("[rules] checkClue.exactMatch", assert => {
+  assert.deepEqual(rules.checkClue(" logo "), [
+    'Alt text should not be "logo".'
+  ]);
+  assert.end();
+});
+
 test("[rules] checkClue.contain", assert => {
   assert.deepEqual(rules.checkClue("A screenshot of a dog."), [
     'Alt text should not contain "screenshot of".'
