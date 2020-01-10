@@ -2,6 +2,8 @@
 
 Alternative text for images aims to improve the user experience for people with low or loss of vision. `alt-text` checks for common issues found in alternative text and provides hints on how to improve it.
 
+Are you writing in markdown? We recommend using [remark-lint-alt-text](https://github.com/double-great/remark-lint-alt-text).
+
 ## Install
 
 ```
