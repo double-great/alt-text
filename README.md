@@ -1,16 +1,18 @@
 # alt-text [![Build Status](https://travis-ci.com/double-great/alt-text.svg?branch=master)](https://travis-ci.com/double-great/alt-text)
 
-Alternative text for images aims to improve the user experience for people with low or loss of vision. `alt-text` checks for common issues found in alternative text and provides hints on how to improve it.
+Alternative text for images aims to improve the user experience for people with low or loss of vision. `altText` checks for common issues found in alternative text and provides hints on how to improve it.
 
 Are you writing in markdown? We recommend using [remark-lint-alt-text](https://github.com/double-great/remark-lint-alt-text).
 
 ## Install
 
 ```
-npm install @double-great/alt-test
+npm install @double-great/alt-text
 ```
 
 ## Usage
+
+If `altText` detects an issue, it will return a warning to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
 
 ```js
 const altText = require("@double-great/alt-text");
