@@ -1,5 +1,23 @@
 # alt-text [![Build Status](https://travis-ci.com/double-great/alt-text.svg?branch=master)](https://travis-ci.com/double-great/alt-text)
 
+## Install
+
+```
+npm install @double-great/alt-test
+```
+
+## Usage
+
+```js
+const altText = require("@double-great/alt-text");
+
+console.log(altText("A child holding a photograph."));
+// undefined
+
+console.log(altText("A screenshot of a dog"));
+// 'Alt text should not contain "screenshot of". Alt text should end in a period.',
+```
+
 
 ## References
 
