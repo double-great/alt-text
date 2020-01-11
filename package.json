@@ -1,6 +1,6 @@
 {
   "name": "@double-great/alt-text",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Check for common issues found in alt text and suggests improvements to improve accessibility.",
   "main": "index.js",
   "scripts": {
