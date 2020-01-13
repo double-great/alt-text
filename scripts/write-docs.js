@@ -2,8 +2,12 @@ const fs = require("fs");
 const clues = require("../clues");
 
 const md = Object.keys(clues).reduce((str, clue) => {
+  const options = clues[clue].rules ? `<${clues[clue].rules.join("|")}>` : "";
+
   str += `### ${clue}\n\n`;
-  str += `Error message:\n\n> ${clues[clue].message("x")}\n\n`;
+  str += `Error message:\n\n> ${clues[clue].message(options)}`;
+
+  str += "\n\n";
   if (clues[clue].rationale) str += `${clues[clue].rationale}\n\n`;
   if (clues[clue].source) str += `Source: ${clues[clue].source}\n\n`;
   return str;
