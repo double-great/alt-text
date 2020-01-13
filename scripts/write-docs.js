@@ -5,7 +5,7 @@ const md = Object.keys(clues).reduce((str, clue) => {
   const options = clues[clue].rules ? `<${clues[clue].rules.join("|")}>` : "";
 
   str += `### ${clue}\n\n`;
-  str += `Error message:\n\n> ${clues[clue].message(options)}`;
+  str += `Warning:\n\n> ${clues[clue].message(options)}`;
 
   str += "\n\n";
   if (clues[clue].rationale) str += `${clues[clue].rationale}\n\n`;

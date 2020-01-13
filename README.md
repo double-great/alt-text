@@ -44,36 +44,36 @@ console.log(altText("A screenshot of a dog"));
 
 ### Image is link
 
-Error message:
+Warning:
 
 > Images inside a link tag require alt text that describes the purpose of the link.
 
 ### Missing alt attribute
 
-Error message:
+Warning:
 
 > Missing `alt` attribute.
 
 ### Alt text contains problematic words
 
-Error message:
+Warning:
 
 > Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>".
 
 ### Alt text could be considered problematic
 
-Error message:
+Warning:
 
 > Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|\*>".
 
 ### Alt text should not end with
 
-Error message:
+Warning:
 
 > Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>".
 
 ### Alt text should not start with
 
-Error message:
+Warning:
 
 > Alt text should not start with "<picture|photo|photograph|photographer|image|graphic|screenshot|spacer>".
