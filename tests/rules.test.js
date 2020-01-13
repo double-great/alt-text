@@ -5,49 +5,51 @@ test("[rules] checkClue.endWith", assert => {
   assert.deepEqual(
     rules.checkClue("A screenshot of a dog.jpg"),
     [
-      'Alt text should not contain "screenshot of".',
-      'Alt text should not end with ".jpg".'
+      'Alt text should not contain "screenshot of" (https://git.io/JvfAe).',
+      'Alt text should not end with ".jpg" (https://git.io/JvfAf).'
     ],
     "can have more than one warning"
   );
   assert.deepEqual(rules.checkClue("DSC_0010.jpg"), [
-    'Alt text should not end with ".jpg".'
+    'Alt text should not end with ".jpg" (https://git.io/JvfAf).'
   ]);
   assert.deepEqual(rules.checkClue("placeholder graphic"), [
-    'Alt text should not end with "graphic".'
+    'Alt text should not end with "graphic" (https://git.io/JvfAf).'
   ]);
   assert.end();
 });
 
 test("[rules] checkClue.startWith", assert => {
   assert.deepEqual(rules.checkClue("spacer image."), [
-    'Alt text should not start with "spacer".'
+    'Alt text should not start with "spacer" (https://git.io/JvfAv).'
   ]);
   assert.end();
 });
 
 test("[rules] checkClue.exactMatch", assert => {
-  assert.deepEqual(rules.checkClue("logo"), ['Alt text should not be "logo".']);
+  assert.deepEqual(rules.checkClue("logo"), [
+    'Alt text should not be "logo" (https://git.io/JvfAJ).'
+  ]);
   assert.end();
 });
 
 test("[rules] checkClue.exactMatch", assert => {
   assert.deepEqual(rules.checkClue(" logo "), [
-    'Alt text should not be "logo".'
+    'Alt text should not be "logo" (https://git.io/JvfAJ).'
   ]);
   assert.end();
 });
 
 test("[rules] checkClue.contain", assert => {
   assert.deepEqual(rules.checkClue("A screenshot of a dog."), [
-    'Alt text should not contain "screenshot of".'
+    'Alt text should not contain "screenshot of" (https://git.io/JvfAe).'
   ]);
   assert.end();
 });
 
 test("[rules] checkPeriod", assert => {
   assert.deepEqual(rules.checkPeriod("a large black dog"), [
-    "Alt text should end in a period."
+    "Alt text should end in a period (https://git.io/JvfxY)."
   ]);
   assert.end();
 });
@@ -58,7 +60,7 @@ test("[rules] checkLength", assert => {
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     ),
     [
-      "Alt text length should be less than 100 characters, it is currently 446 characters."
+      "Alt text length should be less than 100 characters, it is currently 446 characters. (https://git.io/Jvfxm)."
     ]
   );
   assert.end();
@@ -66,7 +68,7 @@ test("[rules] checkLength", assert => {
 
 test("[rules] checkOnlySpace", assert => {
   assert.deepEqual(rules.checkOnlySpace(" "), [
-    "Alt text must not only contain a space."
+    "Alt text should not only contain a space (https://git.io/JvfxO)."
   ]);
   assert.end();
 });

@@ -1,34 +1,38 @@
 const clues = require("./clues");
+const urls = require("./urls");
 
-function filterClues(clue, alt) {
+function createWarning(ruleName, value) {
+  return `${clues[ruleName].message(value)} (${urls[ruleName]}).`;
+}
+
+function filterClues(ruleName, clue, alt) {
   return clue.rules.reduce((arr, item) => {
-    if (clue.fn(item, alt)) arr.push(clue.message(item));
+    if (clue.fn(item, alt)) arr.push(createWarning(ruleName, item));
     return arr;
   }, []);
 }
 
 function checkClue(alt) {
   return Object.keys(clues).reduce((arr, item) => {
-    if (clues[item].rules) arr = [...arr, ...filterClues(clues[item], alt)];
+    if (clues[item].rules)
+      arr = [...arr, ...filterClues(item, clues[item], alt)];
     return arr;
   }, []);
 }
 
 function checkLength(alt) {
   return alt.length > 100
-    ? [
-        `Alt text length should be less than 100 characters, it is currently ${alt.length} characters.`
-      ]
+    ? [createWarning("Character length", alt.length)]
     : [];
 }
 
 function checkOnlySpace(alt) {
-  return alt == " " ? ["Alt text must not only contain a space."] : [];
+  return alt == " " ? [createWarning("Should not only contain a space")] : [];
 }
 
 function checkPeriod(alt) {
   return !alt.endsWith(".") && alt.length > 1
-    ? ["Alt text should end in a period."]
+    ? [createWarning("Should end in a period")]
     : [];
 }
 

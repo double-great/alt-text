@@ -19,7 +19,10 @@
     "url": "https://github.com/double-great/alt-text/issues"
   },
   "homepage": "https://github.com/double-great/alt-text#readme",
-  "dependencies": {},
+  "dependencies": {
+    "cli-git.io": "^1.0.1",
+    "github-slugger": "^1.2.1"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
@@ -30,7 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node scripts/write-docs.js && git add README.md && pretty-quick --staged"
+      "pre-commit": "node scripts/write-docs.js && git add README.md && pretty-quick --staged && node scripts/url.js"
     }
   },
   "directories": {

@@ -42,38 +42,56 @@ console.log(altText("A screenshot of a dog"));
 
 <!-- this section is generated on commit !-->
 
+### Should not only contain a space
+
+Warning:
+
+> Alt text should not only contain a space
+
+### Character length
+
+Warning:
+
+> Alt text length should be less than 100 characters, it is currently characters.
+
 ### Image is link
 
 Warning:
 
-> Images inside a link tag require alt text that describes the purpose of the link.
+> Images inside a link tag require alt text that describes the purpose of the link
+
+### Should end in a period
+
+Warning:
+
+> Alt text should end in a period
 
 ### Missing alt attribute
 
 Warning:
 
-> Missing `alt` attribute.
+> Missing `alt` attribute
 
 ### Alt text contains problematic words
 
 Warning:
 
-> Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>".
+> Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"
 
 ### Alt text could be considered problematic
 
 Warning:
 
-> Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|\*>".
+> Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|\*>"
 
 ### Alt text should not end with
 
 Warning:
 
-> Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>".
+> Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>"
 
 ### Alt text should not start with
 
 Warning:
 
-> Alt text should not start with "<picture|photo|photograph|photographer|image|graphic|screenshot|spacer>".
+> Alt text should not start with "<picture|photo|photograph|photographer|image|graphic|screenshot|spacer>"
