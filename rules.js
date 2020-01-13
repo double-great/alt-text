@@ -9,7 +9,7 @@ function filterClues(clue, alt) {
 
 function checkClue(alt) {
   return Object.keys(clues).reduce((arr, item) => {
-    arr = [...arr, ...filterClues(clues[item], alt)];
+    if (clues[item].rules) arr = [...arr, ...filterClues(clues[item], alt)];
     return arr;
   }, []);
 }

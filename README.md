@@ -37,3 +37,43 @@ console.log(altText("A screenshot of a dog"));
 - WCAG 2.1 1.1.1 Non-text content https://webaim.org/standards/wcag/checklist#sc1.1.1
 - WCAG 2.1 2.4.4 Link purpose (in context) https://webaim.org/standards/wcag/checklist#sc2.4.4
 - Webaim WAVE documentation https://wave.webaim.org/api/docs?format=html
+
+## Warnings
+
+<!-- this section is generated on commit !-->
+
+### Image is link
+
+Error message:
+
+> Images inside a link tag require alt text that describes the purpose of the link.
+
+### Missing alt attribute
+
+Error message:
+
+> Missing `alt` attribute.
+
+### Alt text contains problematic words
+
+Error message:
+
+> Alt text should not contain "x".
+
+### Alt text could be considered problematic
+
+Error message:
+
+> Alt text should not be "x".
+
+### Alt text should not end with
+
+Error message:
+
+> Alt text should not end with "x".
+
+### Alt text should not start with
+
+Error message:
+
+> Alt text should not start with "x".

@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "node scripts/write-docs.js && git add README.md && pretty-quick --staged"
     }
   },
   "directories": {

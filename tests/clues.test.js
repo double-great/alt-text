@@ -9,23 +9,28 @@ test("[clues]", assert => {
 Object.keys(clues).forEach(clue => {
   test(`[clues] ${clue}`, assert => {
     assert.equal(
-      typeof clues[clue].fn,
-      "function",
-      "value of `fn` is a function"
-    );
-    assert.equal(
       typeof clues[clue].message,
       "function",
       "value of `message` is a function"
     );
-    assert.equal(
-      typeof clues[clue].rules,
-      "object",
-      "value of `rules` is an object (array)"
-    );
-    clues[clue].rules.forEach(rule => {
-      assert.equal(rule, rule.toLowerCase(), `"${rule}" must be lowercase`);
-    });
+    if (clues[clue].fn) {
+      assert.equal(
+        typeof clues[clue].fn,
+        "function",
+        "value of `fn` is a function"
+      );
+    }
+    if (clues[clue].rules) {
+      assert.equal(
+        typeof clues[clue].rules,
+        "object",
+        "value of `rules` is an object (array)"
+      );
+      clues[clue].rules.forEach(rule => {
+        assert.equal(rule, rule.toLowerCase(), `"${rule}" must be lowercase`);
+      });
+    }
+
     assert.end();
   });
 });
