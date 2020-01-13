@@ -52,7 +52,7 @@ Warning:
 
 Warning:
 
-> Alt text length should be less than 100 characters, it is currently characters.
+> Alt text length should be less than 100 characters, it is currently characters
 
 ### Image is link
 

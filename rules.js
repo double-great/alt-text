@@ -21,18 +21,16 @@ function checkClue(alt) {
 }
 
 function checkLength(alt) {
-  return alt.length > 100
-    ? [createWarning("Character length", alt.length)]
-    : [];
+  return alt.length > 100 ? [createWarning("charLength", alt.length)] : [];
 }
 
 function checkOnlySpace(alt) {
-  return alt == " " ? [createWarning("Should not only contain a space")] : [];
+  return alt == " " ? [createWarning("notOnlySpace")] : [];
 }
 
 function checkPeriod(alt) {
   return !alt.endsWith(".") && alt.length > 1
-    ? [createWarning("Should end in a period")]
+    ? [createWarning("endPeriod")]
     : [];
 }
 

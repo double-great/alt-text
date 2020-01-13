@@ -4,7 +4,7 @@ const clues = require("../clues");
 const md = Object.keys(clues).reduce((str, clue) => {
   const options = clues[clue].rules ? `<${clues[clue].rules.join("|")}>` : "";
 
-  str += `### ${clue}\n\n`;
+  str += `### ${clues[clue].heading}\n\n`;
   str += `Warning:\n\n> ${clues[clue].message(options)}`;
 
   str += "\n\n";

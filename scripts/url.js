@@ -17,7 +17,7 @@ const shortenUrls = async () => {
   await Promise.all(
     Object.keys(clues).map(async clue => {
       const url = `https://github.com/double-great/alt-text#${slugger.slug(
-        clue
+        clues[clue].heading
       )}`;
       const shortendUrl = await getUrl(url);
       obj[clue] = shortendUrl;

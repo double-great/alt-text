@@ -1,11 +1,11 @@
 {
-  "Alt text contains problematic words": "https://git.io/JvfAe",
-  "Alt text could be considered problematic": "https://git.io/JvfAJ",
-  "Alt text should not end with": "https://git.io/JvfAf",
-  "Alt text should not start with": "https://git.io/JvfAv",
-  "Character length": "https://git.io/Jvfxm",
-  "Image is link": "https://git.io/JvfNj",
-  "Missing alt attribute": "https://git.io/JvfNh",
-  "Should end in a period": "https://git.io/JvfxY",
-  "Should not only contain a space": "https://git.io/JvfxO"
+  "charLength": "https://git.io/Jvfxm",
+  "contains": "https://git.io/JvfAe",
+  "endPeriod": "https://git.io/JvfxY",
+  "endWith": "https://git.io/JvfAf",
+  "exactMatch": "https://git.io/JvfAJ",
+  "imageLink": "https://git.io/JvfNj",
+  "noAlt": "https://git.io/JvfNh",
+  "notOnlySpace": "https://git.io/JvfxO",
+  "startWith": "https://git.io/JvfAv"
 }

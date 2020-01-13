@@ -13,6 +13,23 @@ Object.keys(clues).forEach(clue => {
       "function",
       "value of `message` is a function"
     );
+    assert.equal(
+      clues[clue].message().endsWith("."),
+      false,
+      "`message` must not end in period"
+    );
+
+    /*
+    assert.ok(
+      clues[clue].source,
+      "must have `source`"
+    );
+    assert.ok(
+      clues[clue].rationale,
+      "must have `rationale`"
+    );
+    */
+    assert.ok(clues[clue].heading, "must have `heading`");
     if (clues[clue].fn) {
       assert.equal(
         typeof clues[clue].fn,

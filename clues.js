@@ -1,33 +1,40 @@
 module.exports = {
-  "Should not only contain a space": {
+  notOnlySpace: {
+    heading: "Should not only contain a space",
     message: () => `Alt text should not only contain a space`,
     rationale: "",
     source: ""
   },
-  "Character length": {
+  charLength: {
+    heading: "Character length",
     message: length =>
-      `Alt text length should be less than 100 characters, it is currently ${length} characters.`,
+      `Alt text length should be less than 100 characters, it is currently ${length} characters`,
     rationale: "",
     source: ""
   },
-  "Image is link": {
+  imageLink: {
+    heading: "Image is link",
     message: () =>
       `Images inside a link tag require alt text that describes the purpose of the link`,
     rationale: "",
     source: ""
   },
-  "Should end in a period": {
+  endPeriod: {
+    heading: "Should end in a period",
     message: () => `Alt text should end in a period`,
     rationale: "",
     source: ""
   },
-  "Missing alt attribute": {
+  noAlt: {
+    heading: "Missing alt attribute",
     message: () => `Missing \`alt\` attribute`,
     source: ""
   },
-  "Alt text contains problematic words": {
+  contains: {
+    heading: "Alt text contains problematic words",
     fn: (item, alt) => alt.includes(item),
     message: value => `Alt text should not contain "${value}"`,
+
     rules: [
       "picture of",
       "photo of",
@@ -41,9 +48,11 @@ module.exports = {
     rationale: "",
     source: ""
   },
-  "Alt text could be considered problematic": {
+  exactMatch: {
+    heading: "Alt text could be considered problematic",
     fn: (item, alt) => item == alt.trim(),
     message: value => `Alt text should not be "${value}"`,
+
     rules: [
       "image",
       "graphic",
@@ -71,9 +80,11 @@ module.exports = {
     rationale: "",
     source: ""
   },
-  "Alt text should not end with": {
+  endWith: {
+    heading: "Alt text should not end with",
     fn: (item, alt) => alt.endsWith(item),
     message: value => `Alt text should not end with "${value}"`,
+
     rules: [
       ".jpg",
       ".jpeg",
@@ -87,9 +98,11 @@ module.exports = {
     rationale: "",
     source: ""
   },
-  "Alt text should not start with": {
+  startWith: {
+    heading: "Alt text should not start with",
     fn: (item, alt) => alt.startsWith(item),
     message: value => `Alt text should not start with "${value}"`,
+
     rules: [
       "picture",
       "photo",
