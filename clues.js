@@ -36,20 +36,23 @@ module.exports = {
     warning: () => `Alt text should end in a period`,
     rationale:
       "End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.",
-    source: ["https://axesslab.com/alt-texts/#end-with-a-period"]
+    source: ["https://axesslab.com/alt-texts/#end-with-a-period"],
+    ok: "A child holding a photograph.",
+    notOk: "A child holding a photograph"
   },
   noAlt: {
     heading: "Missing alt attribute",
     warning: () => `Missing "alt" attribute`,
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
-    source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"]
+    source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"],
+    ok: '`<img src="photograph.png" alt="A child holding a photograph." />`',
+    notOk: '`<img src="photograph.png" />`'
   },
   contains: {
     heading: "Alt text contains problematic words",
     fn: (item, alt) => alt.includes(item),
     warning: value => `Alt text should not contain "${value}"`,
-
     rules: [
       "picture of",
       "photo of",
@@ -65,13 +68,14 @@ module.exports = {
     source: [
       "https://www.w3.org/WAI/tutorials/images/tips/#tips",
       "https://axesslab.com/alt-texts/#dont-say-its-an-image"
-    ]
+    ],
+    ok: "A child holding a photograph.",
+    notOk: "A picture of a child holding a photograph."
   },
   exactMatch: {
     heading: "Alt text could be considered problematic",
     fn: (item, alt) => item == alt.trim(),
     warning: value => `Alt text should not be "${value}"`,
-
     rules: [
       "image",
       "graphic",
@@ -97,13 +101,14 @@ module.exports = {
       "*"
     ],
     rationale: "",
-    source: ""
+    source: "",
+    ok: "A child holding a photograph.",
+    notOk: "photograph"
   },
   endWith: {
     heading: "Alt text should not end with",
     fn: (item, alt) => alt.endsWith(item),
     warning: value => `Alt text should not end with "${value}"`,
-
     rules: [
       ".jpg",
       ".jpeg",
@@ -115,7 +120,9 @@ module.exports = {
       "graphic"
     ],
     rationale: "",
-    source: ""
+    source: "",
+    ok: "A child holding a photograph.",
+    notOk: "photograph.jpg"
   },
   startWith: {
     heading: "Alt text should not start with",
@@ -136,6 +143,8 @@ module.exports = {
     source: [
       "https://www.w3.org/WAI/tutorials/images/tips/#tips",
       "https://axesslab.com/alt-texts/#dont-say-its-an-image"
-    ]
+    ],
+    ok: "A child holding a photograph.",
+    notOk: "Image of a child."
   }
 };

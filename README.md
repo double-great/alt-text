@@ -69,7 +69,7 @@ Sources:
 Warning: `Images inside a link tag require alt text that describes the purpose of the link`
 
 - ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com" /></a>`
-- 🚫`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`
+- 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`
 
 Images inside a link tag require alt text that describes the purpose of the link.
 
@@ -81,6 +81,9 @@ Sources:
 
 Warning: `Alt text should end in a period`
 
+- ✅ A child holding a photograph.
+- 🚫 A child holding a photograph
+
 End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.
 
 Sources:
@@ -91,6 +94,9 @@ Sources:
 
 Warning: `Missing "alt" attribute`
 
+- ✅ `<img src="photograph.png" alt="A child holding a photograph." />`
+- 🚫 `<img src="photograph.png" />`
+
 All images must have alternate text to convey their purpose and meaning to screen reader users.
 
 Sources:
@@ -100,6 +106,9 @@ Sources:
 ### Alt text contains problematic words
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
+
+- ✅ A child holding a photograph.
+- 🚫 A picture of a child holding a photograph.
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -112,13 +121,22 @@ Sources:
 
 Warning: `Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|*>"`
 
+- ✅ A child holding a photograph.
+- 🚫 photograph
+
 ### Alt text should not end with
 
 Warning: `Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>"`
 
+- ✅ A child holding a photograph.
+- 🚫 photograph.jpg
+
 ### Alt text should not start with
 
 Warning: `Alt text should not start with "<picture|photo|photograph|photographer|image|graphic|screenshot|spacer>"`
+
+- ✅ A child holding a photograph.
+- 🚫 Image of a child.
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 

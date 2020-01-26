@@ -7,7 +7,7 @@ const md = Object.keys(clues).reduce((str, clue) => {
   str += `### ${heading}\n\n`;
   str += `Warning: \`${warning(options)}\``;
   str += "\n\n";
-  if (ok && notOk) str += `- ✅ ${ok}\n- 🚫${notOk}\n\n`;
+  if (ok && notOk) str += `- ✅ ${ok}\n- 🚫 ${notOk}\n\n`;
   if (rationale) str += `${rationale}\n\n`;
   if (source)
     str += `Sources:\n${source.map(link => `- <${link}>\n`).join("")}\n`;
