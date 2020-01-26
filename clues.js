@@ -3,7 +3,7 @@ module.exports = {
     heading: "Empty alt text",
     warning: () => `Alt text should not be a single space`,
     rationale:
-      'If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
+      'If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
     source: ["https://www.w3.org/WAI/tutorials/images/tips/#tips"],
     ok: '`<img src="photo.png" alt="" />`',
     notOk: '`<img src="photo.png" alt=" " />`'
@@ -23,7 +23,7 @@ module.exports = {
     ok:
       "George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.",
     notOk:
-      'Caption: Painting "Washington and Lafayette at Valley Forge" by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.'
+      "Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress."
   },
   imageLink: {
     heading: "Image is link",
@@ -33,7 +33,7 @@ module.exports = {
       "Images inside a link tag require alt text that describes the purpose of the link.",
     source: ["https://axesslab.com/alt-texts/#images-in-links"],
     ok:
-      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com" /></a>`',
+      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub" /></a>`',
     notOk:
       '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`'
   },
@@ -41,7 +41,7 @@ module.exports = {
     heading: "End in a period",
     warning: () => `Alt text should end in a period`,
     rationale:
-      "End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.",
+      "End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
     source: ["https://axesslab.com/alt-texts/#end-with-a-period"],
     ok: "A child holding a photograph.",
     notOk: "A child holding a photograph"
@@ -52,8 +52,8 @@ module.exports = {
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
     source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"],
-    ok: '`<img src="photograph.png" alt="A child holding a photograph." />`',
-    notOk: '`<img src="photograph.png" />`'
+    ok: '`<img src="photograph.jpg" alt="A child holding a photograph." />`',
+    notOk: '`<img src="photograph.jpg" />`'
   },
   contains: {
     heading: "Alt text contains unhelpful words",
@@ -70,7 +70,7 @@ module.exports = {
       "photographer:"
     ],
     rationale:
-      "Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.",
+      "Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.",
     source: [
       "https://www.w3.org/WAI/tutorials/images/tips/#tips",
       "https://axesslab.com/alt-texts/#dont-say-its-an-image"
@@ -84,6 +84,7 @@ module.exports = {
     warning: value => `Alt text should not be "${value}"`,
     rules: [
       "image",
+      "icon",
       "graphic",
       "photo",
       "photograph",
@@ -100,14 +101,19 @@ module.exports = {
       "more",
       "spacer",
       "blank",
+      "empty",
       "chart",
       "table",
       "diagram",
       "graph",
       "*"
     ],
-    rationale: "",
-    source: "",
+    rationale:
+      "Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.",
+    source: [
+      "https://www.w3.org/WAI/tutorials/images/tips/#tips",
+      "https://axesslab.com/alt-texts/#dont-say-its-an-image"
+    ],
     ok: "A child holding a photograph.",
     notOk: "photograph"
   },
