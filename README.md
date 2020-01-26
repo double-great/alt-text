@@ -47,6 +47,9 @@ console.log(altText("A screenshot of a dog"));
 
 Warning: `Alt text should not be a single space`
 
+- ✅ `<img src="photo.png" alt="" />`
+- 🚫 `<img src="photo.png" alt=" " />`
+
 If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
 
 Sources:
