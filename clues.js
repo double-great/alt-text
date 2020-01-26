@@ -27,7 +27,7 @@ module.exports = {
   },
   noAlt: {
     heading: "Missing alt attribute",
-    message: () => `Missing \`alt\` attribute`,
+    message: () => `Missing "alt" attribute`,
     source: ""
   },
   contains: {

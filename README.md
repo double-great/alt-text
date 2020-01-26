@@ -60,7 +60,7 @@ Warning: `Alt text should end in a period`
 
 ### Missing alt attribute
 
-Warning: `Missing`alt`attribute`
+Warning: `Missing "alt" attribute`
 
 ### Alt text contains problematic words
 
