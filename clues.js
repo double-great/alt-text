@@ -5,8 +5,8 @@ module.exports = {
     rationale:
       'If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
     source: ["https://www.w3.org/WAI/tutorials/images/tips/#tips"],
-    ok: '`<img src="photo.png" alt="" />`',
-    notOk: '`<img src="photo.png" alt=" " />`'
+    ok: '`<img src="photo.png" alt="">`',
+    notOk: '`<img src="photo.png" alt=" ">`'
   },
   charLength: {
     heading: "Character length",
@@ -33,9 +33,9 @@ module.exports = {
       "Images inside a link tag require alt text that describes the purpose of the link.",
     source: ["https://axesslab.com/alt-texts/#images-in-links"],
     ok:
-      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com" /></a>`',
+      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com"></a>`',
     notOk:
-      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`'
+      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`'
   },
   endPeriod: {
     heading: "End in a period",
@@ -52,8 +52,8 @@ module.exports = {
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
     source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"],
-    ok: '`<img src="photograph.png" alt="A child holding a photograph." />`',
-    notOk: '`<img src="photograph.png" />`'
+    ok: '`<img src="photograph.png" alt="A child holding a photograph.">`',
+    notOk: '`<img src="photograph.png">`'
   },
   contains: {
     heading: "Alt text contains unhelpful words",
@@ -152,5 +152,13 @@ module.exports = {
     ],
     ok: "A child holding a photograph.",
     notOk: "Image of a child."
+  },
+  decorative: {
+    heading: "Image is decorative",
+    warning: () => `Empty alt text should only be used for decorative images`,
+    rationale: `Provide "null" \`alt\` attributes (using \`alt=""\`) for images which do not provide information or do not require alternative text because the image is described in the page content. Some developers will mistakenly leave off the alt attribute altogether on images which they deem do not need alternatives. This is not helpful to assistive technology users because the assistive technology, such as screen reader, will often read the source attribute (i.e., file name) as the alternative text. To tell assistive technology to ignore an image, use a "blank alternative text" attribute: \`alt=""\`.`,
+    source: ["https://dequeuniversity.com/rules/axe/3.0/image-alt"],
+    ok: '`<img src="decorative-photo.jpg" alt="">`',
+    notOk: '`<img src="quarterly-earnings-chart.png" alt=""/>`'
   }
 };
