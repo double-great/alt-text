@@ -25,7 +25,11 @@ module.exports = {
       `Images inside a link tag require alt text that describes the purpose of the link`,
     rationale:
       "Images inside a link tag require alt text that describes the purpose of the link.",
-    source: ["https://axesslab.com/alt-texts/#images-in-links"]
+    source: ["https://axesslab.com/alt-texts/#images-in-links"],
+    ok:
+      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com" /></a>`',
+    notOk:
+      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`'
   },
   endPeriod: {
     heading: "End in a period",
