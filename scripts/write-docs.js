@@ -1,8 +1,15 @@
 const fs = require("fs");
 const clues = require("../clues");
 
-const md = Object.keys(clues).reduce((str, clue) => {
-  const { warning, rationale, source, heading, rules, ok, notOk } = clues[clue];
+const sortedClues = Object.keys(clues)
+  .reduce((arr, item) => {
+    clues[item].id = item;
+    return (arr = [...arr, clues[item]]);
+  }, [])
+  .sort((a, b) => a.heading.localeCompare(b.heading));
+
+const md = sortedClues.reduce((str, clue) => {
+  const { warning, rationale, source, heading, rules, ok, notOk } = clue;
   const options = rules ? `<${rules.join("|")}>` : "";
   str += `### ${heading}\n\n`;
   str += `Warning: \`${warning(options)}\``;
