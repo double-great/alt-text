@@ -43,72 +43,6 @@ console.log(altText("A screenshot of a dog"));
 
 <!-- this section is generated on commit !-->
 
-### Empty alt text
-
-Warning: `Alt text should not be a single space`
-
-If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
-
-- ✅ `<img src="photo.png" alt="">`
-- 🚫 `<img src="photo.png" alt=" ">`
-
-Sources:
-
-- <https://www.w3.org/WAI/tutorials/images/tips/#tips>
-
-### Character length
-
-Warning: `Alt text length should be less than 125 characters`
-
-Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
-
-- ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
-- 🚫 Caption: Painting "Washington and Lafayette at Valley Forge" by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
-
-Sources:
-
-- <https://accessibility.psu.edu/images/imageshtml/#alt>
-- <https://terrillthompson.com/tests/altlength.html>
-
-### Image is link
-
-Warning: `Images inside a link tag require alt text that describes the purpose of the link`
-
-Images inside a link tag require alt text that describes the purpose of the link.
-
-- ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com"></a>`
-- 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
-
-Sources:
-
-- <https://axesslab.com/alt-texts/#images-in-links>
-
-### End in a period
-
-Warning: `Alt text should end in a period`
-
-End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.
-
-- ✅ A child holding a photograph.
-- 🚫 A child holding a photograph
-
-Sources:
-
-- <https://axesslab.com/alt-texts/#end-with-a-period>
-
-### Missing alt attribute
-
-Warning: `Missing "alt" attribute`
-
-All images must have alternate text to convey their purpose and meaning to screen reader users.
-
-- ✅ `<img src="photograph.png" alt="A child holding a photograph.">`
-- 🚫 `<img src="photograph.png">`
-
-Sources:
-
-- <https://dequeuniversity.com/rules/axe/3.4/image-alt>
-
 ### Alt text contains unhelpful words
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
@@ -151,6 +85,46 @@ Sources:
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
+### Character length
+
+Warning: `Alt text length should be less than 125 characters`
+
+Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
+
+- ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
+- 🚫 Caption: Painting "Washington and Lafayette at Valley Forge" by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+
+Sources:
+
+- <https://accessibility.psu.edu/images/imageshtml/#alt>
+- <https://terrillthompson.com/tests/altlength.html>
+
+### Empty alt text
+
+Warning: `Alt text should not be a single space`
+
+If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
+
+- ✅ `<img src="photo.png" alt="">`
+- 🚫 `<img src="photo.png" alt=" ">`
+
+Sources:
+
+- <https://www.w3.org/WAI/tutorials/images/tips/#tips>
+
+### End in a period
+
+Warning: `Alt text should end in a period`
+
+End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.
+
+- ✅ A child holding a photograph.
+- 🚫 A child holding a photograph
+
+Sources:
+
+- <https://axesslab.com/alt-texts/#end-with-a-period>
+
 ### Image is decorative
 
 Warning: `Empty alt text should only be used for decorative images`
@@ -163,3 +137,29 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 Sources:
 
 - <https://dequeuniversity.com/rules/axe/3.0/image-alt>
+
+### Image is link
+
+Warning: `Images inside a link tag require alt text that describes the purpose of the link`
+
+Images inside a link tag require alt text that describes the purpose of the link.
+
+- ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com"></a>`
+- 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
+
+Sources:
+
+- <https://axesslab.com/alt-texts/#images-in-links>
+
+### Missing alt attribute
+
+Warning: `Missing "alt" attribute`
+
+All images must have alternate text to convey their purpose and meaning to screen reader users.
+
+- ✅ `<img src="photograph.png" alt="A child holding a photograph.">`
+- 🚫 `<img src="photograph.png">`
+
+Sources:
+
+- <https://dequeuniversity.com/rules/axe/3.4/image-alt>
