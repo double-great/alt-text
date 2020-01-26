@@ -21,7 +21,7 @@ function checkClue(alt) {
 }
 
 function checkLength(alt) {
-  return alt.length > 100 ? [createWarning("charLength", alt.length)] : [];
+  return alt.length > 125 ? [createWarning("charLength", alt.length)] : [];
 }
 
 function checkOnlySpace(alt) {
