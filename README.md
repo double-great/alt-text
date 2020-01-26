@@ -47,7 +47,7 @@ console.log(altText("A screenshot of a dog"));
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
 
-Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
+Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.
 
 - ✅ Dog jumping through a hoop.
 - 🚫 Image of a dog jumping through a hoop.
@@ -59,10 +59,17 @@ Sources:
 
 ### Alt text is unhelpful
 
-Warning: `Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|*>"`
+Warning: `Alt text should not be "<image|icon|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|empty|chart|table|diagram|graph|*>"`
+
+Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
 - ✅ A child holding a photograph.
 - 🚫 photograph
+
+Sources:
+
+- <https://www.w3.org/WAI/tutorials/images/tips/#tips>
+- <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
 ### Alt text should not end with
 
@@ -92,7 +99,7 @@ Warning: `Alt text length should be less than 125 characters`
 Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
 
 - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
-- 🚫 Caption: Painting "Washington and Lafayette at Valley Forge" by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+- 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
 
 Sources:
 
@@ -103,7 +110,7 @@ Sources:
 
 Warning: `Alt text should not be a single space`
 
-If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
+If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
 
 - ✅ `<img src="photo.png" alt="">`
 - 🚫 `<img src="photo.png" alt=" ">`
@@ -116,7 +123,7 @@ Sources:
 
 Warning: `Alt text should end in a period`
 
-End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.
+End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.
 
 - ✅ A child holding a photograph.
 - 🚫 A child holding a photograph
@@ -144,7 +151,7 @@ Warning: `Images inside a link tag require alt text that describes the purpose o
 
 Images inside a link tag require alt text that describes the purpose of the link.
 
-- ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com"></a>`
+- ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`
 - 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
 
 Sources:
@@ -157,8 +164,8 @@ Warning: `Missing "alt" attribute`
 
 All images must have alternate text to convey their purpose and meaning to screen reader users.
 
-- ✅ `<img src="photograph.png" alt="A child holding a photograph.">`
-- 🚫 `<img src="photograph.png">`
+- ✅ `<img src="photograph.jpg" alt="A child holding a photograph.">`
+- 🚫 `<img src="photograph.jpg">`
 
 Sources:
 
