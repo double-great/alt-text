@@ -131,7 +131,7 @@ module.exports = {
       "image",
       "graphic"
     ],
-    rationale: "A file name in alt text does not provide helpful context",
+    rationale: "A file name in alt text does not provide helpful context.",
     source: ["https://axesslab.com/alt-texts/"],
     ok: "A child holding a photograph.",
     notOk: "photograph.jpg"

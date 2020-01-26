@@ -66,7 +66,7 @@ Sources:
 
 Warning: `Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>"`
 
-A file name in alt text does not provide helpful context
+A file name in alt text does not provide helpful context.
 
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
