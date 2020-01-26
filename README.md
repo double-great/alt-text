@@ -94,7 +94,7 @@ Sources:
 
 - <https://dequeuniversity.com/rules/axe/3.4/image-alt>
 
-### Alt text contains problematic words
+### Alt text contains unhelpful words
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
 
@@ -105,7 +105,7 @@ Sources:
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
-### Alt text could be considered problematic
+### Alt text is unhelpful
 
 Warning: `Alt text should not be "<image|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|chart|table|diagram|graph|*>"`
 

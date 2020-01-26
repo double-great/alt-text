@@ -42,10 +42,9 @@ module.exports = {
     source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"]
   },
   contains: {
-    heading: "Alt text contains problematic words",
+    heading: "Alt text contains unhelpful words",
     fn: (item, alt) => alt.includes(item),
     warning: value => `Alt text should not contain "${value}"`,
-
     rules: [
       "picture of",
       "photo of",
@@ -64,10 +63,9 @@ module.exports = {
     ]
   },
   exactMatch: {
-    heading: "Alt text could be considered problematic",
+    heading: "Alt text is unhelpful",
     fn: (item, alt) => item == alt.trim(),
     warning: value => `Alt text should not be "${value}"`,
-
     rules: [
       "image",
       "graphic",
