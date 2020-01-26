@@ -36,7 +36,7 @@ console.log(altText("A screenshot of a dog"));
 
 ### Alt text contains unhelpful words
 
-Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
+Warning: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screenshot of"`
 
 Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.
 
@@ -50,7 +50,7 @@ Sources:
 
 ### Alt text is unhelpful
 
-Warning: `Alt text should not be "<image|icon|graphic|photo|photograph|placeholder|temp|alt|drawing|painting|artwork|logo|bullet|button|arrow|more|spacer|blank|empty|chart|table|diagram|graph|*>"`
+Warning: `Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, spacer, table, temp"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -64,14 +64,14 @@ Sources:
 
 ### Alt text should not end with
 
-Warning: `Alt text should not end with "<.jpg|.jpeg|.gif|.png|.svg|.webp|image|graphic>"`
+Warning: `Alt text should not end with ".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image"`
 
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
 
 ### Alt text should not start with
 
-Warning: `Alt text should not start with "<picture|photo|photograph|photographer|image|graphic|screenshot|spacer>"`
+Warning: `Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screenshot, spacer"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
