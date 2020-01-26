@@ -8,7 +8,7 @@
     "pretest": "npm run lint",
     "test": "tape tests/*.test.js",
     "pretty-quick": "pretty-quick",
-    "write-docs": "node scripts/write-docs.js"
+    "write-docs": "node scripts/write-docs.js && node scripts/url.js"
   },
   "repository": {
     "type": "git",

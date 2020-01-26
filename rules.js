@@ -38,5 +38,6 @@ module.exports = {
   checkClue,
   checkLength,
   checkOnlySpace,
-  checkPeriod
+  checkPeriod,
+  createWarning
 };
