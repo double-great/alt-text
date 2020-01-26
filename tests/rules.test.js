@@ -49,7 +49,7 @@ test("[rules] checkClue.contain", assert => {
 
 test("[rules] checkPeriod", assert => {
   assert.deepEqual(rules.checkPeriod("a large black dog"), [
-    "Alt text should end in a period (https://git.io/JvfxY)."
+    "Alt text should end in a period (https://git.io/Jvqiq)."
   ]);
   assert.end();
 });
@@ -68,7 +68,7 @@ test("[rules] checkLength", assert => {
 
 test("[rules] checkOnlySpace", assert => {
   assert.deepEqual(rules.checkOnlySpace(" "), [
-    "Alt text should not be a single space (https://git.io/JvfxO)."
+    "Alt text should not be a single space (https://git.io/Jvqim)."
   ]);
   assert.end();
 });
