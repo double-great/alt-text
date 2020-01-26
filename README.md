@@ -60,7 +60,10 @@ Sources:
 
 Warning: `Alt text length should be less than 125 characters`
 
-Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks.
+- ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
+- 🚫 Caption: Painting "Washington and Lafayette at Valley Forge" by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+
+Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
 
 Sources:
 
