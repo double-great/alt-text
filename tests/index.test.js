@@ -11,6 +11,22 @@ test("[altText] return no warning", assert => {
   assert.end();
 });
 
+test("[altText] undefined", assert => {
+  assert.equal(
+    altText(),
+    "Empty alt text should only be used for decorative images (https://git.io/Jvqx8)."
+  );
+  assert.equal(
+    altText(""),
+    "Empty alt text should only be used for decorative images (https://git.io/Jvqx8)."
+  );
+  assert.equal(
+    altText(null),
+    "Empty alt text should only be used for decorative images (https://git.io/Jvqx8)."
+  );
+  assert.end();
+});
+
 test("[altText] return warnings", assert => {
   assert.equal(
     altText("A SCREENSHOT OF A DOG."),
