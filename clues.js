@@ -75,8 +75,8 @@ module.exports = {
       "https://www.w3.org/WAI/tutorials/images/tips/#tips",
       "https://axesslab.com/alt-texts/#dont-say-its-an-image"
     ],
-    ok: "A child holding a photograph.",
-    notOk: "A picture of a child holding a photograph."
+    ok: "Dog jumping through a hoop.",
+    notOk: "Image of a dog jumping through a hoop."
   },
   exactMatch: {
     heading: "Alt text could be considered problematic",

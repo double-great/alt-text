@@ -113,8 +113,8 @@ Sources:
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
 
-- ✅ A child holding a photograph.
-- 🚫 A picture of a child holding a photograph.
+- ✅ Dog jumping through a hoop.
+- 🚫 Image of a dog jumping through a hoop.
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
