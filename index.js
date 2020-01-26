@@ -1,6 +1,7 @@
 const rules = require("./rules");
 
 function altText(alt) {
+  if (!alt) return rules.createWarning("decorative");
   alt = alt.toLowerCase();
   const warning = [
     ...rules.checkClue(alt),
