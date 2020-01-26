@@ -14,13 +14,13 @@ test("[altText] return no warning", assert => {
 test("[altText] return warnings", assert => {
   assert.equal(
     altText("A SCREENSHOT OF A DOG."),
-    'Alt text should not contain "screenshot of" (https://git.io/JvfAe).',
+    'Alt text should not contain "screenshot of" (https://git.io/JvqA6).',
     "alt text rules are case insensitive"
   );
 
   assert.equal(
     altText("A SCREENSHOT OF A DOG"),
-    'Alt text should not contain "screenshot of" (https://git.io/JvfAe). Alt text should end in a period (https://git.io/Jvqiq).',
+    'Alt text should not contain "screenshot of" (https://git.io/JvqA6). Alt text should end in a period (https://git.io/Jvqiq).',
     "more than one warning"
   );
   assert.equal(
