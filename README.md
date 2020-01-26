@@ -94,7 +94,7 @@ Sources:
 
 - <https://dequeuniversity.com/rules/axe/3.4/image-alt>
 
-### Alt text contains words considered to be unhelpful
+### Alt text contains unhelpful words
 
 Warning: `Alt text should not contain "<picture of|photo of|photograph of|image of|graphic of|screenshot of|photo:|photographer:>"`
 

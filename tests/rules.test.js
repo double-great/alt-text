@@ -5,7 +5,7 @@ test("[rules] checkClue.endWith", assert => {
   assert.deepEqual(
     rules.checkClue("A screenshot of a dog.jpg"),
     [
-      'Alt text should not contain "screenshot of" (https://git.io/JvqA6).',
+      'Alt text should not contain "screenshot of" (https://git.io/JvqAM).',
       'Alt text should not end with ".jpg" (https://git.io/JvfAf).'
     ],
     "can have more than one warning"
@@ -42,7 +42,7 @@ test("[rules] checkClue.exactMatch", assert => {
 
 test("[rules] checkClue.contain", assert => {
   assert.deepEqual(rules.checkClue("A screenshot of a dog."), [
-    'Alt text should not contain "screenshot of" (https://git.io/JvqA6).'
+    'Alt text should not contain "screenshot of" (https://git.io/JvqAM).'
   ]);
   assert.end();
 });
