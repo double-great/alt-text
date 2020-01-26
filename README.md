@@ -55,7 +55,7 @@ Sources:
 
 ### Character length
 
-Warning: `Alt text length should be less than 125 characters, it is currently characters`
+Warning: `Alt text length should be less than 125 characters`
 
 Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks.
 

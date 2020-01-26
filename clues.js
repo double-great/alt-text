@@ -9,7 +9,9 @@ module.exports = {
   charLength: {
     heading: "Character length",
     message: length =>
-      `Alt text length should be less than 125 characters, it is currently ${length} characters`,
+      `Alt text length should be less than 125 characters${
+        length ? `, it is currently ${length} characters` : ""
+      }`,
     rationale:
       "Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks.",
     source: [
