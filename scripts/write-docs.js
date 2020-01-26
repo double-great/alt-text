@@ -10,9 +10,8 @@ const sortedClues = Object.keys(clues)
 
 const md = sortedClues.reduce((str, clue) => {
   const { warning, rationale, source, heading, rules, ok, notOk } = clue;
-  const options = rules ? `<${rules.join("|")}>` : "";
   str += `### ${heading}\n\n`;
-  str += `Warning: \`${warning(options)}\``;
+  str += `Warning: \`${warning(rules ? rules.sort().join(", ") : "")}\``;
   str += "\n\n";
   if (rationale) str += `${rationale}\n\n`;
   if (ok && notOk) str += `- ✅ ${ok}\n- 🚫 ${notOk}\n\n`;
