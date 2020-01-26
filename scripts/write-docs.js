@@ -9,7 +9,7 @@ const md = Object.keys(clues).reduce((str, clue) => {
 
   str += "\n\n";
   if (clues[clue].rationale) str += `${clues[clue].rationale}\n\n`;
-  if (clues[clue].source) str += `Source: ${clues[clue].source}\n\n`;
+  if (clues[clue].source) str += `Source: <${clues[clue].source}>\n\n`;
   return str;
 }, "## Warnings\n\n<!-- this section is generated on commit !-->\n\n");
 
