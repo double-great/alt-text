@@ -7,7 +7,8 @@
     "lint": "eslint . --fix",
     "pretest": "npm run lint",
     "test": "tape tests/*.test.js",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "write-docs": "node scripts/write-docs.js"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node scripts/write-docs.js && git add README.md && pretty-quick --staged && node scripts/url.js"
+      "pre-commit": "npm run write-docs && git add README.md && pretty-quick --staged && node scripts/url.js"
     }
   },
   "directories": {
