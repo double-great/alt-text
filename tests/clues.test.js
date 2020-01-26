@@ -18,17 +18,16 @@ Object.keys(clues).forEach(clue => {
       false,
       "`warning` must not end in period"
     );
-
-    /*
-    assert.ok(
+    /*assert.ok(
       clues[clue].source,
       "must have `source`"
     );
     assert.ok(
       clues[clue].rationale,
       "must have `rationale`"
-    );
-    */
+    );*/
+    assert.ok(clues[clue].ok, "must have `ok`");
+    assert.ok(clues[clue].notOk, "must have `notOk`");
     assert.ok(clues[clue].heading, "must have `heading`");
     if (clues[clue].fn) {
       assert.equal(
