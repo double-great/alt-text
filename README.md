@@ -66,8 +66,14 @@ Sources:
 
 Warning: `Alt text should not end with ".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image"`
 
+A file name in alt text does not provide helpful context.
+
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
+
+Sources:
+
+- <https://axesslab.com/alt-texts/>
 
 ### Alt text should not start with
 

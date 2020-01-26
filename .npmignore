@@ -1,3 +1,4 @@
 scripts
 tests
 .travis.yml
+.eslintrc
