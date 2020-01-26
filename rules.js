@@ -2,7 +2,7 @@ const clues = require("./clues");
 const urls = require("./urls");
 
 function createWarning(ruleName, value) {
-  return `${clues[ruleName].message(value)} (${urls[ruleName]}).`;
+  return `${clues[ruleName].warning(value)} (${urls[ruleName]}).`;
 }
 
 function filterClues(ruleName, clue, alt) {

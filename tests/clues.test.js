@@ -9,14 +9,14 @@ test("[clues]", assert => {
 Object.keys(clues).forEach(clue => {
   test(`[clues] ${clue}`, assert => {
     assert.equal(
-      typeof clues[clue].message,
+      typeof clues[clue].warning,
       "function",
-      "value of `message` is a function"
+      "value of `warning` is a function"
     );
     assert.equal(
-      clues[clue].message().endsWith("."),
+      clues[clue].warning().endsWith("."),
       false,
-      "`message` must not end in period"
+      "`warning` must not end in period"
     );
 
     /*

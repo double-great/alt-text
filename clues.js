@@ -1,14 +1,14 @@
 module.exports = {
   notOnlySpace: {
     heading: "Empty alt text",
-    message: () => `Alt text should not be a single space`,
+    warning: () => `Alt text should not be a single space`,
     rationale:
       'If you use a null (empty) text alternative (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
     source: ["https://www.w3.org/WAI/tutorials/images/tips/#tips"]
   },
   charLength: {
     heading: "Character length",
-    message: length =>
+    warning: length =>
       `Alt text length should be less than 125 characters${
         length ? `, it is currently ${length} characters` : ""
       }`,
@@ -21,7 +21,7 @@ module.exports = {
   },
   imageLink: {
     heading: "Image is link",
-    message: () =>
+    warning: () =>
       `Images inside a link tag require alt text that describes the purpose of the link`,
     rationale:
       "Images inside a link tag require alt text that describes the purpose of the link.",
@@ -29,14 +29,14 @@ module.exports = {
   },
   endPeriod: {
     heading: "End in a period",
-    message: () => `Alt text should end in a period`,
+    warning: () => `Alt text should end in a period`,
     rationale:
       "End the alt-text with a period. This will make screen readers pause a bit after the last word in the alt-text, which creates a more pleasant reading experience for the user.",
     source: ["https://axesslab.com/alt-texts/#end-with-a-period"]
   },
   noAlt: {
     heading: "Missing alt attribute",
-    message: () => `Missing "alt" attribute`,
+    warning: () => `Missing "alt" attribute`,
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
     source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"]
@@ -44,7 +44,7 @@ module.exports = {
   contains: {
     heading: "Alt text contains problematic words",
     fn: (item, alt) => alt.includes(item),
-    message: value => `Alt text should not contain "${value}"`,
+    warning: value => `Alt text should not contain "${value}"`,
 
     rules: [
       "picture of",
@@ -66,7 +66,7 @@ module.exports = {
   exactMatch: {
     heading: "Alt text could be considered problematic",
     fn: (item, alt) => item == alt.trim(),
-    message: value => `Alt text should not be "${value}"`,
+    warning: value => `Alt text should not be "${value}"`,
 
     rules: [
       "image",
@@ -98,7 +98,7 @@ module.exports = {
   endWith: {
     heading: "Alt text should not end with",
     fn: (item, alt) => alt.endsWith(item),
-    message: value => `Alt text should not end with "${value}"`,
+    warning: value => `Alt text should not end with "${value}"`,
 
     rules: [
       ".jpg",
@@ -116,7 +116,7 @@ module.exports = {
   startWith: {
     heading: "Alt text should not start with",
     fn: (item, alt) => alt.startsWith(item),
-    message: value => `Alt text should not start with "${value}"`,
+    warning: value => `Alt text should not start with "${value}"`,
     rules: [
       "picture",
       "photo",
