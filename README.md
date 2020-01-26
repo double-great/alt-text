@@ -69,7 +69,9 @@ Sources:
 Warning: `Images inside a link tag require alt text that describes the purpose of the link`
 
 - ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on github.com" /></a>`
-- 🚫`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`Images inside a link tag require alt text that describes the purpose of the link.
+- 🚫`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo" /></a>`
+
+Images inside a link tag require alt text that describes the purpose of the link.
 
 Sources:
 
