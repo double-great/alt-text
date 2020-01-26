@@ -1,7 +1,7 @@
 {
   "name": "@double-great/alt-text",
   "version": "0.1.0",
-  "description": "Check for common issues found in alt text and suggests improvements to improve accessibility.",
+  "description": "Check for unhelpful alt text.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
@@ -39,5 +39,9 @@
   },
   "directories": {
     "test": "tests"
-  }
+  },
+  "keywords": [
+    "accessibility",
+    "alt text"
+  ]
 }
