@@ -8,7 +8,7 @@ test("[rules] checkClue.endWith", assert => {
       'Alt text should not contain "screenshot of" (https://git.io/JvqAM).',
       'Alt text should not end with ".jpg" (https://git.io/JvfAf).'
     ],
-    "can have more than one warning"
+    "can have more than one suggestion"
   );
   assert.deepEqual(rules.checkClue("DSC_0010.jpg"), [
     'Alt text should not end with ".jpg" (https://git.io/JvfAf).'

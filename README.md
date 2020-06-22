@@ -18,7 +18,7 @@ npm install @double-great/alt-text
 
 ## Usage
 
-If `altText` detects an issue, it will return a warning to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
+If `altText` detects an issue, it will return a suggestion to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
 
 ```js
 const altText = require("@double-great/alt-text");
@@ -30,13 +30,13 @@ console.log(altText("A screenshot of a dog"));
 // Alt text should not contain "screenshot of". Alt text should end in a period.
 ```
 
-## Warnings
+## Suggestions
 
 <!-- this section is generated on commit !-->
 
 ### Alt text contains unhelpful words
 
-Warning: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screenshot of"`
+Suggestion: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screenshot of"`
 
 Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.
 
@@ -50,7 +50,7 @@ Sources:
 
 ### Alt text is unhelpful
 
-Warning: `Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, spacer, table, temp"`
+Suggestion: `Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, spacer, table, temp"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -64,7 +64,7 @@ Sources:
 
 ### Alt text should not end with
 
-Warning: `Alt text should not end with ".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image"`
+Suggestion: `Alt text should not end with ".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image"`
 
 A file name in alt text does not provide helpful context.
 
@@ -77,7 +77,7 @@ Sources:
 
 ### Alt text should not start with
 
-Warning: `Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screenshot, spacer"`
+Suggestion: `Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screenshot, spacer"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -91,7 +91,7 @@ Sources:
 
 ### Character length
 
-Warning: `Alt text length should be less than 125 characters`
+Suggestion: `Alt text length should be less than 125 characters`
 
 Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
 
@@ -105,7 +105,7 @@ Sources:
 
 ### Empty alt text
 
-Warning: `Alt text should not be a single space`
+Suggestion: `Alt text should not be a single space`
 
 If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
 
@@ -118,7 +118,7 @@ Sources:
 
 ### End in a period
 
-Warning: `Alt text should end in a period`
+Suggestion: `Alt text should end in a period`
 
 End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.
 
@@ -131,7 +131,7 @@ Sources:
 
 ### Image is decorative
 
-Warning: `Empty alt text should only be used for decorative images`
+Suggestion: `Empty alt text should only be used for decorative images`
 
 Provide "null" `alt` attributes (using `alt=""`) for images which do not provide information or do not require alternative text because the image is described in the page content. Some developers will mistakenly leave off the alt attribute altogether on images which they deem do not need alternatives. This is not helpful to assistive technology users because the assistive technology, such as screen reader, will often read the source attribute (i.e., file name) as the alternative text. To tell assistive technology to ignore an image, use a "blank alternative text" attribute: `alt=""`.
 
@@ -144,7 +144,7 @@ Sources:
 
 ### Image is link
 
-Warning: `Images inside a link tag require alt text that describes the purpose of the link`
+Suggestion: `Images inside a link tag require alt text that describes the purpose of the link`
 
 Images inside a link tag require alt text that describes the purpose of the link.
 
@@ -157,7 +157,7 @@ Sources:
 
 ### Missing alt attribute
 
-Warning: `Missing "alt" attribute`
+Suggestion: `Missing "alt" attribute`
 
 All images must have alternate text to convey their purpose and meaning to screen reader users.
 

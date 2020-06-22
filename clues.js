@@ -1,7 +1,7 @@
 module.exports = {
   notOnlySpace: {
     heading: "Empty alt text",
-    warning: () => `Alt text should not be a single space`,
+    suggestion: () => `Alt text should not be a single space`,
     rationale:
       'If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
     source: ["https://www.w3.org/WAI/tutorials/images/tips/#tips"],
@@ -10,7 +10,7 @@ module.exports = {
   },
   charLength: {
     heading: "Character length",
-    warning: length =>
+    suggestion: length =>
       `Alt text length should be less than 125 characters${
         length ? `, it is currently ${length} characters` : ""
       }`,
@@ -27,7 +27,7 @@ module.exports = {
   },
   imageLink: {
     heading: "Image is link",
-    warning: () =>
+    suggestion: () =>
       `Images inside a link tag require alt text that describes the purpose of the link`,
     rationale:
       "Images inside a link tag require alt text that describes the purpose of the link.",
@@ -39,7 +39,7 @@ module.exports = {
   },
   endPeriod: {
     heading: "End in a period",
-    warning: () => `Alt text should end in a period`,
+    suggestion: () => `Alt text should end in a period`,
     rationale:
       "End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
     source: ["https://axesslab.com/alt-texts/#end-with-a-period"],
@@ -48,7 +48,7 @@ module.exports = {
   },
   noAlt: {
     heading: "Missing alt attribute",
-    warning: () => `Missing "alt" attribute`,
+    suggestion: () => `Missing "alt" attribute`,
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
     source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"],
@@ -58,7 +58,7 @@ module.exports = {
   contains: {
     heading: "Alt text contains unhelpful words",
     fn: (item, alt) => alt.includes(item),
-    warning: value => `Alt text should not contain "${value}"`,
+    suggestion: value => `Alt text should not contain "${value}"`,
     rules: [
       "picture of",
       "photo of",
@@ -81,7 +81,7 @@ module.exports = {
   exactMatch: {
     heading: "Alt text is unhelpful",
     fn: (item, alt) => item == alt.trim(),
-    warning: value => `Alt text should not be "${value}"`,
+    suggestion: value => `Alt text should not be "${value}"`,
     rules: [
       "image",
       "icon",
@@ -120,7 +120,7 @@ module.exports = {
   endWith: {
     heading: "Alt text should not end with",
     fn: (item, alt) => alt.endsWith(item),
-    warning: value => `Alt text should not end with "${value}"`,
+    suggestion: value => `Alt text should not end with "${value}"`,
     rules: [
       ".jpg",
       ".jpeg",
@@ -139,7 +139,7 @@ module.exports = {
   startWith: {
     heading: "Alt text should not start with",
     fn: (item, alt) => alt.startsWith(item),
-    warning: value => `Alt text should not start with "${value}"`,
+    suggestion: value => `Alt text should not start with "${value}"`,
     rules: [
       "picture",
       "photo",
@@ -161,7 +161,8 @@ module.exports = {
   },
   decorative: {
     heading: "Image is decorative",
-    warning: () => `Empty alt text should only be used for decorative images`,
+    suggestion: () =>
+      `Empty alt text should only be used for decorative images`,
     rationale: `Provide "null" \`alt\` attributes (using \`alt=""\`) for images which do not provide information or do not require alternative text because the image is described in the page content. Some developers will mistakenly leave off the alt attribute altogether on images which they deem do not need alternatives. This is not helpful to assistive technology users because the assistive technology, such as screen reader, will often read the source attribute (i.e., file name) as the alternative text. To tell assistive technology to ignore an image, use a "blank alternative text" attribute: \`alt=""\`.`,
     source: ["https://dequeuniversity.com/rules/axe/3.0/image-alt"],
     ok: '`<img src="decorative-photo.jpg" alt="">`',
