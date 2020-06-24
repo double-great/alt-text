@@ -1,13 +1,13 @@
 const clues = require("./clues");
 const urls = require("./urls");
 
-function createWarning(ruleName, value) {
-  return `${clues[ruleName].warning(value)} (${urls[ruleName]}).`;
+function createSuggestion(ruleName, value) {
+  return `${clues[ruleName].suggestion(value)} (${urls[ruleName]}).`;
 }
 
 function filterClues(ruleName, clue, alt) {
   return clue.rules.reduce((arr, item) => {
-    if (clue.fn(item, alt)) arr.push(createWarning(ruleName, item));
+    if (clue.fn(item, alt)) arr.push(createSuggestion(ruleName, item));
     return arr;
   }, []);
 }
@@ -21,16 +21,16 @@ function checkClue(alt) {
 }
 
 function checkLength(alt) {
-  return alt.length > 125 ? [createWarning("charLength", alt.length)] : [];
+  return alt.length > 125 ? [createSuggestion("charLength", alt.length)] : [];
 }
 
 function checkOnlySpace(alt) {
-  return alt == " " ? [createWarning("notOnlySpace")] : [];
+  return alt == " " ? [createSuggestion("notOnlySpace")] : [];
 }
 
 function checkPeriod(alt) {
   return !alt.endsWith(".") && alt.length > 1
-    ? [createWarning("endPeriod")]
+    ? [createSuggestion("endPeriod")]
     : [];
 }
 
@@ -39,5 +39,5 @@ module.exports = {
   checkLength,
   checkOnlySpace,
   checkPeriod,
-  createWarning
+  createSuggestion
 };

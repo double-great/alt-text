@@ -1,7 +1,7 @@
 const test = require("tape");
 const altText = require("../");
 
-test("[altText] return no warning", assert => {
+test("[altText] return no suggestion", assert => {
   assert.equal(altText("A large black dog."), undefined);
   assert.equal(altText("A child holding a photograph."), undefined);
   assert.equal(
@@ -27,7 +27,7 @@ test("[altText] undefined", assert => {
   assert.end();
 });
 
-test("[altText] return warnings", assert => {
+test("[altText] return suggestions", assert => {
   assert.equal(
     altText("A SCREENSHOT OF A DOG."),
     'Alt text should not contain "screenshot of" (https://git.io/JvqAM).',
@@ -37,7 +37,7 @@ test("[altText] return warnings", assert => {
   assert.equal(
     altText("A SCREENSHOT OF A DOG"),
     'Alt text should not contain "screenshot of" (https://git.io/JvqAM). Alt text should end in a period (https://git.io/Jvqiq).',
-    "more than one warning"
+    "more than one suggestion"
   );
   assert.equal(
     altText("An inhaler with a spacer connected to the mouthpiece"),
