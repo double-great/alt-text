@@ -1,5 +1,6 @@
 const clues = require("./clues");
 const urls = require("./urls");
+const emojiRegex = require("emoji-regex");
 
 function createSuggestion(ruleName, value) {
   return `${clues[ruleName].suggestion(value)} (${urls[ruleName]}).`;
@@ -34,10 +35,17 @@ function checkPeriod(alt) {
     : [];
 }
 
+function checkEmoji(alt) {
+  const regex = emojiRegex();
+  const match = regex.exec(alt);
+  return match ? [createSuggestion("avoidEmoji", match[0])] : [];
+}
+
 module.exports = {
   checkClue,
   checkLength,
   checkOnlySpace,
   checkPeriod,
-  createSuggestion
+  createSuggestion,
+  checkEmoji
 };

@@ -89,6 +89,20 @@ Sources:
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
+### Avoid emoji
+
+Suggestion: `Replace emoji in alt text with descriptive text`
+
+Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.
+
+- ✅ `<img src="cat.jpg" alt="An orange cat.">`
+- 🚫 `<img src="cat.png" alt="An orange 🐈."/>`
+
+Sources:
+
+- <https://www.youtube.com/watch?v=uIbPcZq6izk>
+- <https://readabilityguidelines.co.uk/images/emojis/>
+
 ### Character length
 
 Suggestion: `Alt text length should be less than 125 characters`
