@@ -171,7 +171,7 @@ module.exports = {
     heading: "Avoid emoji",
     warning: emoji =>
       `Replace ${emoji || "emoji"} in alt text with descriptive text`,
-    rationale: `Do not replace words with emoji in alt text. The emoji alt text descriptions that screen readers and text to speech software use may not be what you intended the emoji to represent.`,
+    rationale: `Emoji also have alt text and their interpretations differ between operating systems and software. It's possible that the emoji alt text and its meaning may not be what you intended the emoji to represent.`,
     source: [
       "https://www.youtube.com/watch?v=uIbPcZq6izk",
       "https://readabilityguidelines.co.uk/images/emojis/"

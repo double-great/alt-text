@@ -93,7 +93,7 @@ Sources:
 
 Warning: `Replace emoji in alt text with descriptive text`
 
-Do not replace words with emoji in alt text. The emoji alt text descriptions that screen readers and text to speech software use may not be what you intended the emoji to represent.
+Emoji also have alt text and their interpretations differ between operating systems and software. It's possible that the emoji alt text and its meaning may not be what you intended the emoji to represent.
 
 - ✅ `<img src="cat.jpg" alt="An orange cat.">`
 - 🚫 `<img src="cat.png" alt="An orange 🐈."/>`
