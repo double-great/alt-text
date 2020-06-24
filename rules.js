@@ -37,8 +37,8 @@ function checkPeriod(alt) {
 
 function checkEmoji(alt) {
   const regex = emojiRegex();
-  let match = regex.exec(alt);
-  return match ? [createWarning("avoidEmoji")] : [];
+  const match = regex.exec(alt);
+  return match ? [createWarning("avoidEmoji", match[0])] : [];
 }
 
 module.exports = {
