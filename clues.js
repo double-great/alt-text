@@ -171,8 +171,11 @@ module.exports = {
     heading: "Avoid emoji",
     warning: emoji =>
       `Replace ${emoji || "emoji"} in alt text with descriptive text`,
-    rationale: `....`,
-    source: ["https://www.youtube.com/watch?v=uIbPcZq6izk"],
+    rationale: `Avoid replacing words with emoji in alt text. Since screen readers and text to speech software interpretation of emoji alt text descriptions can vary, the result may not be what you intended the emoji to represent.`,
+    source: [
+      "https://www.youtube.com/watch?v=uIbPcZq6izk",
+      "https://readabilityguidelines.co.uk/images/emojis/"
+    ],
     ok: '`<img src="cat.jpg" alt="An orange cat.">`',
     notOk: '`<img src="cat.png" alt="An orange 🐈."/>`'
   }
