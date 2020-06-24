@@ -1,15 +1,15 @@
 const rules = require("./rules");
 
 function altText(alt) {
-  if (!alt) return rules.createWarning("decorative");
+  if (!alt) return rules.createSuggestion("decorative");
   alt = alt.toLowerCase();
-  const warning = [
+  const suggestion = [
     ...rules.checkClue(alt),
     ...rules.checkLength(alt),
     ...rules.checkOnlySpace(alt),
     ...rules.checkPeriod(alt)
   ];
-  return warning.length ? warning.join(" ") : undefined;
+  return suggestion.length ? suggestion.join(" ") : undefined;
 }
 
 module.exports = altText;
