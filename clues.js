@@ -166,5 +166,13 @@ module.exports = {
     source: ["https://dequeuniversity.com/rules/axe/3.0/image-alt"],
     ok: '`<img src="decorative-photo.jpg" alt="">`',
     notOk: '`<img src="quarterly-earnings-chart.png" alt=""/>`'
+  },
+  avoidEmoji: {
+    heading: "Avoid emoji",
+    warning: () => `Replace emoji in alt text with descriptive words`,
+    rationale: `....`,
+    source: [""],
+    ok: '`<img src="cat.jpg" alt="An orange cat.">`',
+    notOk: '`<img src="cat.png" alt="An orange 🐈."/>`'
   }
 };

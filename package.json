@@ -22,6 +22,7 @@
   "homepage": "https://github.com/double-great/alt-text#readme",
   "dependencies": {
     "cli-git.io": "^1.0.1",
+    "emoji-regex": "^9.0.0",
     "github-slugger": "^1.2.1"
   },
   "devDependencies": {

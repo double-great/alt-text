@@ -72,3 +72,10 @@ test("[rules] checkOnlySpace", assert => {
   ]);
   assert.end();
 });
+
+test("[rules] checkEmoji", assert => {
+  assert.deepEqual(rules.checkEmoji("An orange 🐈."), [
+    "Replace emoji in alt text with descriptive words (https://git.io/Jfhte)."
+  ]);
+  assert.end();
+});

@@ -1,5 +1,6 @@
 const clues = require("./clues");
 const urls = require("./urls");
+const emojiRegex = require("emoji-regex");
 
 function createWarning(ruleName, value) {
   return `${clues[ruleName].warning(value)} (${urls[ruleName]}).`;
@@ -34,10 +35,17 @@ function checkPeriod(alt) {
     : [];
 }
 
+function checkEmoji(alt) {
+  const regex = emojiRegex();
+  let match = regex.exec(alt);
+  return match ? [createWarning("avoidEmoji")] : [];
+}
+
 module.exports = {
   checkClue,
   checkLength,
   checkOnlySpace,
   checkPeriod,
-  createWarning
+  createWarning,
+  checkEmoji
 };
