@@ -171,7 +171,7 @@ module.exports = {
     heading: "Avoid emoji",
     warning: () => `Replace emoji in alt text with descriptive words`,
     rationale: `....`,
-    source: [""],
+    source: ["https://www.youtube.com/watch?v=uIbPcZq6izk"],
     ok: '`<img src="cat.jpg" alt="An orange cat.">`',
     notOk: '`<img src="cat.png" alt="An orange 🐈."/>`'
   }

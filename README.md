@@ -100,7 +100,7 @@ Warning: `Replace emoji in alt text with descriptive words`
 
 Sources:
 
-- <>
+- <https://www.youtube.com/watch?v=uIbPcZq6izk>
 
 ### Character length
 
