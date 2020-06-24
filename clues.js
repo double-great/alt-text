@@ -170,7 +170,7 @@ module.exports = {
   },
   avoidEmoji: {
     heading: "Avoid emoji",
-    warning: emoji =>
+    suggestion: emoji =>
       `Replace ${emoji || "emoji"} in alt text with descriptive text`,
     rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
     source: [
