@@ -91,7 +91,7 @@ Sources:
 
 ### Avoid emoji
 
-Warning: `Replace emoji in alt text with descriptive words`
+Warning: `Replace emoji in alt text with descriptive text`
 
 ....
 
