@@ -43,5 +43,9 @@ test("[altText] return suggestions", assert => {
     altText("An inhaler with a spacer connected to the mouthpiece"),
     "Alt text should end in a period (https://git.io/Jvqiq)."
   );
+  assert.equal(
+    altText("😸."),
+    "Replace 😸 in alt text with descriptive text (https://git.io/Jfhte)."
+  );
   assert.end();
 });
