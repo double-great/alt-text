@@ -27,7 +27,7 @@ console.log(altText("A child holding a photograph."));
 // undefined
 
 console.log(altText("A photo of a dog"));
-// Alt text should not contain "photo of" (https://git.io/JvqAM). Alt text should end in a period (https://git.io/Jvqiq).
+// Alt text should not contain "photo of" (https://git.io/JvqAM). Alt text should end with punctuation (https://git.io/JJk55).
 ```
 
 ## Suggestions
@@ -130,11 +130,11 @@ Sources:
 
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 
-### End in a period
+### End with punctuation
 
-Suggestion: `Alt text should end in a period`
+Suggestion: `Alt text should end with punctuation`
 
-End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.
+End the alt text with a period, exclamation point, or question mark. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.
 
 - ✅ A child holding a photograph.
 - 🚫 A child holding a photograph
@@ -142,6 +142,7 @@ End the alt text with a period. This will make screen readers pause a bit after 
 Sources:
 
 - <https://axesslab.com/alt-texts/#end-with-a-period>
+- <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
 ### Image is decorative
 

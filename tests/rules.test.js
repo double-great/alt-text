@@ -47,10 +47,13 @@ test("[rules] checkClue.contain", assert => {
   assert.end();
 });
 
-test("[rules] checkPeriod", assert => {
-  assert.deepEqual(rules.checkPeriod("a large black dog"), [
-    "Alt text should end in a period (https://git.io/Jvqiq)."
+test("[rules] checkPunctuation", assert => {
+  assert.deepEqual(rules.checkPunctuation("a large black dog"), [
+    "Alt text should end with punctuation (https://git.io/JJk55)."
   ]);
+  assert.deepEqual(rules.checkPunctuation("a large black dog."), []);
+  assert.deepEqual(rules.checkPunctuation("a large black dog!"), []);
+  assert.deepEqual(rules.checkPunctuation("a large black dog?"), []);
   assert.end();
 });
 

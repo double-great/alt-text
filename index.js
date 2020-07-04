@@ -7,7 +7,7 @@ function altText(alt) {
     ...rules.checkClue(alt),
     ...rules.checkLength(alt),
     ...rules.checkOnlySpace(alt),
-    ...rules.checkPeriod(alt),
+    ...rules.checkPunctuation(alt),
     ...rules.checkEmoji(alt)
   ];
   return suggestion.length ? suggestion.join(" ") : undefined;
