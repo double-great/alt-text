@@ -1,6 +1,6 @@
 {
   "name": "@double-great/alt-text",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Check for unhelpful alt text.",
   "main": "index.js",
   "scripts": {
