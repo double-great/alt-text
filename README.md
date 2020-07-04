@@ -26,8 +26,8 @@ const altText = require("@double-great/alt-text");
 console.log(altText("A child holding a photograph."));
 // undefined
 
-console.log(altText("A screenshot of a dog"));
-// Alt text should not contain "screenshot of". Alt text should end in a period.
+console.log(altText("A photo of a dog"));
+// Alt text should not contain "photo of" (https://git.io/JvqAM). Alt text should end in a period (https://git.io/Jvqiq).
 ```
 
 ## Suggestions
