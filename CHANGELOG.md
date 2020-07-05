@@ -1,6 +1,6 @@
 # Changelog
 
-## Main
+## 0.4.0
 
 - Replace "End in period" suggestion with "End in punctuation". [#49](https://github.com/double-great/alt-text/pull/49)
 
