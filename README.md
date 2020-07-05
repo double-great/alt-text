@@ -139,10 +139,11 @@ End the alt text with a period, exclamation point, or question mark. This will m
 - ✅ A child holding a photograph.
 - 🚫 A child holding a photograph
 
+Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
+
 Sources:
 
 - <https://axesslab.com/alt-texts/#end-with-a-period>
-- <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
 ### Image is decorative
 
