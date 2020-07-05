@@ -36,12 +36,12 @@ test("[altText] return suggestions", assert => {
 
   assert.equal(
     altText("A SCREENSHOT OF A DOG"),
-    'Alt text should not contain "screenshot of" (https://git.io/JvqAM). Alt text should end in a period (https://git.io/Jvqiq).',
+    'Alt text should not contain "screenshot of" (https://git.io/JvqAM). Alt text should end with punctuation (https://git.io/JJk55).',
     "more than one suggestion"
   );
   assert.equal(
     altText("An inhaler with a spacer connected to the mouthpiece"),
-    "Alt text should end in a period (https://git.io/Jvqiq)."
+    "Alt text should end with punctuation (https://git.io/JJk55)."
   );
   assert.equal(
     altText("😸."),

@@ -37,12 +37,15 @@ module.exports = {
     notOk:
       '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`'
   },
-  endPeriod: {
-    heading: "End in a period",
-    suggestion: () => `Alt text should end in a period`,
+  endPunctuation: {
+    heading: "End with punctuation",
+    suggestion: () => `Alt text should end with punctuation`,
     rationale:
-      "End the alt text with a period. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
-    source: ["https://axesslab.com/alt-texts/#end-with-a-period"],
+      "End the alt text with a period, exclamation point, or question mark. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
+    source: [
+      "https://axesslab.com/alt-texts/#end-with-a-period",
+      "https://doublegreat.dev/listen/punctuation-in-alt-text/"
+    ],
     ok: "A child holding a photograph.",
     notOk: "A child holding a photograph"
   },

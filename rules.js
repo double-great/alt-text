@@ -29,9 +29,10 @@ function checkOnlySpace(alt) {
   return alt == " " ? [createSuggestion("notOnlySpace")] : [];
 }
 
-function checkPeriod(alt) {
-  return !alt.endsWith(".") && alt.length > 1
-    ? [createSuggestion("endPeriod")]
+function checkPunctuation(alt) {
+  console.log("test", /[.!?]$/.test(alt));
+  return !/[.!?]$/.test(alt) && alt.length > 1
+    ? [createSuggestion("endPunctuation")]
     : [];
 }
 
@@ -45,7 +46,7 @@ module.exports = {
   checkClue,
   checkLength,
   checkOnlySpace,
-  checkPeriod,
+  checkPunctuation,
   createSuggestion,
   checkEmoji
 };
