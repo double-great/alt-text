@@ -48,5 +48,5 @@ module.exports = {
   checkOnlySpace,
   checkPunctuation,
   createSuggestion,
-  checkEmoji
+  checkEmoji,
 };

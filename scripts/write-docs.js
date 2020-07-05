@@ -16,7 +16,7 @@ const md = sortedClues.reduce((str, clue) => {
   if (rationale) str += `${rationale}\n\n`;
   if (ok && notOk) str += `- ✅ ${ok}\n- 🚫 ${notOk}\n\n`;
   if (source)
-    str += `Sources:\n${source.map(link => `- <${link}>\n`).join("")}\n`;
+    str += `Sources:\n${source.map((link) => `- <${link}>\n`).join("")}\n`;
   return str;
 }, "## Suggestions\n\n<!-- this section is generated on commit !-->\n\n");
 

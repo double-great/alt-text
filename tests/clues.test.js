@@ -1,13 +1,13 @@
 const test = require("tape");
 const clues = require("../clues");
 
-test("[clues]", assert => {
+test("[clues]", (assert) => {
   assert.equal(typeof clues, "object", "shape of clues is an object");
   assert.end();
 });
 
-Object.keys(clues).forEach(clue => {
-  test(`[clues] ${clue}`, assert => {
+Object.keys(clues).forEach((clue) => {
+  test(`[clues] ${clue}`, (assert) => {
     assert.equal(
       typeof clues[clue].suggestion,
       "function",
@@ -41,7 +41,7 @@ Object.keys(clues).forEach(clue => {
         "object",
         "value of `rules` is an object (array)"
       );
-      clues[clue].rules.forEach(rule => {
+      clues[clue].rules.forEach((rule) => {
         assert.equal(rule, rule.toLowerCase(), `"${rule}" must be lowercase`);
       });
     }

@@ -8,7 +8,7 @@ function altText(alt) {
     ...rules.checkLength(alt),
     ...rules.checkOnlySpace(alt),
     ...rules.checkPunctuation(alt),
-    ...rules.checkEmoji(alt)
+    ...rules.checkEmoji(alt),
   ];
   return suggestion.length ? suggestion.join(" ") : undefined;
 }
