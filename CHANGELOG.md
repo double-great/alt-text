@@ -2,7 +2,7 @@
 
 ## Main
 
-- Add Emoji in alt text link as a source to "Avoid emoji" suggestion. [#58](https://github.com/double-great/alt-text/pull/57)
+- Add "Hear an example" section to documentation and include links under "Avoid emoji" and "End with punctuation" suggestions. [#58](https://github.com/double-great/alt-text/pull/58)
 
 ## 0.4.0
 
