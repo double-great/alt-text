@@ -1,5 +1,9 @@
 # Changelog
 
+## Main
+
+- Add Emoji in alt text link as a source to "Avoid emoji" suggestion. [#58](https://github.com/double-great/alt-text/pull/57)
+
 ## 0.4.0
 
 - Replace "End in period" suggestion with "End in punctuation". [#49](https://github.com/double-great/alt-text/pull/49)

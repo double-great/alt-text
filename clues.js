@@ -177,6 +177,7 @@ module.exports = {
     source: [
       "https://www.youtube.com/watch?v=uIbPcZq6izk",
       "https://readabilityguidelines.co.uk/images/emojis/",
+      "https://doublegreat.dev/listen/emoji/",
     ],
     ok: '`<img src="cat.jpg" alt="An orange cat.">`',
     notOk: '`<img src="cat.png" alt="An orange 🐈."/>`',

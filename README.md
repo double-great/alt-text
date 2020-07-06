@@ -102,6 +102,7 @@ Sources:
 
 - <https://www.youtube.com/watch?v=uIbPcZq6izk>
 - <https://readabilityguidelines.co.uk/images/emojis/>
+- <https://doublegreat.dev/listen/emoji/>
 
 ### Character length
 
