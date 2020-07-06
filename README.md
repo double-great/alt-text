@@ -98,11 +98,12 @@ Emoji have their own text descriptions. These descriptions can vary between oper
 - ✅ `<img src="cat.jpg" alt="An orange cat.">`
 - 🚫 `<img src="cat.png" alt="An orange 🐈."/>`
 
+Hear an example: <https://doublegreat.dev/listen/emoji/>
+
 Sources:
 
 - <https://www.youtube.com/watch?v=uIbPcZq6izk>
 - <https://readabilityguidelines.co.uk/images/emojis/>
-- <https://doublegreat.dev/listen/emoji/>
 
 ### Character length
 
@@ -140,10 +141,11 @@ End the alt text with a period, exclamation point, or question mark. This will m
 - ✅ A child holding a photograph.
 - 🚫 A child holding a photograph
 
+Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
+
 Sources:
 
 - <https://axesslab.com/alt-texts/#end-with-a-period>
-- <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
 ### Image is decorative
 
