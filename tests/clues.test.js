@@ -45,6 +45,17 @@ Object.keys(clues).forEach((clue) => {
         assert.equal(rule, rule.toLowerCase(), `"${rule}" must be lowercase`);
       });
     }
+    if (clues[clue].listen) {
+      assert.equal(
+        typeof clues[clue].listen,
+        "string",
+        "`listen` must be a string"
+      );
+      assert.ok(
+        clues[clue].listen.startsWith("https://"),
+        "`listen` must start with 'https://'"
+      );
+    }
 
     assert.end();
   });
