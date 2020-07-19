@@ -1,8 +1,9 @@
 # Changelog
 
-## Main
+## 0.5.0
 
 - Add "Hear an example" section to documentation and include links under "Avoid emoji" and "End with punctuation" suggestions. [#58](https://github.com/double-great/alt-text/pull/58)
+- Update dependencies.
 
 ## 0.4.0
 
