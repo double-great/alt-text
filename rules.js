@@ -30,7 +30,6 @@ function checkOnlySpace(alt) {
 }
 
 function checkPunctuation(alt) {
-  console.log("test", /[.!?]$/.test(alt));
   return !/[.!?]$/.test(alt) && alt.length > 1
     ? [createSuggestion("endPunctuation")]
     : [];
