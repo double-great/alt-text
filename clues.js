@@ -102,6 +102,8 @@ module.exports = {
       "arrow",
       "more",
       "spacer",
+      "screenshot",
+      "screen shot",
       "blank",
       "empty",
       "chart",
