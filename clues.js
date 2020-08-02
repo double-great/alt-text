@@ -150,6 +150,7 @@ module.exports = {
       "image",
       "graphic",
       "screenshot",
+      "screen shot",
       "spacer",
     ],
     rationale:
