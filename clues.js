@@ -67,6 +67,7 @@ module.exports = {
       "image of",
       "graphic of",
       "screenshot of",
+      "screen shot of",
       "photo:",
       "photographer:",
     ],
