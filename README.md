@@ -36,7 +36,7 @@ console.log(altText("A photo of a dog"));
 
 ### Alt text contains unhelpful words
 
-Suggestion: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screenshot of"`
+Suggestion: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screen shot of, screenshot of"`
 
 Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.
 
@@ -50,7 +50,7 @@ Sources:
 
 ### Alt text is unhelpful
 
-Suggestion: `Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, spacer, table, temp"`
+Suggestion: `Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, screen shot, screenshot, spacer, table, temp"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -77,7 +77,7 @@ Sources:
 
 ### Alt text should not start with
 
-Suggestion: `Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screenshot, spacer"`
+Suggestion: `Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screen shot, screenshot, spacer"`
 
 Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 

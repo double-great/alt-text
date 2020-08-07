@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0
+
+- Add "screen shot" and "screenshot" to exact match. [#63](https://github.com/double-great/alt-text/pull/63)
+- Fix stray `console.log`. [#61](https://github.com/double-great/alt-text/pull/61)
+
 ## 0.5.0
 
 - Add "Hear an example" section to documentation and include links under "Avoid emoji" and "End with punctuation" suggestions. [#58](https://github.com/double-great/alt-text/pull/58)
