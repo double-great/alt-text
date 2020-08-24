@@ -30,7 +30,7 @@
     "eslint": "^7.5.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1",
+    "pretty-quick": "^3.0.0",
     "tape": "^5.0.1"
   },
   "husky": {
