@@ -9,7 +9,6 @@
     "test": "tape tests/*.test.js",
     "pretty-quick": "pretty-quick",
     "write-docs": "node scripts/write-docs.js && node scripts/url.js",
-    "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
