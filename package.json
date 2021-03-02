@@ -29,12 +29,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.20.0",
-    "husky": "^5.0.9",
-    "pinst": "^2.1.4",
+    "eslint": "^7.21.0",
+    "husky": "^5.1.2",
+    "pinst": "^2.1.6",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
-    "tape": "^5.1.1"
+    "tape": "^5.2.1"
   },
   "directories": {
     "test": "tests"
