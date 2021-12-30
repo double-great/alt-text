@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Switch to ES module.
+
 ## 0.6.0
 
 - Add "screen shot" and "screenshot" to exact match. [#63](https://github.com/double-great/alt-text/pull/63)
