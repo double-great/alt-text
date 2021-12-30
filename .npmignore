@@ -2,3 +2,4 @@ scripts
 tests
 .eslintrc
 .github
+.husky

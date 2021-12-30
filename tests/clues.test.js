@@ -1,5 +1,5 @@
-const test = require("tape");
-const clues = require("../clues");
+import test from "tape";
+import clues from "../clues.js";
 
 test("[clues]", (assert) => {
   assert.equal(typeof clues, "object", "shape of clues is an object");

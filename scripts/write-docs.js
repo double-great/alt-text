@@ -1,5 +1,6 @@
-const fs = require("fs");
-const clues = require("../clues");
+import { readFileSync, writeFileSync } from "fs";
+import clues from "../clues.js";
+
 
 const sortedClues = Object.keys(clues)
   .reduce((arr, item) => {
@@ -30,9 +31,9 @@ const md = sortedClues.reduce((str, clue) => {
   return str;
 }, "## Suggestions\n\n<!-- this section is generated on commit !-->\n\n");
 
-const readme = fs.readFileSync("readme.md", "utf-8");
+const readme = readFileSync("readme.md", "utf-8");
 const regex = /## Suggestions([\s\S]*)/g;
 const oldFile = readme.match(regex);
 const newFile = readme.replace(oldFile, md);
 
-fs.writeFileSync("README.md", newFile);
+writeFileSync("README.md", newFile);
