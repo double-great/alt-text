@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   notOnlySpace: {
     heading: "Empty alt text",
     suggestion: () => `Alt text should not be a single space`,

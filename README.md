@@ -21,7 +21,7 @@ npm install @double-great/alt-text
 If `altText` detects an issue, it will return a suggestion to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
 
 ```js
-const altText = require("@double-great/alt-text");
+import altText from "@double-great/alt-text";
 
 console.log(altText("A child holding a photograph."));
 // undefined

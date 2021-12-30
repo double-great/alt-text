@@ -1,4 +1,4 @@
-{
+export default {
   "avoidEmoji": "https://git.io/Jfhte",
   "charLength": "https://git.io/Jvfxm",
   "contains": "https://git.io/JvqAM",

@@ -1,7 +1,8 @@
-const githubURL = require("cli-git.io");
-const clues = require("../clues");
-const fs = require("fs");
-const GithubSlugger = require("github-slugger");
+import githubURL from "cli-git.io";
+import clues from "../clues.js";
+import { writeFileSync} from "fs";
+import GithubSlugger from "github-slugger";
+
 const slugger = new GithubSlugger();
 
 const getUrl = url => {
@@ -31,7 +32,7 @@ const shortenUrls = async () => {
       return o;
     }, {});
 
-  fs.writeFileSync("urls.json", `${JSON.stringify(sorted, null, 2)}\n`);
+  writeFileSync("urls.js", `export default ${JSON.stringify(sorted, null, 2)}\n`);
 };
 
 shortenUrls();

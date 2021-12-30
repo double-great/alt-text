@@ -1,16 +1,16 @@
 {
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
   "env": {
-    "browser": false,
+    "es6": true,
     "node": true,
-    "es6": true
+    "jest": true
   },
-  "extends": ["eslint:recommended"]
+  "parserOptions": {
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "parser": "@babel/eslint-parser"
 }

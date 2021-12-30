@@ -1,5 +1,5 @@
-const test = require("tape");
-const altText = require("../");
+import test from "tape";
+import altText from "../index.js";
 
 test("[altText] return no suggestion", (assert) => {
   assert.equal(altText("A large black dog."), undefined);

@@ -3,6 +3,7 @@
   "version": "0.6.0",
   "description": "Check for unhelpful alt text.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint . --fix",
     "pretest": "npm run lint",
@@ -28,8 +29,9 @@
     "github-slugger": "^1.4.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
+    "@babel/eslint-parser": "^7.16.5",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "pinst": "^2.1.6",
     "prettier": "^2.5.1",

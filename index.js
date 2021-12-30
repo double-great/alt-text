@@ -1,16 +1,15 @@
-const rules = require("./rules");
+import { checkClue, checkPunctuation, checkLength, checkOnlySpace, checkEmoji, createSuggestion } from "./rules.js";
 
-function altText(alt) {
-  if (!alt) return rules.createSuggestion("decorative");
+export default function altText(alt) {
+  if (!alt) return createSuggestion("decorative");
   alt = alt.toLowerCase();
   const suggestion = [
-    ...rules.checkClue(alt),
-    ...rules.checkLength(alt),
-    ...rules.checkOnlySpace(alt),
-    ...rules.checkPunctuation(alt),
-    ...rules.checkEmoji(alt),
+    ...checkClue(alt),
+    ...checkLength(alt),
+    ...checkOnlySpace(alt),
+    ...checkPunctuation(alt),
+    ...checkEmoji(alt),
   ];
   return suggestion.length ? suggestion.join(" ") : undefined;
 }
 
-module.exports = altText;
