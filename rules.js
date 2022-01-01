@@ -1,9 +1,8 @@
 import clues from "./clues.js";
-import urls from "./urls.js";
 import emojiRegex from "emoji-regex";
 
 export function createSuggestion(ruleName, value) {
-  return `${clues[ruleName].suggestion(value)} (${urls[ruleName]}).`;
+  return `${clues[ruleName].suggestion(value)} (${clues[ruleName].docs}).`;
 }
 
 export function filterClues(ruleName, clue, alt) {
