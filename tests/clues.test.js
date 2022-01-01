@@ -1,4 +1,4 @@
-import {clues} from "../src/clues.js";
+import {clues} from "../src/clues";
 
 describe("clues", () => {
   it("shape of clues is an object", () => {

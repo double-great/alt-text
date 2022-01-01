@@ -28,7 +28,7 @@ export function filterClues({
 export function checkClue(alt: string) {
   return Object.keys(clues).reduce((arr: string[], item : string) => {
     const clue: Rule = clues[item];
-      arr.concat(filterClues({ ruleName: item, rules: clue.rules, fn: clue.fn, alt }));
+    arr = [...arr, ...filterClues({ ruleName: item, rules: clue.rules, fn: clue.fn, alt })]
     return arr;
   }, []);
 }
