@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
-import {clues} from "../src/clues.js";
+import {clues} from "../src/clues";
 
 
 const sortedClues = Object.keys(clues)
