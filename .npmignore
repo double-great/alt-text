@@ -3,3 +3,6 @@ tests
 .eslintrc
 .github
 .husky
+tsconfig.json
+src
+babel.config.cjs

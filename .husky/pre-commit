@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run write-docs && git add README.md && npm run pretty-quick --staged && node scripts/url.js
+git add README.md && npm run pretty-quick --staged

@@ -1,5 +1,5 @@
 import test from "tape";
-import altText from "../index.js";
+import altText from "../src/index.js";
 
 test("[altText] return no suggestion", (assert) => {
   assert.equal(altText("A large black dog."), undefined);

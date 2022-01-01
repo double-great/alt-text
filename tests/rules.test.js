@@ -1,5 +1,11 @@
 import test from "tape";
-import { checkClue, checkPunctuation, checkLength, checkOnlySpace, checkEmoji} from "../rules.js";
+import {
+  checkClue,
+  checkPunctuation,
+  checkLength,
+  checkOnlySpace,
+  checkEmoji,
+} from "../src/rules.js";
 
 test("[rules] checkClue.endWith", (assert) => {
   assert.deepEqual(

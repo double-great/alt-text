@@ -1,4 +1,4 @@
-export default {
+export const clues: Clue = {
   notOnlySpace: {
     heading: "Empty alt text",
     suggestion: () => `Alt text should not be a single space`,
@@ -10,7 +10,7 @@ export default {
   },
   charLength: {
     heading: "Character length",
-    suggestion: (length) =>
+    suggestion: (length: number) =>
       `Alt text length should be less than 125 characters${
         length ? `, it is currently ${length} characters` : ""
       }`,
@@ -20,8 +20,7 @@ export default {
       "https://accessibility.psu.edu/images/imageshtml/#alt",
       "https://terrillthompson.com/tests/altlength.html",
     ],
-    ok:
-      "George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.",
+    ok: "George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.",
     notOk:
       "Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.",
   },
@@ -32,8 +31,7 @@ export default {
     rationale:
       "Images inside a link tag require alt text that describes the purpose of the link.",
     source: ["https://axesslab.com/alt-texts/#images-in-links"],
-    ok:
-      '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`',
+    ok: '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`',
     notOk:
       '`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`',
   },
@@ -58,8 +56,8 @@ export default {
   },
   contains: {
     heading: "Alt text contains unhelpful words",
-    fn: (item, alt) => alt.includes(item),
-    suggestion: (value) => `Alt text should not contain "${value}"`,
+    fn: (item: string, alt: string) => alt.includes(item),
+    suggestion: (value: string) => `Alt text should not contain "${value}"`,
     rules: [
       "picture of",
       "photo of",
@@ -82,8 +80,8 @@ export default {
   },
   exactMatch: {
     heading: "Alt text is unhelpful",
-    fn: (item, alt) => item == alt.trim(),
-    suggestion: (value) => `Alt text should not be "${value}"`,
+    fn: (item: string, alt: string) => item == alt.trim(),
+    suggestion: (value: string) => `Alt text should not be "${value}"`,
     rules: [
       "image",
       "icon",
@@ -123,8 +121,8 @@ export default {
   },
   endWith: {
     heading: "Alt text should not end with",
-    fn: (item, alt) => alt.endsWith(item),
-    suggestion: (value) => `Alt text should not end with "${value}"`,
+    fn: (item: string, alt: string) => alt.endsWith(item),
+    suggestion: (value: string) => `Alt text should not end with "${value}"`,
     rules: [
       ".jpg",
       ".jpeg",
@@ -142,8 +140,8 @@ export default {
   },
   startWith: {
     heading: "Alt text should not start with",
-    fn: (item, alt) => alt.startsWith(item),
-    suggestion: (value) => `Alt text should not start with "${value}"`,
+    fn: (item: string, alt: string) => alt.startsWith(item),
+    suggestion: (value: string) => `Alt text should not start with "${value}"`,
     rules: [
       "picture",
       "photo",
@@ -175,7 +173,7 @@ export default {
   },
   avoidEmoji: {
     heading: "Avoid emoji",
-    suggestion: (emoji) =>
+    suggestion: (emoji: string) =>
       `Replace ${emoji || "emoji"} in alt text with descriptive text`,
     rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
     listen: "https://doublegreat.dev/listen/emoji/",

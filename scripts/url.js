@@ -1,5 +1,5 @@
 import githubURL from "cli-git.io";
-import clues from "../clues.js";
+import {clues} from "../src/clues.js";
 import { writeFileSync} from "fs";
 import GithubSlugger from "github-slugger";
 

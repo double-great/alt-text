@@ -1,6 +1,13 @@
-import { checkClue, checkPunctuation, checkLength, checkOnlySpace, checkEmoji, createSuggestion } from "./rules.js";
+import {
+  checkClue,
+  checkPunctuation,
+  checkLength,
+  checkOnlySpace,
+  checkEmoji,
+  createSuggestion,
+} from "./rules";
 
-export default function altText(alt) {
+export default function altText(alt: string) {
   if (!alt) return createSuggestion("decorative");
   alt = alt.toLowerCase();
   const suggestion = [
@@ -12,4 +19,3 @@ export default function altText(alt) {
   ];
   return suggestion.length ? suggestion.join(" ") : undefined;
 }
-
