@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es5",
+    "module": "commonjs",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "outDir": "dist",
-    "moduleResolution": "node",
+    "esModuleInterop": true,
     "declaration": true,
     "strict": true,
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true // for github-slugger
   },
-  "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist", "tests"]
 }
