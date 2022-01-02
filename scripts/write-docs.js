@@ -25,6 +25,6 @@ const md = sortedClues.reduce((str, clue) => {
 const readme = readFileSync("readme.md", "utf-8");
 const regex = /## Suggestions([\s\S]*)/g;
 const oldFile = readme.match(regex);
-const newFile = oldFile ? readme.replace(oldFile.toString(), md) : readme;
+const newFile = readme.replace(oldFile, md);
 
 writeFileSync("README.md", newFile);
