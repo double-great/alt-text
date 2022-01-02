@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "outDir": "dist",
-    "esModuleInterop": true,
     "declaration": true,
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true // for github-slugger
   },
-  "exclude": ["node_modules", "dist", "tests"]
+  "exclude": ["node_modules", "dist", "tests", "babel.config.cjs"]
 }

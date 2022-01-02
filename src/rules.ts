@@ -1,6 +1,5 @@
-import { clues } from "./clues";
-
-const emojiRegex = require("emoji-regex");
+import { clues } from "./clues.js";
+import emojiRegex from "emoji-regex";
 
 export function createSuggestion(ruleName: string, value?: string | number) {
   return `${clues[ruleName].suggestion(value)} (${clues[ruleName].docs}).`;

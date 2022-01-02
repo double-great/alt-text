@@ -5,7 +5,7 @@ import {
   checkOnlySpace,
   checkEmoji,
   createSuggestion,
-} from "./rules";
+} from "./rules.js";
 
 export default function altText(alt: string) {
   if (!alt) return createSuggestion("decorative");
