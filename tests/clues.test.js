@@ -1,4 +1,16 @@
 import clues from "../clues.js";
+import githubURL from "cli-git.io";
+import GithubSlugger from "github-slugger";
+
+const slugger = new GithubSlugger();
+
+const getUrl = (url) => new Promise((resolve) => githubURL.shorten(url, (shortURL) => resolve(shortURL)))
+
+async function checkDocsLink(clue) {
+  return await getUrl(`https://github.com/double-great/alt-text#${slugger.slug(
+    clue.heading
+  )}`);
+}
 
 describe("clues", () => {
   it("shape of clues is an object", () => {
@@ -16,6 +28,7 @@ describe("clues", () => {
         fn,
         rules,
         listen,
+        docs,
       } = clues[clue];
       it("value of `suggestion` is a function", () => {
         expect(typeof suggestion).toEqual("function");
@@ -46,6 +59,15 @@ describe("clues", () => {
       });
       it("must have `heading`", () => {
         expect(heading).toBeDefined();
+      });
+
+      it("must have `docs`", () => {
+        expect(docs).toBeDefined();
+      });
+
+      it("`docs` matches generated GitHub `heading` link", async () => {
+        expect.assertions(1);
+        await expect(checkDocsLink(clues[clue])).resolves.toEqual(docs);
       });
 
       if (fn) {
