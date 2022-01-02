@@ -1,6 +1,7 @@
 export const clues: Clue = {
   notOnlySpace: {
     heading: "Empty alt text",
+    docs: "https://git.io/Jvqim",
     suggestion: () => `Alt text should not be a single space`,
     rationale:
       'If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
@@ -10,6 +11,7 @@ export const clues: Clue = {
   },
   charLength: {
     heading: "Character length",
+    docs: "https://git.io/Jvfxm",
     suggestion: (length: number) =>
       `Alt text length should be less than 125 characters${
         length ? `, it is currently ${length} characters` : ""
@@ -26,6 +28,7 @@ export const clues: Clue = {
   },
   imageLink: {
     heading: "Image is link",
+    docs: "https://git.io/JvfNj",
     suggestion: () =>
       `Images inside a link tag require alt text that describes the purpose of the link`,
     rationale:
@@ -37,6 +40,7 @@ export const clues: Clue = {
   },
   endPunctuation: {
     heading: "End with punctuation",
+    docs: "https://git.io/JJk55",
     suggestion: () => `Alt text should end with punctuation`,
     rationale:
       "End the alt text with a period, exclamation point, or question mark. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
@@ -47,6 +51,7 @@ export const clues: Clue = {
   },
   noAlt: {
     heading: "Missing alt attribute",
+    docs: "https://git.io/JvfNh",
     suggestion: () => `Missing "alt" attribute`,
     rationale:
       "All images must have alternate text to convey their purpose and meaning to screen reader users.",
@@ -56,8 +61,9 @@ export const clues: Clue = {
   },
   contains: {
     heading: "Alt text contains unhelpful words",
+    docs: "https://git.io/JvqAM",
     fn: (item: string, alt: string) => alt.includes(item),
-    suggestion: (value: string) => `Alt text should not contain "${value}"`,
+    suggestion: (value) => `Alt text should not contain "${value}"`,
     rules: [
       "picture of",
       "photo of",
@@ -80,6 +86,7 @@ export const clues: Clue = {
   },
   exactMatch: {
     heading: "Alt text is unhelpful",
+    docs: "https://git.io/JvqAK",
     fn: (item: string, alt: string) => item == alt.trim(),
     suggestion: (value: string) => `Alt text should not be "${value}"`,
     rules: [
@@ -121,6 +128,7 @@ export const clues: Clue = {
   },
   endWith: {
     heading: "Alt text should not end with",
+    docs: "https://git.io/JvfAf",
     fn: (item: string, alt: string) => alt.endsWith(item),
     suggestion: (value: string) => `Alt text should not end with "${value}"`,
     rules: [
@@ -140,6 +148,7 @@ export const clues: Clue = {
   },
   startWith: {
     heading: "Alt text should not start with",
+    docs: "https://git.io/JvfAv",
     fn: (item: string, alt: string) => alt.startsWith(item),
     suggestion: (value: string) => `Alt text should not start with "${value}"`,
     rules: [
@@ -164,6 +173,7 @@ export const clues: Clue = {
   },
   decorative: {
     heading: "Image is decorative",
+    docs: "https://git.io/Jvqx8",
     suggestion: () =>
       `Empty alt text should only be used for decorative images`,
     rationale: `Provide "null" \`alt\` attributes (using \`alt=""\`) for images which do not provide information or do not require alternative text because the image is described in the page content. Some developers will mistakenly leave off the alt attribute altogether on images which they deem do not need alternatives. This is not helpful to assistive technology users because the assistive technology, such as screen reader, will often read the source attribute (i.e., file name) as the alternative text. To tell assistive technology to ignore an image, use a "blank alternative text" attribute: \`alt=""\`.`,
@@ -173,6 +183,7 @@ export const clues: Clue = {
   },
   avoidEmoji: {
     heading: "Avoid emoji",
+    docs: "https://git.io/Jfhte",
     suggestion: (emoji: string) =>
       `Replace ${emoji || "emoji"} in alt text with descriptive text`,
     rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
