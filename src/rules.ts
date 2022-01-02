@@ -1,10 +1,9 @@
 import { clues } from "./clues";
-import { urls } from "./urls";
 
 const emojiRegex = require("emoji-regex");
 
 export function createSuggestion(ruleName: string, value?: string | number) {
-  return `${clues[ruleName].suggestion(value)} (${urls[ruleName]}).`;
+  return `${clues[ruleName].suggestion(value)} (${clues[ruleName].docs}).`;
 }
 
 export function filterClues({
@@ -26,9 +25,12 @@ export function filterClues({
 }
 
 export function checkClue(alt: string) {
-  return Object.keys(clues).reduce((arr: string[], item : string) => {
+  return Object.keys(clues).reduce((arr: string[], item: string) => {
     const clue: Rule = clues[item];
-    arr = [...arr, ...filterClues({ ruleName: item, rules: clue.rules, fn: clue.fn, alt })]
+    arr = [
+      ...arr,
+      ...filterClues({ ruleName: item, rules: clue.rules, fn: clue.fn, alt }),
+    ];
     return arr;
   }, []);
 }

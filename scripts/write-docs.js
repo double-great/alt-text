@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
-import {clues} from "../src/clues";
-
+import { clues } from "../dist/clues.js";
 
 const sortedClues = Object.keys(clues)
   .reduce((arr, item) => {
@@ -10,16 +9,8 @@ const sortedClues = Object.keys(clues)
   .sort((a, b) => a.heading.localeCompare(b.heading));
 
 const md = sortedClues.reduce((str, clue) => {
-  const {
-    suggestion,
-    rationale,
-    source,
-    heading,
-    rules,
-    ok,
-    notOk,
-    listen,
-  } = clue;
+  const { suggestion, rationale, source, heading, rules, ok, notOk, listen } =
+    clue;
   str += `### ${heading}\n\n`;
   str += `Suggestion: \`${suggestion(rules ? rules.sort().join(", ") : "")}\``;
   str += "\n\n";
@@ -34,6 +25,6 @@ const md = sortedClues.reduce((str, clue) => {
 const readme = readFileSync("readme.md", "utf-8");
 const regex = /## Suggestions([\s\S]*)/g;
 const oldFile = readme.match(regex);
-const newFile = readme.replace(oldFile, md);
+const newFile = oldFile ? readme.replace(oldFile.toString(), md) : readme;
 
 writeFileSync("README.md", newFile);
