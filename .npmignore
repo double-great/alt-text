@@ -5,3 +5,4 @@ tests
 .husky
 tsconfig.json
 babel.config.cjs
+.eslintignore
