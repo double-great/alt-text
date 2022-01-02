@@ -7,7 +7,7 @@ import {
   createSuggestion,
 } from "./rules.js";
 
-export default function altText(alt: string) {
+export default function altText(alt?: string) {
   if (!alt) return createSuggestion("decorative");
   alt = alt.toLowerCase();
   const suggestion = [
