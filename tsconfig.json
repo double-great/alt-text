@@ -7,7 +7,7 @@
     "declaration": true,
     "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true // for github-slugger
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "dist", "tests", "babel.config.cjs"]
+  "include": ["src"]
 }
