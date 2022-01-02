@@ -12,9 +12,9 @@ export const clues: Clue = {
   charLength: {
     heading: "Character length",
     docs: "https://git.io/Jvfxm",
-    suggestion: (length: number) =>
+    suggestion: (value) =>
       `Alt text length should be less than 125 characters${
-        length ? `, it is currently ${length} characters` : ""
+        value ? `, it is currently ${value} characters` : ""
       }`,
     rationale:
       "Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.",
@@ -88,7 +88,7 @@ export const clues: Clue = {
     heading: "Alt text is unhelpful",
     docs: "https://git.io/JvqAK",
     fn: (item: string, alt: string) => item == alt.trim(),
-    suggestion: (value: string) => `Alt text should not be "${value}"`,
+    suggestion: (value) => `Alt text should not be "${value}"`,
     rules: [
       "image",
       "icon",
@@ -130,7 +130,7 @@ export const clues: Clue = {
     heading: "Alt text should not end with",
     docs: "https://git.io/JvfAf",
     fn: (item: string, alt: string) => alt.endsWith(item),
-    suggestion: (value: string) => `Alt text should not end with "${value}"`,
+    suggestion: (value) => `Alt text should not end with "${value}"`,
     rules: [
       ".jpg",
       ".jpeg",
@@ -150,7 +150,7 @@ export const clues: Clue = {
     heading: "Alt text should not start with",
     docs: "https://git.io/JvfAv",
     fn: (item: string, alt: string) => alt.startsWith(item),
-    suggestion: (value: string) => `Alt text should not start with "${value}"`,
+    suggestion: (value) => `Alt text should not start with "${value}"`,
     rules: [
       "picture",
       "photo",
@@ -184,8 +184,8 @@ export const clues: Clue = {
   avoidEmoji: {
     heading: "Avoid emoji",
     docs: "https://git.io/Jfhte",
-    suggestion: (emoji: string) =>
-      `Replace ${emoji || "emoji"} in alt text with descriptive text`,
+    suggestion: (value) =>
+      `Replace ${value || "emoji"} in alt text with descriptive text`,
     rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
     listen: "https://doublegreat.dev/listen/emoji/",
     source: [
