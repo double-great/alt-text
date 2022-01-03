@@ -7,48 +7,44 @@ export function createSuggestion(ruleName: string, value?: string | number) {
 
 export function filterClues({
   ruleName,
-  rules,
-  fn,
+  clue,
   alt,
 }: {
   ruleName: string;
-  rules: Rule["rules"];
-  fn: Rule["fn"];
-  alt: string;
+  clue: Rule;
+  alt: Alt;
 }) {
-  if (!rules) return [];
-  return rules.reduce((arr: string[], item: string) => {
-    if (fn && fn(item, alt)) arr.push(createSuggestion(ruleName, item));
+  if (!clue.rules) return [];
+  return clue.rules.reduce((arr: string[], item: string) => {
+    if (clue.fn && clue.fn(item, alt))
+      arr.push(createSuggestion(ruleName, item));
     return arr;
   }, []);
 }
 
-export function checkClue(alt: string) {
+export function checkClue(alt: Alt) {
   return Object.keys(clues).reduce((arr: string[], item: string) => {
     const clue: Rule = clues[item];
-    arr = [
-      ...arr,
-      ...filterClues({ ruleName: item, rules: clue.rules, fn: clue.fn, alt }),
-    ];
+    arr = [...arr, ...filterClues({ ruleName: item, clue: clue, alt })];
     return arr;
   }, []);
 }
 
-export function checkLength(alt: string) {
+export function checkLength(alt: Alt) {
   return alt.length > 125 ? [createSuggestion("charLength", alt.length)] : [];
 }
 
-export function checkOnlySpace(alt: string) {
+export function checkOnlySpace(alt: Alt) {
   return alt == " " ? [createSuggestion("notOnlySpace")] : [];
 }
 
-export function checkPunctuation(alt: string) {
+export function checkPunctuation(alt: Alt) {
   return !/[.!?]$/.test(alt) && alt.length > 1
     ? [createSuggestion("endPunctuation")]
     : [];
 }
 
-export function checkEmoji(alt: string) {
+export function checkEmoji(alt: Alt) {
   const regex = emojiRegex();
   const match = regex.exec(alt);
   return match ? [createSuggestion("avoidEmoji", match[0])] : [];

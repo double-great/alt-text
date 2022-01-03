@@ -1,5 +1,7 @@
 declare module "cli-git.io";
 
+type Alt = string;
+
 interface Rule {
   heading: string;
   docs: string;
