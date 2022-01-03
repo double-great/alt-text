@@ -44,6 +44,7 @@ Screen readers announce the presence of an image before reading the alt text. Ad
 - 🚫 Image of a dog jumping through a hoop.
 
 Sources:
+
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
@@ -57,6 +58,7 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 - 🚫 photograph
 
 Sources:
+
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
@@ -70,6 +72,7 @@ A file name in alt text does not provide helpful context.
 - 🚫 photograph.jpg
 
 Sources:
+
 - <https://axesslab.com/alt-texts/>
 
 ### Alt text should not start with
@@ -82,6 +85,7 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 - 🚫 Image of a child.
 
 Sources:
+
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 - <https://axesslab.com/alt-texts/#dont-say-its-an-image>
 
@@ -97,6 +101,7 @@ Emoji have their own text descriptions. These descriptions can vary between oper
 Hear an example: <https://doublegreat.dev/listen/emoji/>
 
 Sources:
+
 - <https://www.youtube.com/watch?v=uIbPcZq6izk>
 - <https://readabilityguidelines.co.uk/images/emojis/>
 
@@ -110,6 +115,7 @@ Alt text should be less than 125 characters in length. The JAWS screen reader re
 - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
 
 Sources:
+
 - <https://accessibility.psu.edu/images/imageshtml/#alt>
 - <https://terrillthompson.com/tests/altlength.html>
 
@@ -123,6 +129,7 @@ If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure
 - 🚫 `<img src="photo.png" alt=" ">`
 
 Sources:
+
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
 
 ### End with punctuation
@@ -137,6 +144,7 @@ End the alt text with a period, exclamation point, or question mark. This will m
 Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
 Sources:
+
 - <https://axesslab.com/alt-texts/#end-with-a-period>
 
 ### Image is decorative
@@ -149,6 +157,7 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 - 🚫 `<img src="quarterly-earnings-chart.png" alt=""/>`
 
 Sources:
+
 - <https://dequeuniversity.com/rules/axe/3.0/image-alt>
 
 ### Image is link
@@ -161,6 +170,7 @@ Images inside a link tag require alt text that describes the purpose of the link
 - 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
 
 Sources:
+
 - <https://axesslab.com/alt-texts/#images-in-links>
 
 ### Missing alt attribute
@@ -173,5 +183,5 @@ All images must have alternate text to convey their purpose and meaning to scree
 - 🚫 `<img src="photograph.jpg">`
 
 Sources:
-- <https://dequeuniversity.com/rules/axe/3.4/image-alt>
 
+- <https://dequeuniversity.com/rules/axe/3.4/image-alt>

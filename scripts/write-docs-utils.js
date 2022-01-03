@@ -23,7 +23,7 @@ export function formatDocs(clues) {
     if (ok && notOk) str += `- ✅ ${ok}\n- 🚫 ${notOk}\n\n`;
     if (listen) str += `Hear an example: <${listen}>\n\n`;
     if (source)
-      str += `Sources:\n${source.map((link) => `- <${link}>\n`).join("")}\n`;
+      str += `Sources:\n\n${source.map((link) => `- <${link}>\n`).join("")}\n`;
     return str;
   }, "## Suggestions\n\n<!-- this section is generated on commit !-->\n\n");
 }

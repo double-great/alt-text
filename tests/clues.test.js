@@ -4,12 +4,15 @@ import GithubSlugger from "github-slugger";
 
 const slugger = new GithubSlugger();
 
-const getUrl = (url) => new Promise((resolve) => githubURL.shorten(url, (shortURL) => resolve(shortURL)))
+const getUrl = (url) =>
+  new Promise((resolve) =>
+    githubURL.shorten(url, (shortURL) => resolve(shortURL))
+  );
 
 async function checkDocsLink(clue) {
-  return await getUrl(`https://github.com/double-great/alt-text#${slugger.slug(
-    clue.heading
-  )}`);
+  return await getUrl(
+    `https://github.com/double-great/alt-text#${slugger.slug(clue.heading)}`
+  );
 }
 
 describe("clues", () => {
