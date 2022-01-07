@@ -1,4 +1,4 @@
-import { clues } from "../src/clues";
+import { clues } from "../clues";
 import githubURL from "cli-git.io";
 import GithubSlugger from "github-slugger";
 
