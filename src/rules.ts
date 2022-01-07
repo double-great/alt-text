@@ -1,5 +1,6 @@
-import { clues } from "./clues.js";
+import { clues, Rule } from "./clues.js";
 import emojiRegex from "emoji-regex";
+import { Alt } from "./index.js";
 
 export function createSuggestion(ruleName: string, value?: string | number) {
   return `${clues[ruleName].suggestion(value)} (${clues[ruleName].docs}).`;

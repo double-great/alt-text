@@ -7,6 +7,8 @@ import {
   createSuggestion,
 } from "./rules.js";
 
+export type Alt = string;
+
 /**
  * Check for unhelpful alt text.
  *
