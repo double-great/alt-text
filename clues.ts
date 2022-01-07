@@ -1,17 +1,29 @@
 export interface Rule {
+  /** The name of the rule */
   heading: string;
+  /** Shortened URL to the rule's documentation. */
   docs: string;
+  /** Recommendation on how to fix the rule. */
   suggestion: (value?: number | string) => string;
+  /** Explanation of the rule and why it's important. */
   rationale: string;
+  /** URLs to external sources to support the rule. */
   source: string[];
+  /** Example of the correct usage. */
   ok: string;
+  /** Example of the incorrect usage. */
   notOk: string;
+  /** If available, URL to https://doublegreat.dev/listen/ test case to support the rule.  */
   listen?: string;
+  /** If applicable, list of strings to test the rule against.  */
   rules?: string[];
+  /** If applicable, a function to test the rule against the current `alt` value. */
   fn?: (item: string, alt: string) => string | boolean;
-  id?: string;
 }
 
+/**
+ * Suggestions to improve alt text.
+ */
 interface Clue {
   [rule: string]: Rule;
 }
@@ -80,7 +92,7 @@ export const clues: Clue = {
   contains: {
     heading: "Alt text contains unhelpful words",
     docs: "https://git.io/JvqAM",
-    fn: (item: string, alt: string) => alt.includes(item),
+    fn: (item, alt) => alt.includes(item),
     suggestion: (value) => `Alt text should not contain "${value}"`,
     rules: [
       "picture of",
@@ -105,7 +117,7 @@ export const clues: Clue = {
   exactMatch: {
     heading: "Alt text is unhelpful",
     docs: "https://git.io/JvqAK",
-    fn: (item: string, alt: string) => item == alt.trim(),
+    fn: (item, alt) => item == alt.trim(),
     suggestion: (value) => `Alt text should not be "${value}"`,
     rules: [
       "image",
@@ -147,7 +159,7 @@ export const clues: Clue = {
   endWith: {
     heading: "Alt text should not end with",
     docs: "https://git.io/JvfAf",
-    fn: (item: string, alt: string) => alt.endsWith(item),
+    fn: (item, alt) => alt.endsWith(item),
     suggestion: (value) => `Alt text should not end with "${value}"`,
     rules: [
       ".jpg",
@@ -167,7 +179,7 @@ export const clues: Clue = {
   startWith: {
     heading: "Alt text should not start with",
     docs: "https://git.io/JvfAv",
-    fn: (item: string, alt: string) => alt.startsWith(item),
+    fn: (item, alt) => alt.startsWith(item),
     suggestion: (value) => `Alt text should not start with "${value}"`,
     rules: [
       "picture",
