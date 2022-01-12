@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/double-great/alt-text#readme",
   "dependencies": {
-    "cli-git.io": "^1.0.1",
     "emoji-regex": "^10.0.0",
-    "github-slugger": "^1.4.0"
+    "github-slugger": "^1.4.0",
+    "tinyurl": "^1.1.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
