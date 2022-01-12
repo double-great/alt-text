@@ -6,4 +6,3 @@ tests
 tsconfig.json
 babel.config.cjs
 .eslintignore
-*.ts
