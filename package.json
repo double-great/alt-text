@@ -54,8 +54,8 @@
   ],
   "jest": {
     "moduleNameMapper": {
-      "^./clues.js$": "<rootDir>/clues.ts",
-      "^./rules.js$": "<rootDir>/rules.ts"
+      "^./clues.js$": "<rootDir>/src/clues.ts",
+      "^./rules.js$": "<rootDir>/src/rules.ts"
     }
   }
 }

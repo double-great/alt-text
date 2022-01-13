@@ -1,4 +1,4 @@
-import altText from "../index";
+import altText from "../src/index";
 
 describe("altText", () => {
   test("return no suggestion", () => {
