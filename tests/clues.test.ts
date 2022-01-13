@@ -1,12 +1,12 @@
 import { clues } from "../clues";
-import githubURL from "cli-git.io";
+import TinyUrl from "tinyurl";
 import GithubSlugger from "github-slugger";
 
 const slugger = new GithubSlugger();
 
 const getUrl = (url) =>
   new Promise((resolve) =>
-    githubURL.shorten(url, (shortURL) => resolve(shortURL))
+    TinyUrl.shorten(url, (shortURL) => resolve(shortURL))
   );
 
 async function checkDocsLink(clue) {

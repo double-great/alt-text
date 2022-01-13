@@ -10,18 +10,18 @@ describe("rules", () => {
   test("checkClue.endWith", () => {
     expect(checkClue("A screenshot of a dog.jpg")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not contain \\"screenshot of\\" (https://git.io/JvqAM).",
-        "Alt text should not end with \\".jpg\\" (https://git.io/JvfAf).",
+        "Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/y3v3jgux).",
+        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yy2q8bbb).",
       ]
     `);
     expect(checkClue("DSC_0010.jpg")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\".jpg\\" (https://git.io/JvfAf).",
+        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yy2q8bbb).",
       ]
     `);
     expect(checkClue("placeholder graphic")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\"graphic\\" (https://git.io/JvfAf).",
+        "Alt text should not end with \\"graphic\\" (https://tinyurl.com/yy2q8bbb).",
       ]
     `);
   });
@@ -29,7 +29,7 @@ describe("rules", () => {
   test("checkClue.startWith", () => {
     expect(checkClue("spacer image.")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not start with \\"spacer\\" (https://git.io/JvfAv).",
+        "Alt text should not start with \\"spacer\\" (https://tinyurl.com/y5y98ygu).",
       ]
     `);
   });
@@ -37,7 +37,7 @@ describe("rules", () => {
   test("checkClue.exactMatch", () => {
     expect(checkClue("logo")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be \\"logo\\" (https://git.io/JvqAK).",
+        "Alt text should not be \\"logo\\" (https://tinyurl.com/yxwc2hof).",
       ]
     `);
   });
@@ -45,7 +45,7 @@ describe("rules", () => {
   test("checkClue.exactMatch", () => {
     expect(checkClue(" logo ")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be \\"logo\\" (https://git.io/JvqAK).",
+        "Alt text should not be \\"logo\\" (https://tinyurl.com/yxwc2hof).",
       ]
     `);
   });
@@ -53,7 +53,7 @@ describe("rules", () => {
   test("checkClue.contain", () => {
     expect(checkClue("A screenshot of a dog.")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not contain \\"screenshot of\\" (https://git.io/JvqAM).",
+        "Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/y3v3jgux).",
       ]
     `);
   });
@@ -61,7 +61,7 @@ describe("rules", () => {
   test("checkPunctuation", () => {
     expect(checkPunctuation("a large black dog")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should end with punctuation (https://git.io/JJk55).",
+        "Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).",
       ]
     `);
     expect(checkPunctuation("a large black dog.")).toMatchInlineSnapshot(
@@ -85,7 +85,7 @@ describe("rules", () => {
       )
     ).toMatchInlineSnapshot(`
       Array [
-        "Alt text length should be less than 125 characters, it is currently 446 characters (https://git.io/Jvfxm).",
+        "Alt text length should be less than 125 characters, it is currently 446 characters (https://tinyurl.com/y2f7rhao).",
       ]
     `);
   });
@@ -93,7 +93,7 @@ describe("rules", () => {
   test("checkOnlySpace", () => {
     expect(checkOnlySpace(" ")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be a single space (https://git.io/Jvqim).",
+        "Alt text should not be a single space (https://tinyurl.com/y2o7uctu).",
       ]
     `);
   });
@@ -101,7 +101,7 @@ describe("rules", () => {
   test("checkEmoji", () => {
     expect(checkEmoji("An orange 🐈.")).toMatchInlineSnapshot(`
       Array [
-        "Replace 🐈 in alt text with descriptive text (https://git.io/Jfhte).",
+        "Replace 🐈 in alt text with descriptive text (https://tinyurl.com/yylrxrus).",
       ]
     `);
   });
