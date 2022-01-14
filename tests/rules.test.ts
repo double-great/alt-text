@@ -4,7 +4,7 @@ import {
   checkLength,
   checkOnlySpace,
   checkEmoji,
-} from "../rules.js";
+} from "../src/rules";
 
 describe("rules", () => {
   test("checkClue.endWith", () => {

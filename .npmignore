@@ -3,4 +3,7 @@ tests
 .eslintrc
 .github
 .husky
+tsconfig.json
 babel.config.cjs
+.eslintignore
+src
