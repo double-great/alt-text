@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0
+
+- Switch to TypeScript.
+- Replace the deprecated git.io with tinyurl.
+
 ## 1.0.0
 
 - Switch to ES module.
