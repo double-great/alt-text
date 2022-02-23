@@ -16,9 +16,6 @@ describe("altText", () => {
     expect(altText("")).toMatchInlineSnapshot(
       `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
     );
-    expect(altText(null)).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
-    );
   });
 
   test("return suggestions", () => {
