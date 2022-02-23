@@ -1,5 +1,5 @@
 import { formatDocs, swapDocs } from "../write-docs-utils.js";
-import { clues } from "../../src/clues.ts";
+import { clues } from "../../src/rules/index.ts";
 
 describe("Documentation in README.md is up-to-date", () => {
   it("Run `npm run write-docs` to update documentation", () => {

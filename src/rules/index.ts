@@ -1,14 +1,14 @@
-import avoidEmoji from "./rules/avoid-emoji";
-import charLength from "./rules/char-length";
-import altContains from "./rules/contains";
-import decorative from "./rules/decorative";
-import endPunctuation from "./rules/end-punctuation";
-import atlEndsWith from "./rules/end-with";
-import exactMatch from "./rules/exact-match";
-import imageLink from "./rules/image-link";
-import noAlt from "./rules/no-alt";
-import notOnlySpace from "./rules/not-only-space";
-import altStartWith from "./rules/start-with";
+import avoidEmoji from "./avoid-emoji";
+import charLength from "./char-length";
+import altContains from "./contains";
+import decorative from "./decorative";
+import endPunctuation from "./end-punctuation";
+import atlEndsWith from "./end-with";
+import exactMatch from "./exact-match";
+import imageLink from "./image-link";
+import noAlt from "./no-alt";
+import notOnlySpace from "./not-only-space";
+import altStartWith from "./start-with";
 
 export interface Rule {
   /** The name of the rule */

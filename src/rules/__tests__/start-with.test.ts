@@ -1,4 +1,4 @@
-import { checkClue } from "../../rules";
+import checkClue from "../../check-clue";
 
 test("startWith", () => {
   expect(checkClue("spacer image.")).toMatchInlineSnapshot(`

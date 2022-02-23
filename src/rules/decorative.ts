@@ -1,4 +1,4 @@
-import { Rule } from "../clues";
+import { Rule } from "./index";
 
 export default function decorative(): Rule {
   return {

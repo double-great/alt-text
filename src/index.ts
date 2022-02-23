@@ -1,4 +1,4 @@
-import { checkClue, createSuggestion } from "./rules";
+import checkClue, { createSuggestion } from "./check-clue";
 import { checkEmoji } from "./rules/avoid-emoji";
 import { checkLength } from "./rules/char-length";
 import { checkPunctuation } from "./rules/end-punctuation";
