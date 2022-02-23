@@ -1,4 +1,4 @@
-import { clues, Rule } from "./rules/index";
+import { clues, Rule } from "./clues/index";
 import { Alt } from "./index";
 
 export default function checkClue(alt: Alt) {

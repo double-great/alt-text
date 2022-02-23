@@ -1,8 +1,8 @@
 import checkClue, { createSuggestion } from "./check-clue";
-import { checkEmoji } from "./rules/avoid-emoji";
-import { checkLength } from "./rules/char-length";
-import { checkPunctuation } from "./rules/end-punctuation";
-import { checkOnlySpace } from "./rules/not-only-space";
+import { checkEmoji } from "./clues/avoid-emoji";
+import { checkLength } from "./clues/char-length";
+import { checkPunctuation } from "./clues/end-punctuation";
+import { checkOnlySpace } from "./clues/not-only-space";
 
 export type Alt = string;
 
