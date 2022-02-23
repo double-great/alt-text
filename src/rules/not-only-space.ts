@@ -1,4 +1,10 @@
+import { Alt } from "..";
 import { Rule } from "../clues";
+import { createSuggestion } from "../rules";
+
+export function checkOnlySpace(alt: Alt) {
+  return alt == " " ? [createSuggestion("notOnlySpace")] : [];
+}
 
 export default function notOnlySpace(): Rule {
   return {

@@ -1,4 +1,13 @@
+import emojiRegex from "emoji-regex";
 import { Rule } from "../clues";
+import { createSuggestion } from "../rules";
+import { Alt } from "../index.js";
+
+export function checkEmoji(alt: Alt) {
+  const regex = emojiRegex();
+  const match = regex.exec(alt);
+  return match ? [createSuggestion("avoidEmoji", match[0])] : [];
+}
 
 export default function avoidEmoji(): Rule {
   return {

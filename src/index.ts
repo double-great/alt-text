@@ -1,11 +1,8 @@
-import {
-  checkClue,
-  checkPunctuation,
-  checkLength,
-  checkOnlySpace,
-  checkEmoji,
-  createSuggestion,
-} from "./rules.js";
+import { checkClue, createSuggestion } from "./rules";
+import { checkEmoji } from "./rules/avoid-emoji";
+import { checkLength } from "./rules/char-length";
+import { checkPunctuation } from "./rules/end-punctuation";
+import { checkOnlySpace } from "./rules/not-only-space";
 
 export type Alt = string;
 

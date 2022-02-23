@@ -1,4 +1,12 @@
+import { Alt } from "..";
 import { Rule } from "../clues";
+import { createSuggestion } from "../rules";
+
+export function checkPunctuation(alt: Alt) {
+  return !/[.!?]$/.test(alt) && alt.length > 1
+    ? [createSuggestion("endPunctuation")]
+    : [];
+}
 
 export default function endPunctuation(): Rule {
   return {
