@@ -1,6 +1,6 @@
-import { Rule } from "./index";
-import { createSuggestion } from "../check-clue";
-import { Alt } from "../index.js";
+import { Rule } from "../index";
+import { createSuggestion } from "../../check-clue";
+import { Alt } from "../../index.js";
 
 export function checkLength(alt: Alt) {
   return alt.length > 125 ? [createSuggestion("charLength", alt.length)] : [];

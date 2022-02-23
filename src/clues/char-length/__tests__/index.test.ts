@@ -1,4 +1,4 @@
-import { checkLength } from "../char-length";
+import { checkLength } from "..";
 
 test("checkLength", () => {
   expect(

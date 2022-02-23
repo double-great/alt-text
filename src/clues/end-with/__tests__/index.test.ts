@@ -1,4 +1,4 @@
-import checkClue from "../../check-clue";
+import checkClue from "../../../check-clue";
 
 test("endWith", () => {
   expect(checkClue("A screenshot of a dog.jpg")).toMatchInlineSnapshot(`

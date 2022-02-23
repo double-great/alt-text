@@ -1,6 +1,6 @@
-import { Alt } from "../index";
-import { Rule } from "./index";
-import { createSuggestion } from "../check-clue";
+import { Alt } from "../../index";
+import { Rule } from "../index";
+import { createSuggestion } from "../../check-clue";
 
 export function checkOnlySpace(alt: Alt) {
   return alt == " " ? [createSuggestion("notOnlySpace")] : [];

@@ -1,4 +1,4 @@
-import { Rule } from "./index";
+import { Rule } from "../index";
 
 export default function exactMatch(): Rule {
   return {
