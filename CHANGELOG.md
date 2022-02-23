@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add configuration.
+
 ## 2.0.0
 
 - Switch to TypeScript.
