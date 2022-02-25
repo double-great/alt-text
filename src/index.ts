@@ -1,13 +1,8 @@
-import {
-  checkClue,
-  checkPunctuation,
-  checkLength,
-  checkOnlySpace,
-  checkEmoji,
-  createSuggestion,
-} from "./rules.js";
-
-export type Alt = string;
+import { checkClue, createSuggestion } from "./clues.js";
+import { checkEmoji } from "./clues/avoid-emoji/index.js";
+import { checkLength } from "./clues/char-length/index.js";
+import { checkPunctuation } from "./clues/end-punctuation/index.js";
+import { checkOnlySpace } from "./clues/not-only-space/index.js";
 
 /**
  * Check for unhelpful alt text.
@@ -27,3 +22,5 @@ export default function altText(alt?: Alt) {
   ];
   return suggestion.length ? suggestion.join(" ") : undefined;
 }
+
+export type Alt = string;

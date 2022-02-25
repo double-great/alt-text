@@ -1,4 +1,4 @@
-import { clues } from "../src/clues";
+import { clues } from "../clues.js";
 import TinyUrl from "tinyurl";
 import GithubSlugger from "github-slugger";
 

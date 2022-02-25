@@ -1,4 +1,4 @@
-import altText from "../src/index";
+import altText from "../index.js";
 
 describe("altText", () => {
   test("return no suggestion", () => {
@@ -14,9 +14,6 @@ describe("altText", () => {
       `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
     );
     expect(altText("")).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
-    );
-    expect(altText(null)).toMatchInlineSnapshot(
       `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
     );
   });
