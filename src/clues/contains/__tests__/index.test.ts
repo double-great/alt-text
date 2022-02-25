@@ -1,4 +1,4 @@
-import { checkClue } from "../../../index.js";
+import { checkClue } from "../../../clues.js";
 
 test("contains", () => {
   expect(checkClue("A screenshot of a dog.")).toMatchInlineSnapshot(`

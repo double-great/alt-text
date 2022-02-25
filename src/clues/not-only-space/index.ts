@@ -1,5 +1,5 @@
-import { Rule } from "../../clues.js";
-import { Alt, createSuggestion } from "../../index.js";
+import { Rule, createSuggestion } from "../../clues.js";
+import { Alt } from "../../index.js";
 
 export function checkOnlySpace(alt: Alt) {
   return alt == " " ? [createSuggestion("notOnlySpace")] : [];
