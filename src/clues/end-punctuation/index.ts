@@ -1,6 +1,5 @@
-import { Alt } from "../../index";
-import { Rule } from "../index";
-import { createSuggestion } from "../../check-clue";
+import { Rule } from "../../clues.js";
+import { Alt, createSuggestion } from "../../index.js";
 
 export function checkPunctuation(alt: Alt) {
   return !/[.!?]$/.test(alt) && alt.length > 1

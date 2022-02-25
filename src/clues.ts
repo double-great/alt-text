@@ -1,14 +1,14 @@
-import avoidEmoji from "./avoid-emoji";
-import charLength from "./char-length";
-import altContains from "./contains";
-import decorative from "./decorative";
-import endPunctuation from "./end-punctuation";
-import atlEndsWith from "./end-with";
-import exactMatch from "./exact-match";
-import imageLink from "./image-link";
-import noAlt from "./no-alt";
-import notOnlySpace from "./not-only-space";
-import altStartWith from "./start-with";
+import avoidEmoji from "./clues/avoid-emoji/index.js";
+import charLength from "./clues/char-length/index.js";
+import altContains from "./clues/contains/index.js";
+import decorative from "./clues/decorative/index.js";
+import endPunctuation from "./clues/end-punctuation/index.js";
+import atlEndsWith from "./clues/end-with/index.js";
+import exactMatch from "./clues/exact-match/index.js";
+import imageLink from "./clues/image-link/index.js";
+import noAlt from "./clues/no-alt/index.js";
+import notOnlySpace from "./clues/not-only-space/index.js";
+import altStartWith from "./clues/start-with/index.js";
 
 export interface Rule {
   /** The name of the rule */

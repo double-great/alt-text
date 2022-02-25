@@ -1,4 +1,4 @@
-import { Rule } from "../index";
+import { Rule } from "../../clues.js";
 
 export default function noAlt(): Rule {
   return {

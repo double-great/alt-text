@@ -52,5 +52,12 @@
   "keywords": [
     "accessibility",
     "alt text"
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "./clues.js$": "<rootDir>/src/clues.ts",
+      "^./clues/(.*)/index.js$": "<rootDir>/src/clues/$1/index.ts",
+      "../index.js$": "<rootDir>/src/index.ts"
+    }
+  }
 }
