@@ -1,4 +1,4 @@
-import { checkOnlySpace } from "..";
+import { checkOnlySpace } from "../not-only-space";
 
 test("checkOnlySpace", () => {
   expect(checkOnlySpace(" ")).toMatchInlineSnapshot(`

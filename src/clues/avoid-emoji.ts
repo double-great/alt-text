@@ -1,6 +1,6 @@
 import emojiRegex from "emoji-regex";
-import { Rule, createSuggestion } from "../../clues.js";
-import { Alt } from "../../index.js";
+import { Rule, createSuggestion } from "../clues.js";
+import { Alt } from "../index.js";
 
 export function checkEmoji(alt: Alt) {
   const regex = emojiRegex();

@@ -1,8 +1,8 @@
 import { checkClue, createSuggestion } from "./clues.js";
-import { checkEmoji } from "./clues/avoid-emoji/index.js";
-import { checkLength } from "./clues/char-length/index.js";
-import { checkPunctuation } from "./clues/end-punctuation/index.js";
-import { checkOnlySpace } from "./clues/not-only-space/index.js";
+import { checkEmoji } from "./clues/avoid-emoji.js";
+import { checkLength } from "./clues/char-length.js";
+import { checkPunctuation } from "./clues/end-punctuation.js";
+import { checkOnlySpace } from "./clues/not-only-space.js";
 
 /**
  * Check for unhelpful alt text.

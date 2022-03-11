@@ -1,4 +1,4 @@
-import { checkPunctuation } from "..";
+import { checkPunctuation } from "../end-punctuation";
 
 test("checkPunctuation", () => {
   expect(checkPunctuation("a large black dog")).toMatchInlineSnapshot(`

@@ -1,14 +1,14 @@
-import avoidEmoji from "./clues/avoid-emoji/index.js";
-import charLength from "./clues/char-length/index.js";
-import altContains from "./clues/contains/index.js";
-import decorative from "./clues/decorative/index.js";
-import endPunctuation from "./clues/end-punctuation/index.js";
-import atlEndsWith from "./clues/end-with/index.js";
-import exactMatch from "./clues/exact-match/index.js";
-import imageLink from "./clues/image-link/index.js";
-import noAlt from "./clues/no-alt/index.js";
-import notOnlySpace from "./clues/not-only-space/index.js";
-import altStartWith from "./clues/start-with/index.js";
+import avoidEmoji from "./clues/avoid-emoji.js";
+import charLength from "./clues/char-length.js";
+import altContains from "./clues/contains.js";
+import decorative from "./clues/decorative.js";
+import endPunctuation from "./clues/end-punctuation.js";
+import atlEndsWith from "./clues/end-with.js";
+import exactMatch from "./clues/exact-match.js";
+import imageLink from "./clues/image-link.js";
+import noAlt from "./clues/no-alt.js";
+import notOnlySpace from "./clues/not-only-space.js";
+import altStartWith from "./clues/start-with.js";
 import { Alt } from "./index.js";
 
 export const clues: Clue = {

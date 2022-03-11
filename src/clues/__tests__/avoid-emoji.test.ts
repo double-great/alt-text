@@ -1,4 +1,4 @@
-import { checkEmoji } from "..";
+import { checkEmoji } from "../avoid-emoji";
 
 test("checkEmoji", () => {
   expect(checkEmoji("An orange 🐈.")).toMatchInlineSnapshot(`

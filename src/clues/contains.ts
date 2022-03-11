@@ -1,4 +1,4 @@
-import { Rule } from "../../clues.js";
+import { Rule } from "../clues.js";
 
 export default function altContains(): Rule {
   return {
