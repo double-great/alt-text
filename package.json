@@ -10,7 +10,8 @@
     "pretest": "npm run lint",
     "test": "jest",
     "pretty-quick": "pretty-quick",
-    "write-docs": "tsc && node scripts/write-docs.js",
+    "write-docs": "tsc && node dist/docs.js",
+    "build": "tsc",
     "prepublishOnly": "pinst --disable && tsc",
     "postpublish": "pinst --enable"
   },
@@ -56,6 +57,8 @@
   "jest": {
     "moduleNameMapper": {
       "./clues.js$": "<rootDir>/src/clues.ts",
+      "./utils.js$": "<rootDir>/src/clues/utils.ts",
+      "./docs.js$": "<rootDir>/src/docs.ts",
       "^./clues/(.*).js$": "<rootDir>/src/clues/$1.ts",
       "../index.js$": "<rootDir>/src/index.ts"
     }
