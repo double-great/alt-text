@@ -9,7 +9,7 @@ class ImageLink extends Clue {
     return this.suggestion();
   }
   setRecommendation() {
-    return (this.recommendation = `Images inside a link tag require alt text that describes the purpose of the link`);
+    return `Images inside a link tag require alt text that describes the purpose of the link`;
   }
 }
 
