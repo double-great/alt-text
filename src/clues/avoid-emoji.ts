@@ -1,26 +1,37 @@
 import emojiRegex from "emoji-regex";
-import { Rule, createSuggestion } from "../clues.js";
 import { Alt } from "../index.js";
+import Clue, { ClueProps } from "../clues.js";
 
-export function checkEmoji(alt: Alt) {
-  const regex = emojiRegex();
-  const match = regex.exec(alt);
-  return match ? [createSuggestion("avoidEmoji", match[0])] : [];
+class AvoidEmoji extends Clue {
+  constructor(props: ClueProps) {
+    super(props);
+    this.recommendation = this.setRecommendation();
+  }
+
+  check(alt: Alt) {
+    const regex = emojiRegex();
+    const match = regex.exec(alt);
+    if (!match) return [];
+    this.recommendation = this.setRecommendation(match[0]);
+    return [this.suggestion()];
+  }
+
+  setRecommendation(value?: string) {
+    return `Replace ${value || "emoji"} in alt text with descriptive text`;
+  }
 }
 
-export default function avoidEmoji(): Rule {
-  return {
-    heading: "Avoid emoji",
-    docs: "https://tinyurl.com/yylrxrus",
-    suggestion: (value) =>
-      `Replace ${value || "emoji"} in alt text with descriptive text`,
-    rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
-    listen: "https://doublegreat.dev/listen/emoji/",
-    source: [
-      "https://www.youtube.com/watch?v=uIbPcZq6izk",
-      "https://readabilityguidelines.co.uk/images/emojis/",
-    ],
-    ok: '`<img src="cat.jpg" alt="An orange cat.">`',
-    notOk: '`<img src="cat.png" alt="An orange 🐈."/>`',
-  };
-}
+const avoidEmoji = new AvoidEmoji({
+  heading: "Avoid emoji",
+  docs: "https://tinyurl.com/yylrxrus",
+  rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
+  listen: "https://doublegreat.dev/listen/emoji/",
+  source: [
+    "https://www.youtube.com/watch?v=uIbPcZq6izk",
+    "https://readabilityguidelines.co.uk/images/emojis/",
+  ],
+  ok: '`<img src="cat.jpg" alt="An orange cat.">`',
+  notOk: '`<img src="cat.png" alt="An orange 🐈."/>`',
+});
+
+export default avoidEmoji;
