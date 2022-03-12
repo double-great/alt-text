@@ -23,11 +23,11 @@ If `altText` detects an issue, it will return a suggestion to help you fix it. I
 ```js
 import altText from "@double-great/alt-text";
 
-console.log(altText("A child holding a photograph."));
+console.log(new altText("A child holding a photograph.").check());
 // undefined
 
-console.log(altText("A photo of a dog"));
-// Alt text should not contain "photo of" (https://git.io/JvqAM). Alt text should end with punctuation (https://git.io/JJk55).
+console.log(new altText("A photo of a dog").check());
+// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).
 ```
 
 ## Suggestions
@@ -42,6 +42,31 @@ Screen readers announce the presence of an image before reading the alt text. Ad
 
 - ✅ Dog jumping through a hoop.
 - 🚫 Image of a dog jumping through a hoop.
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "contains-unhelpful-word": false,
+});
+
+// adjust rule defaults:
+new altText("My alt text.", {
+  "contains-unhelpful-word": {
+    exclude: [
+      "graphic of",
+      "image of",
+      "photo of",
+      "photo:",
+      "photograph of",
+      "photographer:",
+      "picture of",
+      "screen shot of",
+      "screenshot of",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -56,6 +81,48 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 - ✅ A child holding a photograph.
 - 🚫 photograph
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "is-unhelpful": false,
+});
+
+// adjust rule defaults:
+new altText("My alt text.", {
+  "is-unhelpful": {
+    exclude: [
+      "*",
+      "alt",
+      "arrow",
+      "artwork",
+      "blank",
+      "bullet",
+      "button",
+      "chart",
+      "diagram",
+      "drawing",
+      "empty",
+      "graph",
+      "graphic",
+      "icon",
+      "image",
+      "logo",
+      "more",
+      "painting",
+      "photo",
+      "photograph",
+      "placeholder",
+      "screen shot",
+      "screenshot",
+      "spacer",
+      "table",
+      "temp",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -70,6 +137,30 @@ A file name in alt text does not provide helpful context.
 
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "should-not-end-with": false,
+});
+
+// adjust rule defaults:
+new altText("My alt text.", {
+  "should-not-end-with": {
+    exclude: [
+      ".gif",
+      ".jpeg",
+      ".jpg",
+      ".png",
+      ".svg",
+      ".webp",
+      "graphic",
+      "image",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -83,6 +174,31 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 - ✅ A child holding a photograph.
 - 🚫 Image of a child.
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "should-not-start-with": false,
+});
+
+// adjust rule defaults:
+new altText("My alt text.", {
+  "should-not-start-with": {
+    exclude: [
+      "graphic",
+      "image",
+      "photo",
+      "photograph",
+      "photographer",
+      "picture",
+      "screen shot",
+      "screenshot",
+      "spacer",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -99,6 +215,14 @@ Emoji have their own text descriptions. These descriptions can vary between oper
 - 🚫 `<img src="cat.png" alt="An orange 🐈."/>`
 
 Hear an example: <https://doublegreat.dev/listen/emoji/>
+Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "avoid-emoji": false,
+});
+```
 
 Sources:
 
@@ -113,6 +237,21 @@ Alt text should be less than 125 characters in length. The JAWS screen reader re
 
 - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
 - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "character-length": false,
+});
+
+// adjust rule defaults:
+new altText("My alt text.", {
+  "character-length": {
+    length: 125,
+  },
+});
+```
 
 Sources:
 
@@ -127,6 +266,14 @@ If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure
 
 - ✅ `<img src="photo.png" alt="">`
 - 🚫 `<img src="photo.png" alt=" ">`
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "empty-alt-text": false,
+});
+```
 
 Sources:
 
@@ -142,6 +289,14 @@ End the alt text with a period, exclamation point, or question mark. This will m
 - 🚫 A child holding a photograph
 
 Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
+Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "end-with-punctuation": false,
+});
+```
 
 Sources:
 
@@ -155,6 +310,14 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 
 - ✅ `<img src="decorative-photo.jpg" alt="">`
 - 🚫 `<img src="quarterly-earnings-chart.png" alt=""/>`
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "image-is-decorative": false,
+});
+```
 
 Sources:
 
@@ -168,6 +331,14 @@ Images inside a link tag require alt text that describes the purpose of the link
 
 - ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`
 - 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "image-is-link": false,
+});
+```
 
 Sources:
 
@@ -181,6 +352,14 @@ All images must have alternate text to convey their purpose and meaning to scree
 
 - ✅ `<img src="photograph.jpg" alt="A child holding a photograph.">`
 - 🚫 `<img src="photograph.jpg">`
+  Configuration:
+
+```js
+// disable the rule:
+new altText("My alt text.", {
+  "no-alt": false,
+});
+```
 
 Sources:
 

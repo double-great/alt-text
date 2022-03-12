@@ -14,6 +14,14 @@ describe("avoidEmoji", () => {
       - 🚫 \`<img src=\\"cat.png\\" alt=\\"An orange 🐈.\\"/>\`
 
       Hear an example: <https://doublegreat.dev/listen/emoji/>
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"avoid-emoji\\": false
+      });
+      \`\`\`
 
       Sources:
 

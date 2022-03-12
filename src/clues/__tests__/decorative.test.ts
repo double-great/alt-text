@@ -12,6 +12,14 @@ describe("decorative", () => {
 
       - ✅ \`<img src=\\"decorative-photo.jpg\\" alt=\\"\\">\`
       - 🚫 \`<img src=\\"quarterly-earnings-chart.png\\" alt=\\"\\"/>\`
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"image-is-decorative\\": false
+      });
+      \`\`\`
 
       Sources:
 

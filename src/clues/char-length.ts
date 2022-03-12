@@ -2,27 +2,34 @@ import { Alt } from "../index.js";
 import Clue, { ClueProps } from "../clues.js";
 
 class CharLength extends Clue {
-  altLength: number;
+  config: {
+    length: number;
+  };
+
   constructor(props: ClueProps) {
     super(props);
-    this.altLength = 125;
-    this.recommendation = this.setRecommendation(0);
+    this.config = {
+      length: 125,
+    };
+    this.recommendation = this.setRecommendation();
   }
 
-  check(alt: Alt) {
-    if (!alt || alt.length < this.altLength) return [];
+  check(alt: Alt, config?: { length?: number }) {
+    if (config?.length) this.config.length = config.length;
+    if (!alt || alt.length < this.config.length) return [];
     this.recommendation = this.setRecommendation(alt.length);
     return [this.suggestion()];
   }
 
-  setRecommendation(value: number) {
-    return `Alt text length should be less than 125 characters${
-      value ? `, it is currently ${value} characters` : ""
-    }`;
+  setRecommendation(value?: number) {
+    return `Alt text length should be less than ${
+      this.config.length
+    } characters${value ? `, it is currently ${value} characters` : ""}`;
   }
 }
 
 const charLength = new CharLength({
+  id: "character-length",
   heading: "Character length",
   docs: "https://tinyurl.com/y2f7rhao",
   rationale:

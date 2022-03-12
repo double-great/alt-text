@@ -12,6 +12,31 @@ describe("altStartsWith", () => {
 
       - ✅ A child holding a photograph.
       - 🚫 Image of a child.
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"should-not-start-with\\": false
+      });
+
+      // adjust rule defaults:
+      new altText('My alt text.', {
+        \\"should-not-start-with\\": {
+          \\"exclude\\": [
+            \\"graphic\\",
+            \\"image\\",
+            \\"photo\\",
+            \\"photograph\\",
+            \\"photographer\\",
+            \\"picture\\",
+            \\"screen shot\\",
+            \\"screenshot\\",
+            \\"spacer\\"
+          ]
+        }
+      });
+      \`\`\`
 
       Sources:
 

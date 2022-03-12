@@ -18,6 +18,7 @@ class NotOnlySpace extends Clue {
 }
 
 const notOnlySpace = new NotOnlySpace({
+  id: "empty-alt-text",
   heading: "Empty alt text",
   docs: "https://tinyurl.com/y2o7uctu",
   rationale:

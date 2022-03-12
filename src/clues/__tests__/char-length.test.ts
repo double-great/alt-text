@@ -12,6 +12,21 @@ describe("charLength", () => {
 
       - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
       - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"character-length\\": false
+      });
+
+      // adjust rule defaults:
+      new altText('My alt text.', {
+        \\"character-length\\": {
+          \\"length\\": 125
+        }
+      });
+      \`\`\`
 
       Sources:
 
@@ -33,6 +48,12 @@ describe("charLength", () => {
     expect(
       charLength.check("Lorem ipsum dolor sit amet")
     ).toMatchInlineSnapshot(`Array []`);
+    expect(charLength.check("Lorem ipsum dolor sit amet", { length: 10 }))
+      .toMatchInlineSnapshot(`
+      Array [
+        "Alt text length should be less than 10 characters, it is currently 26 characters (https://tinyurl.com/y2f7rhao).",
+      ]
+    `);
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);

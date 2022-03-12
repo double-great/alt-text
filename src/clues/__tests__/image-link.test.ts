@@ -12,6 +12,14 @@ describe("imageLink", () => {
 
       - ✅ \`<a href=\\"https://github.com/double-great\\"><img src=\\"logo.png\\" alt=\\"double great on GitHub\\"></a>\`
       - 🚫 \`<a href=\\"https://github.com/double-great\\"><img src=\\"logo.png\\" alt=\\"double great logo\\"></a>\`
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"image-is-link\\": false
+      });
+      \`\`\`
 
       Sources:
 

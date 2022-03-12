@@ -19,6 +19,7 @@ class EndPunctuation extends Clue {
 }
 
 const endPunctuation = new EndPunctuation({
+  id: "end-with-punctuation",
   heading: "End with punctuation",
   docs: "https://tinyurl.com/y5krn3ny",
   rationale:

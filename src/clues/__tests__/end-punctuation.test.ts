@@ -14,6 +14,14 @@ describe("endPunctuation", () => {
       - 🚫 A child holding a photograph
 
       Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"end-with-punctuation\\": false
+      });
+      \`\`\`
 
       Sources:
 

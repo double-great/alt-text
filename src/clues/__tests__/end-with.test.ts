@@ -12,6 +12,30 @@ describe("altEndsWith", () => {
 
       - ✅ A child holding a photograph.
       - 🚫 photograph.jpg
+       Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      new altText('My alt text.', {
+        \\"should-not-end-with\\": false
+      });
+
+      // adjust rule defaults:
+      new altText('My alt text.', {
+        \\"should-not-end-with\\": {
+          \\"exclude\\": [
+            \\".gif\\",
+            \\".jpeg\\",
+            \\".jpg\\",
+            \\".png\\",
+            \\".svg\\",
+            \\".webp\\",
+            \\"graphic\\",
+            \\"image\\"
+          ]
+        }
+      });
+      \`\`\`
 
       Sources:
 
