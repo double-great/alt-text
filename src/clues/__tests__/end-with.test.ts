@@ -2,6 +2,23 @@ import altEndsWith from "../end-with";
 import checkDocsLink from "../utils.js";
 
 describe("altEndsWith", () => {
+  it("document", () => {
+    expect(altEndsWith.document()).toMatchInlineSnapshot(`
+      "### Alt text should not end with
+
+      Suggestion: \`Alt text should not end with \\".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image\\"\`
+
+      A file name in alt text does not provide helpful context.
+
+      - ✅ A child holding a photograph.
+      - 🚫 photograph.jpg
+
+      Sources:
+
+      - <https://axesslab.com/alt-texts/>
+      "
+    `);
+  });
   it("check", () => {
     expect(altEndsWith.check("A screenshot of a dog.jpg"))
       .toMatchInlineSnapshot(`
@@ -25,22 +42,5 @@ describe("altEndsWith", () => {
     await expect(checkDocsLink(altEndsWith.heading)).resolves.toEqual(
       altEndsWith.docs
     );
-  });
-  it("document", () => {
-    expect(altEndsWith.document()).toMatchInlineSnapshot(`
-      "### Alt text should not end with
-
-      Suggestion: \`Alt text should not end with \\"graphic\\"\`
-
-      A file name in alt text does not provide helpful context.
-
-      - ✅ A child holding a photograph.
-      - 🚫 photograph.jpg
-
-      Sources:
-
-      - <https://axesslab.com/alt-texts/>
-      "
-    `);
   });
 });

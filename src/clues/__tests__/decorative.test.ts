@@ -2,17 +2,6 @@ import decorative from "../decorative";
 import checkDocsLink from "../utils.js";
 
 describe("decorative", () => {
-  it("check", () => {
-    expect(decorative.check()).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
-    );
-  });
-  it("`docs` matches generated GitHub `heading` link", async () => {
-    expect.assertions(1);
-    await expect(checkDocsLink(decorative.heading)).resolves.toEqual(
-      decorative.docs
-    );
-  });
   it("document", () => {
     expect(decorative.document()).toMatchInlineSnapshot(`
       "### Image is decorative
@@ -29,5 +18,16 @@ describe("decorative", () => {
       - <https://dequeuniversity.com/rules/axe/3.0/image-alt>
       "
     `);
+  });
+  it("check", () => {
+    expect(decorative.check()).toMatchInlineSnapshot(
+      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
+    );
+  });
+  it("`docs` matches generated GitHub `heading` link", async () => {
+    expect.assertions(1);
+    await expect(checkDocsLink(decorative.heading)).resolves.toEqual(
+      decorative.docs
+    );
   });
 });

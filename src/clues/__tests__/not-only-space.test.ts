@@ -2,19 +2,6 @@ import notOnlySpace from "../not-only-space";
 import checkDocsLink from "../utils.js";
 
 describe("notOnlySpace", () => {
-  it("check", () => {
-    expect(notOnlySpace.check(" ")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not be a single space (https://tinyurl.com/y2o7uctu).",
-      ]
-    `);
-  });
-  it("`docs` matches generated GitHub `heading` link", async () => {
-    expect.assertions(1);
-    await expect(checkDocsLink(notOnlySpace.heading)).resolves.toEqual(
-      notOnlySpace.docs
-    );
-  });
   it("document", () => {
     expect(notOnlySpace.document()).toMatchInlineSnapshot(`
       "### Empty alt text
@@ -31,5 +18,18 @@ describe("notOnlySpace", () => {
       - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
       "
     `);
+  });
+  it("check", () => {
+    expect(notOnlySpace.check(" ")).toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not be a single space (https://tinyurl.com/y2o7uctu).",
+      ]
+    `);
+  });
+  it("`docs` matches generated GitHub `heading` link", async () => {
+    expect.assertions(1);
+    await expect(checkDocsLink(notOnlySpace.heading)).resolves.toEqual(
+      notOnlySpace.docs
+    );
   });
 });

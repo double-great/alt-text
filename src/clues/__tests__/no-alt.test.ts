@@ -2,15 +2,6 @@ import noAlt from "../no-alt";
 import checkDocsLink from "../utils.js";
 
 describe("noAlt", () => {
-  it("check", () => {
-    expect(noAlt.check()).toMatchInlineSnapshot(
-      `"Missing \\"alt\\" attribute (https://tinyurl.com/yybc6bsy)."`
-    );
-  });
-  it("`docs` matches generated GitHub `heading` link", async () => {
-    expect.assertions(1);
-    await expect(checkDocsLink(noAlt.heading)).resolves.toEqual(noAlt.docs);
-  });
   it("document", () => {
     expect(noAlt.document()).toMatchInlineSnapshot(`
       "### Missing alt attribute
@@ -27,5 +18,14 @@ describe("noAlt", () => {
       - <https://dequeuniversity.com/rules/axe/3.4/image-alt>
       "
     `);
+  });
+  it("check", () => {
+    expect(noAlt.check()).toMatchInlineSnapshot(
+      `"Missing \\"alt\\" attribute (https://tinyurl.com/yybc6bsy)."`
+    );
+  });
+  it("`docs` matches generated GitHub `heading` link", async () => {
+    expect.assertions(1);
+    await expect(checkDocsLink(noAlt.heading)).resolves.toEqual(noAlt.docs);
   });
 });

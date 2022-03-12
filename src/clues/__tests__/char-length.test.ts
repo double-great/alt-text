@@ -2,6 +2,24 @@ import charLength from "../char-length";
 import checkDocsLink from "../utils.js";
 
 describe("charLength", () => {
+  it("document", () => {
+    expect(charLength.document()).toMatchInlineSnapshot(`
+      "### Character length
+
+      Suggestion: \`Alt text length should be less than 125 characters\`
+
+      Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
+
+      - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
+      - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
+
+      Sources:
+
+      - <https://accessibility.psu.edu/images/imageshtml/#alt>
+      - <https://terrillthompson.com/tests/altlength.html>
+      "
+    `);
+  });
   it("check", () => {
     expect(
       charLength.check(
@@ -21,23 +39,5 @@ describe("charLength", () => {
     await expect(checkDocsLink(charLength.heading)).resolves.toEqual(
       charLength.docs
     );
-  });
-  it("document", () => {
-    expect(charLength.document()).toMatchInlineSnapshot(`
-      "### Character length
-
-      Suggestion: \`Alt text length should be less than 125 characters, it is currently 446 characters\`
-
-      Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.
-
-      - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
-      - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
-
-      Sources:
-
-      - <https://accessibility.psu.edu/images/imageshtml/#alt>
-      - <https://terrillthompson.com/tests/altlength.html>
-      "
-    `);
   });
 });

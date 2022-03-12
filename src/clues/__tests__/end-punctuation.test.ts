@@ -2,22 +2,6 @@ import endPunctuation from "../end-punctuation";
 import checkDocsLink from "../utils.js";
 
 describe("endPunctuation", () => {
-  it("check", () => {
-    expect(endPunctuation.check("A large black dog")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).",
-      ]
-    `);
-    expect(endPunctuation.check("A large block dog?")).toMatchInlineSnapshot(
-      `Array []`
-    );
-  });
-  it("`docs` matches generated GitHub `heading` link", async () => {
-    expect.assertions(1);
-    await expect(checkDocsLink(endPunctuation.heading)).resolves.toEqual(
-      endPunctuation.docs
-    );
-  });
   it("document", () => {
     expect(endPunctuation.document()).toMatchInlineSnapshot(`
       "### End with punctuation
@@ -36,5 +20,21 @@ describe("endPunctuation", () => {
       - <https://axesslab.com/alt-texts/#end-with-a-period>
       "
     `);
+  });
+  it("check", () => {
+    expect(endPunctuation.check("A large black dog")).toMatchInlineSnapshot(`
+      Array [
+        "Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).",
+      ]
+    `);
+    expect(endPunctuation.check("A large block dog?")).toMatchInlineSnapshot(
+      `Array []`
+    );
+  });
+  it("`docs` matches generated GitHub `heading` link", async () => {
+    expect.assertions(1);
+    await expect(checkDocsLink(endPunctuation.heading)).resolves.toEqual(
+      endPunctuation.docs
+    );
   });
 });
