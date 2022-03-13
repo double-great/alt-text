@@ -17,14 +17,12 @@ describe("altEndsWith", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"should-not-end-with\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"should-not-end-with\\": false });
 
       // adjust rule defaults:
       new altText(\\"My alt text.\\", {
         \\"should-not-end-with\\": {
-          \\"exclude\\": [
+          exclude: [
             \\".gif\\",
             \\".jpeg\\",
             \\".jpg\\",
@@ -32,9 +30,9 @@ describe("altEndsWith", () => {
             \\".svg\\",
             \\".webp\\",
             \\"graphic\\",
-            \\"image\\"
-          ]
-        }
+            \\"image\\",
+          ],
+        },
       });
       \`\`\`
 

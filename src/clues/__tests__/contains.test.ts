@@ -17,14 +17,12 @@ describe("altContains", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"contains-unhelpful-word\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"contains-unhelpful-word\\": false });
 
       // adjust rule defaults:
       new altText(\\"My alt text.\\", {
         \\"contains-unhelpful-word\\": {
-          \\"exclude\\": [
+          exclude: [
             \\"graphic of\\",
             \\"image of\\",
             \\"photo of\\",
@@ -33,9 +31,9 @@ describe("altContains", () => {
             \\"photographer:\\",
             \\"picture of\\",
             \\"screen shot of\\",
-            \\"screenshot of\\"
-          ]
-        }
+            \\"screenshot of\\",
+          ],
+        },
       });
       \`\`\`
 

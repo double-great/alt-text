@@ -17,14 +17,12 @@ describe("exactMatch", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"is-unhelpful\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"is-unhelpful\\": false });
 
       // adjust rule defaults:
       new altText(\\"My alt text.\\", {
         \\"is-unhelpful\\": {
-          \\"exclude\\": [
+          exclude: [
             \\"*\\",
             \\"alt\\",
             \\"arrow\\",
@@ -50,9 +48,9 @@ describe("exactMatch", () => {
             \\"screenshot\\",
             \\"spacer\\",
             \\"table\\",
-            \\"temp\\"
-          ]
-        }
+            \\"temp\\",
+          ],
+        },
       });
       \`\`\`
 

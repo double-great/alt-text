@@ -17,9 +17,7 @@ describe("notOnlySpace", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"empty-alt-text\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"empty-alt-text\\": false });
       \`\`\`
 
       Sources:

@@ -17,9 +17,7 @@ describe("decorative", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"image-is-decorative\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"image-is-decorative\\": false });
       \`\`\`
 
       Sources:

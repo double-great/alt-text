@@ -19,9 +19,7 @@ describe("endPunctuation", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"end-with-punctuation\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"end-with-punctuation\\": false });
       \`\`\`
 
       Sources:

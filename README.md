@@ -47,9 +47,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "contains-unhelpful-word": false,
-});
+new altText("My alt text.", { "contains-unhelpful-word": false });
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -87,9 +85,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "is-unhelpful": false,
-});
+new altText("My alt text.", { "is-unhelpful": false });
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -144,9 +140,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "should-not-end-with": false,
-});
+new altText("My alt text.", { "should-not-end-with": false });
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -182,9 +176,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "should-not-start-with": false,
-});
+new altText("My alt text.", { "should-not-start-with": false });
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -224,9 +216,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "avoid-emoji": false,
-});
+new altText("My alt text.", { "avoid-emoji": false });
 ```
 
 Sources:
@@ -247,16 +237,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "character-length": false,
-});
+new altText("My alt text.", { "character-length": false });
 
 // adjust rule defaults:
-new altText("My alt text.", {
-  "character-length": {
-    length: 125,
-  },
-});
+new altText("My alt text.", { "character-length": { length: 125 } });
 ```
 
 Sources:
@@ -277,9 +261,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "empty-alt-text": false,
-});
+new altText("My alt text.", { "empty-alt-text": false });
 ```
 
 Sources:
@@ -301,9 +283,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "end-with-punctuation": false,
-});
+new altText("My alt text.", { "end-with-punctuation": false });
 ```
 
 Sources:
@@ -323,9 +303,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "image-is-decorative": false,
-});
+new altText("My alt text.", { "image-is-decorative": false });
 ```
 
 Sources:
@@ -345,9 +323,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "image-is-link": false,
-});
+new altText("My alt text.", { "image-is-link": false });
 ```
 
 Sources:
@@ -367,9 +343,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", {
-  "no-alt": false,
-});
+new altText("My alt text.", { "no-alt": false });
 ```
 
 Sources:

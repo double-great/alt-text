@@ -17,14 +17,12 @@ describe("altStartsWith", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", {
-        \\"should-not-start-with\\": false
-      });
+      new altText(\\"My alt text.\\", { \\"should-not-start-with\\": false });
 
       // adjust rule defaults:
       new altText(\\"My alt text.\\", {
         \\"should-not-start-with\\": {
-          \\"exclude\\": [
+          exclude: [
             \\"graphic\\",
             \\"image\\",
             \\"photo\\",
@@ -33,9 +31,9 @@ describe("altStartsWith", () => {
             \\"picture\\",
             \\"screen shot\\",
             \\"screenshot\\",
-            \\"spacer\\"
-          ]
-        }
+            \\"spacer\\",
+          ],
+        },
       });
       \`\`\`
 

@@ -1,4 +1,6 @@
 import { Alt } from ".";
+import pkg from "prettier";
+const { format } = pkg;
 
 export type ClueProps = {
   id: string;
@@ -49,6 +51,16 @@ export default class Clue {
   }
 
   document() {
+    const codeDisable = format(
+      `new altText('My alt text.', ${JSON.stringify({ [this.id]: false })});`,
+      { parser: "babel" }
+    );
+    const codeOptions = format(
+      `new altText("My alt text.", ${JSON.stringify({
+        [this.id]: this.config,
+      })});`,
+      { parser: "babel" }
+    );
     return `### ${this.heading}
 
 Suggestion: \`${this.recommendation}\`
@@ -68,19 +80,13 @@ Configuration:
 
 \`\`\`js
 // disable the rule:
-new altText("My alt text.", ${JSON.stringify({ [this.id]: false }, null, 2)});
-${
-  this.config
-    ? `
+${codeDisable}${
+      this.config
+        ? `
 // adjust rule defaults:
-new altText("My alt text.", ${JSON.stringify(
-        { [this.id]: this.config },
-        null,
-        2
-      )});
-`
-    : ""
-}\`\`\`
+${codeOptions}`
+        : ""
+    }\`\`\`
 
 Sources:
 
