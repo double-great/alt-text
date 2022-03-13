@@ -9,88 +9,77 @@ import exactMatch from "./clues/exact-match.js";
 import notOnlySpace from "./clues/not-only-space.js";
 import altStartsWith from "./clues/start-with.js";
 
-export default class AltText {
-  alt: string | undefined;
-  config: Config;
+export default function altText(alt: string | undefined, config?: Config) {
+  alt = alt?.toLowerCase();
+  config = {
+    "image-is-decorative": true,
+    "avoid-emoji": true,
+    "contains-unhelpful-word": true,
+    "character-length": true,
+    "end-with-puncutation": true,
+    "should-not-end-with": true,
+    "is-unhelpful": true,
+    "should-not-start-with": true,
+    "empty-alt-text": true,
+    ...config,
+  };
 
-  constructor(alt?: Alt, config?: Config) {
-    this.alt = alt?.toLowerCase();
-    this.config = {
-      "image-is-decorative": true,
-      "avoid-emoji": true,
-      "contains-unhelpful-word": true,
-      "character-length": true,
-      "end-with-puncutation": true,
-      "should-not-end-with": true,
-      "is-unhelpful": true,
-      "should-not-start-with": true,
-      "empty-alt-text": true,
-      ...config,
-    };
+  const rules = [
+    {
+      config: config["avoid-emoji"],
+      rule: avoidEmoji,
+    },
+    {
+      config: config["contains-unhelpful-word"],
+      rule: altContains,
+    },
+    {
+      config: config["character-length"],
+      rule: charLength,
+    },
+    {
+      config: config["end-with-puncutation"],
+      rule: endPunctuation,
+    },
+    {
+      config: config["should-not-end-with"],
+      rule: altEndsWith,
+    },
+    {
+      config: config["is-unhelpful"],
+      rule: exactMatch,
+    },
+    {
+      config: config["should-not-start-with"],
+      rule: altStartsWith,
+    },
+    {
+      config: config["empty-alt-text"],
+      rule: notOnlySpace,
+    },
+  ];
+
+  if (!alt && config["image-is-decorative"] !== false) {
+    return decorative.check();
+  } else if (!alt) return undefined;
+
+  let suggestion: string[] | [] = [];
+  for (const { rule, config } of rules) {
+    suggestion = [...suggestion, ...register({ alt, config, rule })];
   }
+  return suggestion.length ? suggestion.join(" ") : undefined;
+}
 
-  check() {
-    const { config, alt, register } = this;
-    if (!alt && config["image-is-decorative"] !== false) {
-      return decorative.check();
-    } else if (!alt) return undefined;
-
-    let suggestion: string[] | [] = [];
-    for (const { rule, config } of this.rules()) {
-      suggestion = [...suggestion, ...register({ alt, config, rule })];
-    }
-    return suggestion.length ? suggestion.join(" ") : undefined;
-  }
-
-  private rules() {
-    const { config } = this;
-    return [
-      {
-        config: config["avoid-emoji"],
-        rule: avoidEmoji,
-      },
-      {
-        config: config["contains-unhelpful-word"],
-        rule: altContains,
-      },
-      {
-        config: config["character-length"],
-        rule: charLength,
-      },
-      {
-        config: config["end-with-puncutation"],
-        rule: endPunctuation,
-      },
-      {
-        config: config["should-not-end-with"],
-        rule: altEndsWith,
-      },
-      {
-        config: config["is-unhelpful"],
-        rule: exactMatch,
-      },
-      {
-        config: config["should-not-start-with"],
-        rule: altStartsWith,
-      },
-      {
-        config: config["empty-alt-text"],
-        rule: notOnlySpace,
-      },
-    ];
-  }
-
-  private register({
-    alt,
-    config,
-    rule,
-  }: {
-    alt: string;
-    config: boolean | Record<string, unknown> | undefined;
-    rule: Clue;
-  }): [] | string[] | string {
-    return config === false ? [] : rule.check(alt, config);
-  }
+function register({
+  alt,
+  config,
+  rule,
+}: {
+  alt: string;
+  config: boolean | Record<string, unknown> | undefined;
+  rule: Clue;
+}): [] | string[] | string {
+  return config === false ? [] : rule.check(alt, config);
 }
 
 export type Alt = string;

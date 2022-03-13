@@ -17,10 +17,10 @@ describe("exactMatch", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"is-unhelpful\\": false }).check();
+      altText(\\"My alt text.\\", { \\"is-unhelpful\\": false });
 
       // adjust rule defaults:
-      new altText(\\"My alt text.\\", {
+      altText(\\"My alt text.\\", {
         \\"is-unhelpful\\": {
           exclude: [
             \\"*\\",
@@ -51,7 +51,7 @@ describe("exactMatch", () => {
             \\"temp\\",
           ],
         },
-      }).check();
+      });
       \`\`\`
 
       Sources:

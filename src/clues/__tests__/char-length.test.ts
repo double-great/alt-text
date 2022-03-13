@@ -17,10 +17,10 @@ describe("charLength", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"character-length\\": false }).check();
+      altText(\\"My alt text.\\", { \\"character-length\\": false });
 
       // adjust rule defaults:
-      new altText(\\"My alt text.\\", { \\"character-length\\": { length: 125 } }).check();
+      altText(\\"My alt text.\\", { \\"character-length\\": { length: 125 } });
       \`\`\`
 
       Sources:

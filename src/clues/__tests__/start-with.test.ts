@@ -17,10 +17,10 @@ describe("altStartsWith", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"should-not-start-with\\": false }).check();
+      altText(\\"My alt text.\\", { \\"should-not-start-with\\": false });
 
       // adjust rule defaults:
-      new altText(\\"My alt text.\\", {
+      altText(\\"My alt text.\\", {
         \\"should-not-start-with\\": {
           exclude: [
             \\"graphic\\",
@@ -34,7 +34,7 @@ describe("altStartsWith", () => {
             \\"spacer\\",
           ],
         },
-      }).check();
+      });
       \`\`\`
 
       Sources:

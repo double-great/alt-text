@@ -23,10 +23,10 @@ If `altText` detects an issue, it will return a suggestion to help you fix it. I
 ```js
 import altText from "@double-great/alt-text";
 
-console.log(new altText("A child holding a photograph.").check());
+console.log(altText("A child holding a photograph."));
 // undefined
 
-console.log(new altText("A photo of a dog").check());
+console.log(altText("A photo of a dog"));
 // Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).
 ```
 
@@ -59,10 +59,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "contains-unhelpful-word": false }).check();
+altText("My alt text.", { "contains-unhelpful-word": false });
 
 // adjust rule defaults:
-new altText("My alt text.", {
+altText("My alt text.", {
   "contains-unhelpful-word": {
     exclude: [
       "graphic of",
@@ -76,7 +76,7 @@ new altText("My alt text.", {
       "screenshot of",
     ],
   },
-}).check();
+});
 ```
 
 Sources:
@@ -97,10 +97,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "is-unhelpful": false }).check();
+altText("My alt text.", { "is-unhelpful": false });
 
 // adjust rule defaults:
-new altText("My alt text.", {
+altText("My alt text.", {
   "is-unhelpful": {
     exclude: [
       "*",
@@ -131,7 +131,7 @@ new altText("My alt text.", {
       "temp",
     ],
   },
-}).check();
+});
 ```
 
 Sources:
@@ -152,10 +152,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "should-not-end-with": false }).check();
+altText("My alt text.", { "should-not-end-with": false });
 
 // adjust rule defaults:
-new altText("My alt text.", {
+altText("My alt text.", {
   "should-not-end-with": {
     exclude: [
       ".gif",
@@ -168,7 +168,7 @@ new altText("My alt text.", {
       "image",
     ],
   },
-}).check();
+});
 ```
 
 Sources:
@@ -188,10 +188,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "should-not-start-with": false }).check();
+altText("My alt text.", { "should-not-start-with": false });
 
 // adjust rule defaults:
-new altText("My alt text.", {
+altText("My alt text.", {
   "should-not-start-with": {
     exclude: [
       "graphic",
@@ -205,7 +205,7 @@ new altText("My alt text.", {
       "spacer",
     ],
   },
-}).check();
+});
 ```
 
 Sources:
@@ -228,7 +228,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "avoid-emoji": false }).check();
+altText("My alt text.", { "avoid-emoji": false });
 ```
 
 Sources:
@@ -249,10 +249,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "character-length": false }).check();
+altText("My alt text.", { "character-length": false });
 
 // adjust rule defaults:
-new altText("My alt text.", { "character-length": { length: 125 } }).check();
+altText("My alt text.", { "character-length": { length: 125 } });
 ```
 
 Sources:
@@ -273,7 +273,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "empty-alt-text": false }).check();
+altText("My alt text.", { "empty-alt-text": false });
 ```
 
 Sources:
@@ -295,7 +295,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "end-with-punctuation": false }).check();
+altText("My alt text.", { "end-with-punctuation": false });
 ```
 
 Sources:
@@ -315,7 +315,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "image-is-decorative": false }).check();
+altText("My alt text.", { "image-is-decorative": false });
 ```
 
 Sources:
@@ -335,7 +335,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "image-is-link": false }).check();
+altText("My alt text.", { "image-is-link": false });
 ```
 
 Sources:
@@ -355,7 +355,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "no-alt": false }).check();
+altText("My alt text.", { "no-alt": false });
 ```
 
 Sources:

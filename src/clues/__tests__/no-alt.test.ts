@@ -17,7 +17,7 @@ describe("noAlt", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"no-alt\\": false }).check();
+      altText(\\"My alt text.\\", { \\"no-alt\\": false });
       \`\`\`
 
       Sources:

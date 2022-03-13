@@ -19,7 +19,7 @@ describe("avoidEmoji", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"avoid-emoji\\": false }).check();
+      altText(\\"My alt text.\\", { \\"avoid-emoji\\": false });
       \`\`\`
 
       Sources:
