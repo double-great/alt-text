@@ -52,13 +52,15 @@ export default class Clue {
 
   document() {
     const codeDisable = format(
-      `new altText('My alt text.', ${JSON.stringify({ [this.id]: false })});`,
+      `new altText('My alt text.', ${JSON.stringify({
+        [this.id]: false,
+      })}).check();`,
       { parser: "babel" }
     );
     const codeOptions = format(
       `new altText("My alt text.", ${JSON.stringify({
         [this.id]: this.config,
-      })});`,
+      })}).check();`,
       { parser: "babel" }
     );
     return `### ${this.heading}

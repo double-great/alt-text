@@ -47,7 +47,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "contains-unhelpful-word": false });
+new altText("My alt text.", { "contains-unhelpful-word": false }).check();
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -64,7 +64,7 @@ new altText("My alt text.", {
       "screenshot of",
     ],
   },
-});
+}).check();
 ```
 
 Sources:
@@ -85,7 +85,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "is-unhelpful": false });
+new altText("My alt text.", { "is-unhelpful": false }).check();
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -119,7 +119,7 @@ new altText("My alt text.", {
       "temp",
     ],
   },
-});
+}).check();
 ```
 
 Sources:
@@ -140,7 +140,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "should-not-end-with": false });
+new altText("My alt text.", { "should-not-end-with": false }).check();
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -156,7 +156,7 @@ new altText("My alt text.", {
       "image",
     ],
   },
-});
+}).check();
 ```
 
 Sources:
@@ -176,7 +176,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "should-not-start-with": false });
+new altText("My alt text.", { "should-not-start-with": false }).check();
 
 // adjust rule defaults:
 new altText("My alt text.", {
@@ -193,7 +193,7 @@ new altText("My alt text.", {
       "spacer",
     ],
   },
-});
+}).check();
 ```
 
 Sources:
@@ -216,7 +216,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "avoid-emoji": false });
+new altText("My alt text.", { "avoid-emoji": false }).check();
 ```
 
 Sources:
@@ -237,10 +237,10 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "character-length": false });
+new altText("My alt text.", { "character-length": false }).check();
 
 // adjust rule defaults:
-new altText("My alt text.", { "character-length": { length: 125 } });
+new altText("My alt text.", { "character-length": { length: 125 } }).check();
 ```
 
 Sources:
@@ -261,7 +261,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "empty-alt-text": false });
+new altText("My alt text.", { "empty-alt-text": false }).check();
 ```
 
 Sources:
@@ -283,7 +283,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "end-with-punctuation": false });
+new altText("My alt text.", { "end-with-punctuation": false }).check();
 ```
 
 Sources:
@@ -303,7 +303,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "image-is-decorative": false });
+new altText("My alt text.", { "image-is-decorative": false }).check();
 ```
 
 Sources:
@@ -323,7 +323,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "image-is-link": false });
+new altText("My alt text.", { "image-is-link": false }).check();
 ```
 
 Sources:
@@ -343,7 +343,7 @@ Configuration:
 
 ```js
 // disable the rule:
-new altText("My alt text.", { "no-alt": false });
+new altText("My alt text.", { "no-alt": false }).check();
 ```
 
 Sources:

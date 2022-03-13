@@ -17,7 +17,7 @@ describe("imageLink", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"image-is-link\\": false });
+      new altText(\\"My alt text.\\", { \\"image-is-link\\": false }).check();
       \`\`\`
 
       Sources:

@@ -17,7 +17,7 @@ describe("altContains", () => {
 
       \`\`\`js
       // disable the rule:
-      new altText(\\"My alt text.\\", { \\"contains-unhelpful-word\\": false });
+      new altText(\\"My alt text.\\", { \\"contains-unhelpful-word\\": false }).check();
 
       // adjust rule defaults:
       new altText(\\"My alt text.\\", {
@@ -34,7 +34,7 @@ describe("altContains", () => {
             \\"screenshot of\\",
           ],
         },
-      });
+      }).check();
       \`\`\`
 
       Sources:
