@@ -34,6 +34,18 @@ console.log(new altText("A photo of a dog").check());
 
 <!-- this section is generated on commit !-->
 
+- [Alt text contains unhelpful words (`contains-unhelpful-word`)](#alt-text-contains-unhelpful-words)
+- [Alt text is unhelpful (`is-unhelpful`)](#alt-text-is-unhelpful)
+- [Alt text should not end with (`should-not-end-with`)](#alt-text-should-not-end-with)
+- [Alt text should not start with (`should-not-start-with`)](#alt-text-should-not-start-with)
+- [Avoid emoji (`avoid-emoji`)](#avoid-emoji)
+- [Character length (`character-length`)](#character-length)
+- [Empty alt text (`empty-alt-text`)](#empty-alt-text)
+- [End with punctuation (`end-with-punctuation`)](#end-with-punctuation)
+- [Image is decorative (`image-is-decorative`)](#image-is-decorative)
+- [Image is link (`image-is-link`)](#image-is-link)
+- [Missing alt attribute (`no-alt`)](#missing-alt-attribute)
+
 ### Alt text contains unhelpful words
 
 Suggestion: `Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screen shot of, screenshot of"`
