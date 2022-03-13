@@ -60,7 +60,7 @@ export default function altText(
   return suggestion.length ? suggestion.join(" ") : undefined;
 }
 
-const defaultConfig: Config = {
+export const defaultConfig: Config = {
   "image-is-decorative": true,
   "avoid-emoji": true,
   "contains-unhelpful-word": true,
