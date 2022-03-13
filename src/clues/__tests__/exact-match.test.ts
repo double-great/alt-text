@@ -12,16 +12,17 @@ describe("exactMatch", () => {
 
       - ✅ A child holding a photograph.
       - 🚫 photograph
-       Configuration:
+
+      Configuration:
 
       \`\`\`js
       // disable the rule:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"is-unhelpful\\": false
       });
 
       // adjust rule defaults:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"is-unhelpful\\": {
           \\"exclude\\": [
             \\"*\\",

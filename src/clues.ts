@@ -63,16 +63,17 @@ ${
 Hear an example: <${this.listen}>
 `
     : ""
-} Configuration:
+}
+Configuration:
 
 \`\`\`js
 // disable the rule:
-new altText('My alt text.', ${JSON.stringify({ [this.id]: false }, null, 2)});
+new altText("My alt text.", ${JSON.stringify({ [this.id]: false }, null, 2)});
 ${
   this.config
     ? `
 // adjust rule defaults:
-new altText('My alt text.', ${JSON.stringify(
+new altText("My alt text.", ${JSON.stringify(
         { [this.id]: this.config },
         null,
         2

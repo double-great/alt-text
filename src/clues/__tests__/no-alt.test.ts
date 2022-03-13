@@ -12,11 +12,12 @@ describe("noAlt", () => {
 
       - ✅ \`<img src=\\"photograph.jpg\\" alt=\\"A child holding a photograph.\\">\`
       - 🚫 \`<img src=\\"photograph.jpg\\">\`
-       Configuration:
+
+      Configuration:
 
       \`\`\`js
       // disable the rule:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"no-alt\\": false
       });
       \`\`\`

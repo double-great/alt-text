@@ -42,7 +42,8 @@ Screen readers announce the presence of an image before reading the alt text. Ad
 
 - ✅ Dog jumping through a hoop.
 - 🚫 Image of a dog jumping through a hoop.
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -81,7 +82,8 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 - ✅ A child holding a photograph.
 - 🚫 photograph
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -137,7 +139,8 @@ A file name in alt text does not provide helpful context.
 
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -174,7 +177,8 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 - ✅ A child holding a photograph.
 - 🚫 Image of a child.
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -215,6 +219,7 @@ Emoji have their own text descriptions. These descriptions can vary between oper
 - 🚫 `<img src="cat.png" alt="An orange 🐈."/>`
 
 Hear an example: <https://doublegreat.dev/listen/emoji/>
+
 Configuration:
 
 ```js
@@ -237,7 +242,8 @@ Alt text should be less than 125 characters in length. The JAWS screen reader re
 
 - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
 - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -266,7 +272,8 @@ If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure
 
 - ✅ `<img src="photo.png" alt="">`
 - 🚫 `<img src="photo.png" alt=" ">`
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -289,6 +296,7 @@ End the alt text with a period, exclamation point, or question mark. This will m
 - 🚫 A child holding a photograph
 
 Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
+
 Configuration:
 
 ```js
@@ -310,7 +318,8 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 
 - ✅ `<img src="decorative-photo.jpg" alt="">`
 - 🚫 `<img src="quarterly-earnings-chart.png" alt=""/>`
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -331,7 +340,8 @@ Images inside a link tag require alt text that describes the purpose of the link
 
 - ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`
 - 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:
@@ -352,7 +362,8 @@ All images must have alternate text to convey their purpose and meaning to scree
 
 - ✅ `<img src="photograph.jpg" alt="A child holding a photograph.">`
 - 🚫 `<img src="photograph.jpg">`
-  Configuration:
+
+Configuration:
 
 ```js
 // disable the rule:

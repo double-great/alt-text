@@ -12,11 +12,12 @@ describe("notOnlySpace", () => {
 
       - ✅ \`<img src=\\"photo.png\\" alt=\\"\\">\`
       - 🚫 \`<img src=\\"photo.png\\" alt=\\" \\">\`
-       Configuration:
+
+      Configuration:
 
       \`\`\`js
       // disable the rule:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"empty-alt-text\\": false
       });
       \`\`\`

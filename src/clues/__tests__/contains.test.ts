@@ -12,16 +12,17 @@ describe("altContains", () => {
 
       - ✅ Dog jumping through a hoop.
       - 🚫 Image of a dog jumping through a hoop.
-       Configuration:
+
+      Configuration:
 
       \`\`\`js
       // disable the rule:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"contains-unhelpful-word\\": false
       });
 
       // adjust rule defaults:
-      new altText('My alt text.', {
+      new altText(\\"My alt text.\\", {
         \\"contains-unhelpful-word\\": {
           \\"exclude\\": [
             \\"graphic of\\",
