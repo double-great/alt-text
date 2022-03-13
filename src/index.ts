@@ -70,6 +70,7 @@ const defaultConfig: Config = {
   "is-unhelpful": true,
   "should-not-start-with": true,
   "empty-alt-text": true,
+  "image-is-link": true,
 };
 
 export type Alt = string;
@@ -85,6 +86,7 @@ export type Config = {
   "is-unhelpful"?: boolean | { exclude: string[] };
   "should-not-start-with"?: boolean | { exclude: string[] };
   "empty-alt-text"?: boolean;
+  "image-is-link"?: boolean;
 };
 
 export type ConfigOption = boolean | { exclude?: string[]; length?: number };
