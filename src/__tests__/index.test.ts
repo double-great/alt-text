@@ -58,13 +58,13 @@ describe("altText", () => {
     ).toMatchInlineSnapshot(`undefined`);
 
     expect(
-      altText("An orange cat", { "end-with-puncutation": false })
+      altText("An orange cat", { "end-with-punctuation": false })
     ).toMatchInlineSnapshot(`undefined`);
 
     expect(
       altText("An orange cat.jpg", {
         "should-not-end-with": false,
-        "end-with-puncutation": false,
+        "end-with-punctuation": false,
       })
     ).toMatchInlineSnapshot(`undefined`);
 
@@ -85,7 +85,7 @@ describe("altText", () => {
     expect(
       altText("icon", {
         "is-unhelpful": false,
-        "end-with-puncutation": false,
+        "end-with-punctuation": false,
       })
     ).toMatchInlineSnapshot(`undefined`);
   });

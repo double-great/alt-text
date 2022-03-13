@@ -28,35 +28,36 @@ export default function altText(
     ...config,
   };
 
-  // register each rule with its configuration
-  const rules = registerRules(config);
-
   // if no alt text, throw image is decorative (if enabled)
   if (!alt && config["image-is-decorative"] !== false) {
     return decorative.check();
   } else if (!alt) return undefined;
 
+  // list of rules
+  const rules: Clue[] = [
+    avoidEmoji,
+    altContains,
+    charLength,
+    endPunctuation,
+    altEndsWith,
+    exactMatch,
+    altStartsWith,
+    notOnlySpace,
+  ];
+
   // check all rules
   let suggestion: string[] | [] = [];
-  for (const { rule, config } of rules) {
-    suggestion = [...suggestion, ...ruleChecker({ alt, config, rule })];
+  for (const rule of rules) {
+    // get the rule's id
+    const ruleConfig: ConfigOption = config[rule.id];
+    // skip rule if it is diabled
+    if (ruleConfig === false) continue;
+    // check rule and add any suggestions
+    suggestion = [...suggestion, ...rule.check(alt, ruleConfig)];
   }
 
   // return suggestions, if any
   return suggestion.length ? suggestion.join(" ") : undefined;
-}
-
-// if it's not disabled, check the alt text against the rule
-function ruleChecker({
-  alt,
-  config,
-  rule,
-}: {
-  alt: string;
-  config: boolean | Record<string, unknown> | undefined;
-  rule: Clue;
-}): [] | string[] | string {
-  return config === false ? [] : rule.check(alt, config);
 }
 
 const defaultConfig: Config = {
@@ -64,60 +65,26 @@ const defaultConfig: Config = {
   "avoid-emoji": true,
   "contains-unhelpful-word": true,
   "character-length": true,
-  "end-with-puncutation": true,
+  "end-with-punctuation": true,
   "should-not-end-with": true,
   "is-unhelpful": true,
   "should-not-start-with": true,
   "empty-alt-text": true,
 };
 
-const registerRules = (config: Config) => {
-  return [
-    {
-      config: config["avoid-emoji"],
-      rule: avoidEmoji,
-    },
-    {
-      config: config["contains-unhelpful-word"],
-      rule: altContains,
-    },
-    {
-      config: config["character-length"],
-      rule: charLength,
-    },
-    {
-      config: config["end-with-puncutation"],
-      rule: endPunctuation,
-    },
-    {
-      config: config["should-not-end-with"],
-      rule: altEndsWith,
-    },
-    {
-      config: config["is-unhelpful"],
-      rule: exactMatch,
-    },
-    {
-      config: config["should-not-start-with"],
-      rule: altStartsWith,
-    },
-    {
-      config: config["empty-alt-text"],
-      rule: notOnlySpace,
-    },
-  ];
-};
-
 export type Alt = string;
 
 export type Config = {
+  [key: string]: any; // TO DO, remove!
   "image-is-decorative"?: boolean;
   "avoid-emoji"?: boolean;
   "contains-unhelpful-word"?: boolean | { exclude: string[] };
   "character-length"?: boolean | { length: number };
-  "end-with-puncutation"?: boolean;
+  "end-with-punctuation"?: boolean;
   "should-not-end-with"?: boolean | { exclude: string[] };
   "is-unhelpful"?: boolean | { exclude: string[] };
   "should-not-start-with"?: boolean | { exclude: string[] };
   "empty-alt-text"?: boolean;
 };
+
+export type ConfigOption = boolean | { exclude?: string[]; length?: number };

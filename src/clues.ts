@@ -1,4 +1,4 @@
-import { Alt } from ".";
+import { Alt, ConfigOption } from ".";
 import pkg from "prettier";
 const { format } = pkg;
 
@@ -38,7 +38,7 @@ export default class Clue {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  check(alt: Alt, config?: any): string | [] | string[] {
+  check(alt: Alt, config?: ConfigOption): string | [] | string[] {
     throw new Error("check() method not implemented.");
   }
 
