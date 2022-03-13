@@ -9,22 +9,70 @@ import exactMatch from "./clues/exact-match.js";
 import notOnlySpace from "./clues/not-only-space.js";
 import altStartsWith from "./clues/start-with.js";
 
-export default function altText(alt: string | undefined, config?: Config) {
+/**
+ * Check for unhelpful alt text.
+ *
+ * @param alt A string of alt text
+ * @returns {string | undefined} Suggestions on how to improve the alt text
+ */
+export default function altText(
+  alt: string | undefined,
+  config?: Config
+): string | undefined {
+  // lowercase alt text to improve parsing
   alt = alt?.toLowerCase();
+
+  // take into account user configuration settings
   config = {
-    "image-is-decorative": true,
-    "avoid-emoji": true,
-    "contains-unhelpful-word": true,
-    "character-length": true,
-    "end-with-puncutation": true,
-    "should-not-end-with": true,
-    "is-unhelpful": true,
-    "should-not-start-with": true,
-    "empty-alt-text": true,
+    ...defaultConfig,
     ...config,
   };
 
-  const rules = [
+  // register each rule with its configuration
+  const rules = registerRules(config);
+
+  // if no alt text, throw image is decorative (if enabled)
+  if (!alt && config["image-is-decorative"] !== false) {
+    return decorative.check();
+  } else if (!alt) return undefined;
+
+  // check all rules
+  let suggestion: string[] | [] = [];
+  for (const { rule, config } of rules) {
+    suggestion = [...suggestion, ...ruleChecker({ alt, config, rule })];
+  }
+
+  // return suggestions, if any
+  return suggestion.length ? suggestion.join(" ") : undefined;
+}
+
+// if it's not disabled, check the alt text against the rule
+function ruleChecker({
+  alt,
+  config,
+  rule,
+}: {
+  alt: string;
+  config: boolean | Record<string, unknown> | undefined;
+  rule: Clue;
+}): [] | string[] | string {
+  return config === false ? [] : rule.check(alt, config);
+}
+
+const defaultConfig: Config = {
+  "image-is-decorative": true,
+  "avoid-emoji": true,
+  "contains-unhelpful-word": true,
+  "character-length": true,
+  "end-with-puncutation": true,
+  "should-not-end-with": true,
+  "is-unhelpful": true,
+  "should-not-start-with": true,
+  "empty-alt-text": true,
+};
+
+const registerRules = (config: Config) => {
+  return [
     {
       config: config["avoid-emoji"],
       rule: avoidEmoji,
@@ -58,29 +106,7 @@ export default function altText(alt: string | undefined, config?: Config) {
       rule: notOnlySpace,
     },
   ];
-
-  if (!alt && config["image-is-decorative"] !== false) {
-    return decorative.check();
-  } else if (!alt) return undefined;
-
-  let suggestion: string[] | [] = [];
-  for (const { rule, config } of rules) {
-    suggestion = [...suggestion, ...register({ alt, config, rule })];
-  }
-  return suggestion.length ? suggestion.join(" ") : undefined;
-}
-
-function register({
-  alt,
-  config,
-  rule,
-}: {
-  alt: string;
-  config: boolean | Record<string, unknown> | undefined;
-  rule: Clue;
-}): [] | string[] | string {
-  return config === false ? [] : rule.check(alt, config);
-}
+};
 
 export type Alt = string;
 
