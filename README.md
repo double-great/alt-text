@@ -6,7 +6,7 @@ Alt text describes an image. This description provides context for people with l
 
 The usefulness of alt text can be subjective. Context, detail, length, and relevance contribute to the quality of the description. Determining alt text quality is a manual effort, but there are patterns to avoid.
 
-`altText` checks for common issues found in alt text and suggests improvements.
+This library checks for common issues found in alt text and suggests improvements.
 
 Are you writing in markdown? We recommend using [remark-lint-alt-text](https://github.com/double-great/remark-lint-alt-text).
 
@@ -18,7 +18,7 @@ npm install @double-great/alt-text
 
 ## Usage
 
-If `altText` detects an issue, it will return a suggestion to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
+If the library detects an issue, it will return a suggestion to help you fix it. If it doesn't detect any issues it will return `undefined`.
 
 ```js
 import altText from "@double-great/alt-text";
@@ -29,6 +29,17 @@ console.log(altText("A child holding a photograph."));
 console.log(altText("A photo of a dog"));
 // Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).
 ```
+
+The library is configured with best practices, but context is always important. You can disable any rule and pass custom configuration options for those that check against specific values.
+
+Example:
+
+```js
+console.log(altText("A photo of a dog", { "end-with-punctuation": false }));
+// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux).
+```
+
+Each rule in the suggestions list below has full documentation on configuration options.
 
 ## Suggestions
 
