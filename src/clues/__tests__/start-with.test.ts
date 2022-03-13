@@ -50,6 +50,12 @@ describe("altStartsWith", () => {
         "Alt text should not start with \\"spacer\\" (https://tinyurl.com/y5y98ygu).",
       ]
     `);
+    expect(altStartsWith.check("hotdog with bun", { exclude: ["hotdog"] }))
+      .toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not start with \\"hotdog\\" (https://tinyurl.com/y5y98ygu).",
+      ]
+    `);
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);

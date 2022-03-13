@@ -67,6 +67,12 @@ describe("exactMatch", () => {
         "Alt text should not be \\"logo\\" (https://tinyurl.com/yxwc2hof).",
       ]
     `);
+    expect(exactMatch.check("hotdog", { exclude: ["hotdog"] }))
+      .toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not be \\"hotdog\\" (https://tinyurl.com/yxwc2hof).",
+      ]
+    `);
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);

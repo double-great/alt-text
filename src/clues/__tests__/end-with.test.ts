@@ -59,6 +59,15 @@ describe("altEndsWith", () => {
         "Alt text should not end with \\"graphic\\" (https://tinyurl.com/yy2q8bbb).",
       ]
     `);
+    expect(
+      altEndsWith.check("DSC_0010.gov", {
+        exclude: [".gov"],
+      })
+    ).toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not end with \\".gov\\" (https://tinyurl.com/yy2q8bbb).",
+      ]
+    `);
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
