@@ -15,6 +15,13 @@ describe("endPunctuation", () => {
 
       Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"end-with-punctuation\\": false });
+      \`\`\`
+
       Sources:
 
       - <https://axesslab.com/alt-texts/#end-with-a-period>

@@ -15,6 +15,13 @@ describe("avoidEmoji", () => {
 
       Hear an example: <https://doublegreat.dev/listen/emoji/>
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"avoid-emoji\\": false });
+      \`\`\`
+
       Sources:
 
       - <https://www.youtube.com/watch?v=uIbPcZq6izk>

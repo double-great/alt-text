@@ -14,6 +14,7 @@ class ImageLink extends Clue {
 }
 
 const imageLink = new ImageLink({
+  id: "image-is-link",
   heading: "Image is link",
   docs: "https://tinyurl.com/yxhq2k5w",
   rationale:

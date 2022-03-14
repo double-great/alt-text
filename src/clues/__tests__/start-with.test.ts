@@ -13,6 +13,30 @@ describe("altStartsWith", () => {
       - ✅ A child holding a photograph.
       - 🚫 Image of a child.
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"should-not-start-with\\": false });
+
+      // adjust rule defaults:
+      altText(\\"My alt text.\\", {
+        \\"should-not-start-with\\": {
+          exclude: [
+            \\"graphic\\",
+            \\"image\\",
+            \\"photo\\",
+            \\"photograph\\",
+            \\"photographer\\",
+            \\"picture\\",
+            \\"screen shot\\",
+            \\"screenshot\\",
+            \\"spacer\\",
+          ],
+        },
+      });
+      \`\`\`
+
       Sources:
 
       - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
@@ -24,6 +48,12 @@ describe("altStartsWith", () => {
     expect(altStartsWith.check("spacer image")).toMatchInlineSnapshot(`
       Array [
         "Alt text should not start with \\"spacer\\" (https://tinyurl.com/y5y98ygu).",
+      ]
+    `);
+    expect(altStartsWith.check("hotdog with bun", { exclude: ["hotdog"] }))
+      .toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not start with \\"hotdog\\" (https://tinyurl.com/y5y98ygu).",
       ]
     `);
   });

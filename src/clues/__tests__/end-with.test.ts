@@ -13,6 +13,29 @@ describe("altEndsWith", () => {
       - ✅ A child holding a photograph.
       - 🚫 photograph.jpg
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"should-not-end-with\\": false });
+
+      // adjust rule defaults:
+      altText(\\"My alt text.\\", {
+        \\"should-not-end-with\\": {
+          exclude: [
+            \\".gif\\",
+            \\".jpeg\\",
+            \\".jpg\\",
+            \\".png\\",
+            \\".svg\\",
+            \\".webp\\",
+            \\"graphic\\",
+            \\"image\\",
+          ],
+        },
+      });
+      \`\`\`
+
       Sources:
 
       - <https://axesslab.com/alt-texts/>
@@ -34,6 +57,15 @@ describe("altEndsWith", () => {
     expect(altEndsWith.check("placeholder graphic")).toMatchInlineSnapshot(`
       Array [
         "Alt text should not end with \\"graphic\\" (https://tinyurl.com/yy2q8bbb).",
+      ]
+    `);
+    expect(
+      altEndsWith.check("DSC_0010.gov", {
+        exclude: [".gov"],
+      })
+    ).toMatchInlineSnapshot(`
+      Array [
+        "Alt text should not end with \\".gov\\" (https://tinyurl.com/yy2q8bbb).",
       ]
     `);
   });

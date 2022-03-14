@@ -60,7 +60,8 @@
       "./utils.js$": "<rootDir>/src/clues/utils.ts",
       "./docs.js$": "<rootDir>/src/docs.ts",
       "^./clues/(.*).js$": "<rootDir>/src/clues/$1.ts",
-      "../index.js$": "<rootDir>/src/index.ts"
-    }
+      "..?/index.js$": "<rootDir>/src/index.ts"
+    },
+    "clearMocks": true
   }
 }

@@ -11,21 +11,36 @@ import noAlt from "./clues/no-alt.js";
 import notOnlySpace from "./clues/not-only-space.js";
 import altStartsWith from "./clues/start-with.js";
 
+import GithubSlugger from "github-slugger";
+
+const slugger = new GithubSlugger();
+
+const allClues = [
+  altContains,
+  exactMatch,
+  altEndsWith,
+  altStartsWith,
+  avoidEmoji,
+  charLength,
+  notOnlySpace,
+  endPunctuation,
+  decorative,
+  imageLink,
+  noAlt,
+];
+
 export const formattedDocs = `## Suggestions
 
 <!-- this section is generated on commit !-->
 
-${altContains.document()}
-${exactMatch.document()}
-${altEndsWith.document()}
-${altStartsWith.document()}
-${avoidEmoji.document()}
-${charLength.document()}
-${notOnlySpace.document()}
-${endPunctuation.document()}
-${decorative.document()}
-${imageLink.document()}
-${noAlt.document()}`;
+${allClues
+  .map(
+    (clue) =>
+      `- [${clue.heading} (\`${clue.id}\`)](#${slugger.slug(clue.heading)})`
+  )
+  .join("\n")}
+
+${allClues.map((clue) => clue.document()).join("\n")}`;
 
 export async function writeDocs() {
   const { currentDocs, matchedDocs } = await swapDocs();

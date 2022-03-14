@@ -13,6 +13,13 @@ describe("decorative", () => {
       - ✅ \`<img src=\\"decorative-photo.jpg\\" alt=\\"\\">\`
       - 🚫 \`<img src=\\"quarterly-earnings-chart.png\\" alt=\\"\\"/>\`
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"image-is-decorative\\": false });
+      \`\`\`
+
       Sources:
 
       - <https://dequeuniversity.com/rules/axe/3.0/image-alt>

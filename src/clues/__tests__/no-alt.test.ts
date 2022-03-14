@@ -13,6 +13,13 @@ describe("noAlt", () => {
       - ✅ \`<img src=\\"photograph.jpg\\" alt=\\"A child holding a photograph.\\">\`
       - 🚫 \`<img src=\\"photograph.jpg\\">\`
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"no-alt\\": false });
+      \`\`\`
+
       Sources:
 
       - <https://dequeuniversity.com/rules/axe/3.4/image-alt>

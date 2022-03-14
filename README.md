@@ -6,7 +6,7 @@ Alt text describes an image. This description provides context for people with l
 
 The usefulness of alt text can be subjective. Context, detail, length, and relevance contribute to the quality of the description. Determining alt text quality is a manual effort, but there are patterns to avoid.
 
-`altText` checks for common issues found in alt text and suggests improvements.
+This library checks for common issues found in alt text and suggests improvements.
 
 Are you writing in markdown? We recommend using [remark-lint-alt-text](https://github.com/double-great/remark-lint-alt-text).
 
@@ -18,7 +18,7 @@ npm install @double-great/alt-text
 
 ## Usage
 
-If `altText` detects an issue, it will return a suggestion to help you fix it. If `altText` doesn't detect any issues it will return `undefined`.
+If the library detects an issue, it will return a suggestion to help you fix it. If it doesn't detect any issues it will return `undefined`.
 
 ```js
 import altText from "@double-great/alt-text";
@@ -27,12 +27,35 @@ console.log(altText("A child holding a photograph."));
 // undefined
 
 console.log(altText("A photo of a dog"));
-// Alt text should not contain "photo of" (https://git.io/JvqAM). Alt text should end with punctuation (https://git.io/JJk55).
+// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).
 ```
+
+The library is configured with best practices, but context is always important. You can disable any rule and pass custom configuration options for those that check against specific values.
+
+Example:
+
+```js
+console.log(altText("A photo of a dog", { "end-with-punctuation": false }));
+// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux).
+```
+
+Each rule in the suggestions list below has full documentation on configuration options.
 
 ## Suggestions
 
 <!-- this section is generated on commit !-->
+
+- [Alt text contains unhelpful words (`contains-unhelpful-word`)](#alt-text-contains-unhelpful-words)
+- [Alt text is unhelpful (`is-unhelpful`)](#alt-text-is-unhelpful)
+- [Alt text should not end with (`should-not-end-with`)](#alt-text-should-not-end-with)
+- [Alt text should not start with (`should-not-start-with`)](#alt-text-should-not-start-with)
+- [Avoid emoji (`avoid-emoji`)](#avoid-emoji)
+- [Character length (`character-length`)](#character-length)
+- [Empty alt text (`empty-alt-text`)](#empty-alt-text)
+- [End with punctuation (`end-with-punctuation`)](#end-with-punctuation)
+- [Image is decorative (`image-is-decorative`)](#image-is-decorative)
+- [Image is link (`image-is-link`)](#image-is-link)
+- [Missing alt attribute (`no-alt`)](#missing-alt-attribute)
 
 ### Alt text contains unhelpful words
 
@@ -42,6 +65,30 @@ Screen readers announce the presence of an image before reading the alt text. Ad
 
 - ✅ Dog jumping through a hoop.
 - 🚫 Image of a dog jumping through a hoop.
+
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "contains-unhelpful-word": false });
+
+// adjust rule defaults:
+altText("My alt text.", {
+  "contains-unhelpful-word": {
+    exclude: [
+      "graphic of",
+      "image of",
+      "photo of",
+      "photo:",
+      "photograph of",
+      "photographer:",
+      "picture of",
+      "screen shot of",
+      "screenshot of",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -57,6 +104,47 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 - ✅ A child holding a photograph.
 - 🚫 photograph
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "is-unhelpful": false });
+
+// adjust rule defaults:
+altText("My alt text.", {
+  "is-unhelpful": {
+    exclude: [
+      "*",
+      "alt",
+      "arrow",
+      "artwork",
+      "blank",
+      "bullet",
+      "button",
+      "chart",
+      "diagram",
+      "drawing",
+      "empty",
+      "graph",
+      "graphic",
+      "icon",
+      "image",
+      "logo",
+      "more",
+      "painting",
+      "photo",
+      "photograph",
+      "placeholder",
+      "screen shot",
+      "screenshot",
+      "spacer",
+      "table",
+      "temp",
+    ],
+  },
+});
+```
+
 Sources:
 
 - <https://www.w3.org/WAI/tutorials/images/tips/#tips>
@@ -71,6 +159,29 @@ A file name in alt text does not provide helpful context.
 - ✅ A child holding a photograph.
 - 🚫 photograph.jpg
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "should-not-end-with": false });
+
+// adjust rule defaults:
+altText("My alt text.", {
+  "should-not-end-with": {
+    exclude: [
+      ".gif",
+      ".jpeg",
+      ".jpg",
+      ".png",
+      ".svg",
+      ".webp",
+      "graphic",
+      "image",
+    ],
+  },
+});
+```
+
 Sources:
 
 - <https://axesslab.com/alt-texts/>
@@ -83,6 +194,30 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 - ✅ A child holding a photograph.
 - 🚫 Image of a child.
+
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "should-not-start-with": false });
+
+// adjust rule defaults:
+altText("My alt text.", {
+  "should-not-start-with": {
+    exclude: [
+      "graphic",
+      "image",
+      "photo",
+      "photograph",
+      "photographer",
+      "picture",
+      "screen shot",
+      "screenshot",
+      "spacer",
+    ],
+  },
+});
+```
 
 Sources:
 
@@ -100,6 +235,13 @@ Emoji have their own text descriptions. These descriptions can vary between oper
 
 Hear an example: <https://doublegreat.dev/listen/emoji/>
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "avoid-emoji": false });
+```
+
 Sources:
 
 - <https://www.youtube.com/watch?v=uIbPcZq6izk>
@@ -114,6 +256,16 @@ Alt text should be less than 125 characters in length. The JAWS screen reader re
 - ✅ George Washington and Lafayette on horseback talking to soldiers in snow at Valley Forge.
 - 🚫 Caption: Painting “Washington and Lafayette at Valley Forge” by John Ward Dunsmore from 1907. Image courtesy of the Library of Congress.
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "character-length": false });
+
+// adjust rule defaults:
+altText("My alt text.", { "character-length": { length: 125 } });
+```
+
 Sources:
 
 - <https://accessibility.psu.edu/images/imageshtml/#alt>
@@ -127,6 +279,13 @@ If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure
 
 - ✅ `<img src="photo.png" alt="">`
 - 🚫 `<img src="photo.png" alt=" ">`
+
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "empty-alt-text": false });
+```
 
 Sources:
 
@@ -143,6 +302,13 @@ End the alt text with a period, exclamation point, or question mark. This will m
 
 Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "end-with-punctuation": false });
+```
+
 Sources:
 
 - <https://axesslab.com/alt-texts/#end-with-a-period>
@@ -155,6 +321,13 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 
 - ✅ `<img src="decorative-photo.jpg" alt="">`
 - 🚫 `<img src="quarterly-earnings-chart.png" alt=""/>`
+
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "image-is-decorative": false });
+```
 
 Sources:
 
@@ -169,6 +342,13 @@ Images inside a link tag require alt text that describes the purpose of the link
 - ✅ `<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>`
 - 🚫 `<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>`
 
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "image-is-link": false });
+```
+
 Sources:
 
 - <https://axesslab.com/alt-texts/#images-in-links>
@@ -181,6 +361,13 @@ All images must have alternate text to convey their purpose and meaning to scree
 
 - ✅ `<img src="photograph.jpg" alt="A child holding a photograph.">`
 - 🚫 `<img src="photograph.jpg">`
+
+Configuration:
+
+```js
+// disable the rule:
+altText("My alt text.", { "no-alt": false });
+```
 
 Sources:
 

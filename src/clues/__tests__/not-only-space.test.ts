@@ -13,6 +13,13 @@ describe("notOnlySpace", () => {
       - ✅ \`<img src=\\"photo.png\\" alt=\\"\\">\`
       - 🚫 \`<img src=\\"photo.png\\" alt=\\" \\">\`
 
+      Configuration:
+
+      \`\`\`js
+      // disable the rule:
+      altText(\\"My alt text.\\", { \\"empty-alt-text\\": false });
+      \`\`\`
+
       Sources:
 
       - <https://www.w3.org/WAI/tutorials/images/tips/#tips>

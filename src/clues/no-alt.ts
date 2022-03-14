@@ -14,6 +14,7 @@ class NoAlt extends Clue {
 }
 
 const noAlt = new NoAlt({
+  id: "no-alt",
   heading: "Missing alt attribute",
   docs: "https://tinyurl.com/yybc6bsy",
   rationale:
