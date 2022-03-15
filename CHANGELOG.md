@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 3.0.0
 
-- Add configuration.
+- Add configuration options to disable any rule and change the defaults for some rules that check against specific values.
 
 ## 2.0.0
 
