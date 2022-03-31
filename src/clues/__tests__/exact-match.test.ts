@@ -64,13 +64,13 @@ describe("exactMatch", () => {
   it("check", () => {
     expect(exactMatch.check("logo")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be \\"logo\\" (https://tinyurl.com/yxwc2hof).",
+        "Alt text should not be \\"logo\\" (https://tinyurl.com/ycxdkm92).",
       ]
     `);
     expect(exactMatch.check("hotdog", { exclude: ["hotdog"] }))
       .toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be \\"hotdog\\" (https://tinyurl.com/yxwc2hof).",
+        "Alt text should not be \\"hotdog\\" (https://tinyurl.com/ycxdkm92).",
       ]
     `);
   });

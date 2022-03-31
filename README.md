@@ -27,7 +27,7 @@ console.log(altText("A child holding a photograph."));
 // undefined
 
 console.log(altText("A photo of a dog"));
-// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).
+// Alt text should not contain "photo of" (https://tinyurl.com/ydbwu53g). Alt text should end with punctuation (https://tinyurl.com/y9fcquhy).
 ```
 
 The library is configured with best practices, but context is always important. You can disable any rule and pass custom configuration options for those that check against specific values.
@@ -36,7 +36,7 @@ Example:
 
 ```js
 console.log(altText("A photo of a dog", { "end-with-punctuation": false }));
-// Alt text should not contain "photo of" (https://tinyurl.com/y3v3jgux).
+// Alt text should not contain "photo of" (https://tinyurl.com/ydbwu53g).
 ```
 
 Each rule in the suggestions list below has full documentation on configuration options.

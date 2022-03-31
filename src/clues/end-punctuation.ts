@@ -21,7 +21,7 @@ class EndPunctuation extends Clue {
 const endPunctuation = new EndPunctuation({
   id: "end-with-punctuation",
   heading: "End with punctuation",
-  docs: "https://tinyurl.com/y5krn3ny",
+  docs: "https://tinyurl.com/y9fcquhy",
   rationale:
     "End the alt text with a period, exclamation point, or question mark. This will make screen readers pause a bit after the last word in the alt text, which creates a more pleasant reading experience for the user.",
   listen: "https://doublegreat.dev/listen/punctuation-in-alt-text/",

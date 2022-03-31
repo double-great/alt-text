@@ -32,7 +32,7 @@ describe("avoidEmoji", () => {
   it("check", () => {
     expect(avoidEmoji.check("An orange 🐈.")).toMatchInlineSnapshot(`
       Array [
-        "Replace 🐈 in alt text with descriptive text (https://tinyurl.com/yylrxrus).",
+        "Replace 🐈 in alt text with descriptive text (https://tinyurl.com/ybhwbyzk).",
       ]
     `);
     expect(avoidEmoji.check("An orange cat.")).toMatchInlineSnapshot(

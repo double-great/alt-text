@@ -11,10 +11,10 @@ describe("altText", () => {
 
   test("empty", () => {
     expect(altText()).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
+      `"Empty alt text should only be used for decorative images (https://tinyurl.com/y8mlwswv)."`
     );
     expect(altText("")).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/yxnvejgv)."`
+      `"Empty alt text should only be used for decorative images (https://tinyurl.com/y8mlwswv)."`
     );
   });
 
@@ -24,18 +24,18 @@ describe("altText", () => {
 
   test("return suggestions", () => {
     expect(altText("A SCREENSHOT OF A DOG.")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/y3v3jgux)."`
+      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/ydbwu53g)."`
     );
     expect(altText("A SCREENSHOT OF A DOG")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/y3v3jgux). Alt text should end with punctuation (https://tinyurl.com/y5krn3ny)."`
+      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/ydbwu53g). Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
     );
     expect(
       altText("An inhaler with a spacer connected to the mouthpiece")
     ).toMatchInlineSnapshot(
-      `"Alt text should end with punctuation (https://tinyurl.com/y5krn3ny)."`
+      `"Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
     );
     expect(altText("😸.")).toMatchInlineSnapshot(
-      `"Replace 😸 in alt text with descriptive text (https://tinyurl.com/yylrxrus)."`
+      `"Replace 😸 in alt text with descriptive text (https://tinyurl.com/ybhwbyzk)."`
     );
   });
 
@@ -79,7 +79,7 @@ describe("altText", () => {
     );
 
     expect(altText("icon", { "is-unhelpful": false })).toMatchInlineSnapshot(
-      `"Alt text should end with punctuation (https://tinyurl.com/y5krn3ny)."`
+      `"Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
     );
 
     expect(
