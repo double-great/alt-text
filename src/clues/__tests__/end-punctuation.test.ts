@@ -31,7 +31,7 @@ describe("endPunctuation", () => {
   it("check", () => {
     expect(endPunctuation.check("A large black dog")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should end with punctuation (https://tinyurl.com/y5krn3ny).",
+        "Alt text should end with punctuation (https://tinyurl.com/y9fcquhy).",
       ]
     `);
     expect(endPunctuation.check("A large block dog?")).toMatchInlineSnapshot(

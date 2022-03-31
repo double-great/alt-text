@@ -29,7 +29,7 @@ describe("notOnlySpace", () => {
   it("check", () => {
     expect(notOnlySpace.check(" ")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not be a single space (https://tinyurl.com/y2o7uctu).",
+        "Alt text should not be a single space (https://tinyurl.com/y877n89g).",
       ]
     `);
   });

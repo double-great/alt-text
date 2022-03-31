@@ -46,17 +46,17 @@ describe("altEndsWith", () => {
     expect(altEndsWith.check("A screenshot of a dog.jpg"))
       .toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yy2q8bbb).",
+        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yb5w77fy).",
       ]
     `);
     expect(altEndsWith.check("DSC_0010.jpg")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yy2q8bbb).",
+        "Alt text should not end with \\".jpg\\" (https://tinyurl.com/yb5w77fy).",
       ]
     `);
     expect(altEndsWith.check("placeholder graphic")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\"graphic\\" (https://tinyurl.com/yy2q8bbb).",
+        "Alt text should not end with \\"graphic\\" (https://tinyurl.com/yb5w77fy).",
       ]
     `);
     expect(
@@ -65,7 +65,7 @@ describe("altEndsWith", () => {
       })
     ).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not end with \\".gov\\" (https://tinyurl.com/yy2q8bbb).",
+        "Alt text should not end with \\".gov\\" (https://tinyurl.com/yb5w77fy).",
       ]
     `);
   });

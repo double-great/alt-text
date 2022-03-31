@@ -20,7 +20,7 @@ class NotOnlySpace extends Clue {
 const notOnlySpace = new NotOnlySpace({
   id: "empty-alt-text",
   heading: "Empty alt text",
-  docs: "https://tinyurl.com/y2o7uctu",
+  docs: "https://tinyurl.com/y877n89g",
   rationale:
     'If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.',
   source: ["https://www.w3.org/WAI/tutorials/images/tips/#tips"],

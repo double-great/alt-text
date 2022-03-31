@@ -47,7 +47,7 @@ describe("altContains", () => {
   it("check", () => {
     expect(altContains.check("A screenshot of a dog.")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/y3v3jgux).",
+        "Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/ydbwu53g).",
       ]
     `);
     expect(
@@ -56,7 +56,7 @@ describe("altContains", () => {
       })
     ).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not contain \\"illustration\\" (https://tinyurl.com/y3v3jgux).",
+        "Alt text should not contain \\"illustration\\" (https://tinyurl.com/ydbwu53g).",
       ]
     `);
   });

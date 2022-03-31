@@ -59,7 +59,7 @@ class ExactMatch extends Clue {
 const exactMatch = new ExactMatch({
   id: "is-unhelpful",
   heading: "Alt text is unhelpful",
-  docs: "https://tinyurl.com/yxwc2hof",
+  docs: "https://tinyurl.com/ycxdkm92",
   rationale:
     "Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.",
   source: [

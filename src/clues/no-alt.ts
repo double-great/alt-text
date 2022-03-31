@@ -16,7 +16,7 @@ class NoAlt extends Clue {
 const noAlt = new NoAlt({
   id: "no-alt",
   heading: "Missing alt attribute",
-  docs: "https://tinyurl.com/yybc6bsy",
+  docs: "https://tinyurl.com/ycq4enq5",
   rationale:
     "All images must have alternate text to convey their purpose and meaning to screen reader users.",
   source: ["https://dequeuniversity.com/rules/axe/3.4/image-alt"],

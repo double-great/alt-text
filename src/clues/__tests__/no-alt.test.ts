@@ -28,7 +28,7 @@ describe("noAlt", () => {
   });
   it("check", () => {
     expect(noAlt.check()).toMatchInlineSnapshot(
-      `"Missing \\"alt\\" attribute (https://tinyurl.com/yybc6bsy)."`
+      `"Missing \\"alt\\" attribute (https://tinyurl.com/ycq4enq5)."`
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
