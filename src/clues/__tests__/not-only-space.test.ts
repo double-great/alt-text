@@ -15,10 +15,12 @@ describe("notOnlySpace", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"empty-alt-text\\": false });
+      altText(\\"My alt text.\\", {\\"empty-alt-text\\":false})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

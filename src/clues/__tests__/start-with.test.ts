@@ -15,27 +15,14 @@ describe("altStartsWith", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"should-not-start-with\\": false });
-
+      altText(\\"My alt text.\\", {\\"should-not-start-with\\":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {
-        \\"should-not-start-with\\": {
-          exclude: [
-            \\"graphic\\",
-            \\"image\\",
-            \\"photo\\",
-            \\"photograph\\",
-            \\"photographer\\",
-            \\"picture\\",
-            \\"screen shot\\",
-            \\"screenshot\\",
-            \\"spacer\\",
-          ],
-        },
-      });
+      altText(\\"My alt text.\\", {\\"should-not-start-with\\":{\\"exclude\\":[\\"graphic\\",\\"image\\",\\"photo\\",\\"photograph\\",\\"photographer\\",\\"picture\\",\\"screen shot\\",\\"screenshot\\",\\"spacer\\"]}})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

@@ -15,10 +15,12 @@ describe("imageLink", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"image-is-link\\": false });
+      altText(\\"My alt text.\\", {\\"image-is-link\\":false})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

@@ -15,10 +15,12 @@ describe("noAlt", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"no-alt\\": false });
+      altText(\\"My alt text.\\", {\\"no-alt\\":false})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

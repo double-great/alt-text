@@ -68,27 +68,14 @@ Screen readers announce the presence of an image before reading the alt text. Ad
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "contains-unhelpful-word": false });
-
+altText("My alt text.", {"contains-unhelpful-word":false})
 // adjust rule defaults:
-altText("My alt text.", {
-  "contains-unhelpful-word": {
-    exclude: [
-      "graphic of",
-      "image of",
-      "photo of",
-      "photo:",
-      "photograph of",
-      "photographer:",
-      "picture of",
-      "screen shot of",
-      "screenshot of",
-    ],
-  },
-});
+altText("My alt text.", {"contains-unhelpful-word":{"exclude":["graphic of","image of","photo of","photo:","photograph of","photographer:","picture of","screen shot of","screenshot of"]}})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -106,44 +93,14 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "is-unhelpful": false });
-
+altText("My alt text.", {"is-unhelpful":false})
 // adjust rule defaults:
-altText("My alt text.", {
-  "is-unhelpful": {
-    exclude: [
-      "*",
-      "alt",
-      "arrow",
-      "artwork",
-      "blank",
-      "bullet",
-      "button",
-      "chart",
-      "diagram",
-      "drawing",
-      "empty",
-      "graph",
-      "graphic",
-      "icon",
-      "image",
-      "logo",
-      "more",
-      "painting",
-      "photo",
-      "photograph",
-      "placeholder",
-      "screen shot",
-      "screenshot",
-      "spacer",
-      "table",
-      "temp",
-    ],
-  },
-});
+altText("My alt text.", {"is-unhelpful":{"exclude":["*","alt","arrow","artwork","blank","bullet","button","chart","diagram","drawing","empty","graph","graphic","icon","image","logo","more","painting","photo","photograph","placeholder","screen shot","screenshot","spacer","table","temp"]}})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -161,26 +118,14 @@ A file name in alt text does not provide helpful context.
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "should-not-end-with": false });
-
+altText("My alt text.", {"should-not-end-with":false})
 // adjust rule defaults:
-altText("My alt text.", {
-  "should-not-end-with": {
-    exclude: [
-      ".gif",
-      ".jpeg",
-      ".jpg",
-      ".png",
-      ".svg",
-      ".webp",
-      "graphic",
-      "image",
-    ],
-  },
-});
+altText("My alt text.", {"should-not-end-with":{"exclude":[".gif",".jpeg",".jpg",".png",".svg",".webp","graphic","image"]}})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -197,27 +142,14 @@ Usually, there’s no need to include words like “image”, “icon”, or “
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "should-not-start-with": false });
-
+altText("My alt text.", {"should-not-start-with":false})
 // adjust rule defaults:
-altText("My alt text.", {
-  "should-not-start-with": {
-    exclude: [
-      "graphic",
-      "image",
-      "photo",
-      "photograph",
-      "photographer",
-      "picture",
-      "screen shot",
-      "screenshot",
-      "spacer",
-    ],
-  },
-});
+altText("My alt text.", {"should-not-start-with":{"exclude":["graphic","image","photo","photograph","photographer","picture","screen shot","screenshot","spacer"]}})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -237,10 +169,12 @@ Hear an example: <https://doublegreat.dev/listen/emoji/>
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "avoid-emoji": false });
+altText("My alt text.", {"avoid-emoji":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -258,13 +192,14 @@ Alt text should be less than 125 characters in length. The JAWS screen reader re
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "character-length": false });
-
+altText("My alt text.", {"character-length":false})
 // adjust rule defaults:
-altText("My alt text.", { "character-length": { length: 125 } });
+altText("My alt text.", {"character-length":{"length":125}})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -282,10 +217,12 @@ If you use null (empty) alt text (`alt=""`) to hide decorative images, make sure
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "empty-alt-text": false });
+altText("My alt text.", {"empty-alt-text":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -304,10 +241,12 @@ Hear an example: <https://doublegreat.dev/listen/punctuation-in-alt-text/>
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "end-with-punctuation": false });
+altText("My alt text.", {"end-with-punctuation":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -324,10 +263,12 @@ Provide "null" `alt` attributes (using `alt=""`) for images which do not provide
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "image-is-decorative": false });
+altText("My alt text.", {"image-is-decorative":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -344,10 +285,12 @@ Images inside a link tag require alt text that describes the purpose of the link
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "image-is-link": false });
+altText("My alt text.", {"image-is-link":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 
@@ -364,10 +307,12 @@ All images must have alternate text to convey their purpose and meaning to scree
 
 Configuration:
 
+<!-- prettier-ignore-start -->
 ```js
 // disable the rule:
-altText("My alt text.", { "no-alt": false });
+altText("My alt text.", {"no-alt":false})
 ```
+<!-- prettier-ignore-end -->
 
 Sources:
 

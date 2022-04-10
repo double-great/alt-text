@@ -15,10 +15,12 @@ describe("decorative", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"image-is-decorative\\": false });
+      altText(\\"My alt text.\\", {\\"image-is-decorative\\":false})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

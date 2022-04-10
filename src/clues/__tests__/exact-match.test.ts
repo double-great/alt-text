@@ -15,44 +15,14 @@ describe("exactMatch", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"is-unhelpful\\": false });
-
+      altText(\\"My alt text.\\", {\\"is-unhelpful\\":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {
-        \\"is-unhelpful\\": {
-          exclude: [
-            \\"*\\",
-            \\"alt\\",
-            \\"arrow\\",
-            \\"artwork\\",
-            \\"blank\\",
-            \\"bullet\\",
-            \\"button\\",
-            \\"chart\\",
-            \\"diagram\\",
-            \\"drawing\\",
-            \\"empty\\",
-            \\"graph\\",
-            \\"graphic\\",
-            \\"icon\\",
-            \\"image\\",
-            \\"logo\\",
-            \\"more\\",
-            \\"painting\\",
-            \\"photo\\",
-            \\"photograph\\",
-            \\"placeholder\\",
-            \\"screen shot\\",
-            \\"screenshot\\",
-            \\"spacer\\",
-            \\"table\\",
-            \\"temp\\",
-          ],
-        },
-      });
+      altText(\\"My alt text.\\", {\\"is-unhelpful\\":{\\"exclude\\":[\\"*\\",\\"alt\\",\\"arrow\\",\\"artwork\\",\\"blank\\",\\"bullet\\",\\"button\\",\\"chart\\",\\"diagram\\",\\"drawing\\",\\"empty\\",\\"graph\\",\\"graphic\\",\\"icon\\",\\"image\\",\\"logo\\",\\"more\\",\\"painting\\",\\"photo\\",\\"photograph\\",\\"placeholder\\",\\"screen shot\\",\\"screenshot\\",\\"spacer\\",\\"table\\",\\"temp\\"]}})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

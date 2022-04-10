@@ -17,10 +17,12 @@ describe("endPunctuation", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"end-with-punctuation\\": false });
+      altText(\\"My alt text.\\", {\\"end-with-punctuation\\":false})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

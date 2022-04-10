@@ -15,26 +15,14 @@ describe("altEndsWith", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"should-not-end-with\\": false });
-
+      altText(\\"My alt text.\\", {\\"should-not-end-with\\":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {
-        \\"should-not-end-with\\": {
-          exclude: [
-            \\".gif\\",
-            \\".jpeg\\",
-            \\".jpg\\",
-            \\".png\\",
-            \\".svg\\",
-            \\".webp\\",
-            \\"graphic\\",
-            \\"image\\",
-          ],
-        },
-      });
+      altText(\\"My alt text.\\", {\\"should-not-end-with\\":{\\"exclude\\":[\\".gif\\",\\".jpeg\\",\\".jpg\\",\\".png\\",\\".svg\\",\\".webp\\",\\"graphic\\",\\"image\\"]}})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

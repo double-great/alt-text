@@ -1,6 +1,4 @@
 import { Alt, ConfigOption } from ".";
-import pkg from "prettier";
-const { format } = pkg;
 
 export type ClueProps = {
   id: string;
@@ -51,18 +49,12 @@ export default class Clue {
   }
 
   document() {
-    const codeDisable = format(
-      `altText('My alt text.', ${JSON.stringify({
-        [this.id]: false,
-      })})`,
-      { parser: "babel" }
-    );
-    const codeOptions = format(
-      `altText("My alt text.", ${JSON.stringify({
-        [this.id]: this.config,
-      })})`,
-      { parser: "babel" }
-    );
+    const codeDisable = `altText("My alt text.", ${JSON.stringify({
+      [this.id]: false,
+    })})`;
+    const codeOptions = `altText("My alt text.", ${JSON.stringify({
+      [this.id]: this.config,
+    })})`;
     return `### ${this.heading}
 
 Suggestion: \`${this.recommendation}\`
@@ -80,6 +72,7 @@ Hear an example: <${this.listen}>
 }
 Configuration:
 
+<!-- prettier-ignore-start -->
 \`\`\`js
 // disable the rule:
 ${codeDisable}${
@@ -88,7 +81,9 @@ ${codeDisable}${
 // adjust rule defaults:
 ${codeOptions}`
         : ""
-    }\`\`\`
+    }
+\`\`\`
+<!-- prettier-ignore-end -->
 
 Sources:
 

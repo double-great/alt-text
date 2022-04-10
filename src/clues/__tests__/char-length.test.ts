@@ -15,13 +15,14 @@ describe("charLength", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"character-length\\": false });
-
+      altText(\\"My alt text.\\", {\\"character-length\\":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", { \\"character-length\\": { length: 125 } });
+      altText(\\"My alt text.\\", {\\"character-length\\":{\\"length\\":125}})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 

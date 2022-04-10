@@ -15,27 +15,14 @@ describe("altContains", () => {
 
       Configuration:
 
+      <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", { \\"contains-unhelpful-word\\": false });
-
+      altText(\\"My alt text.\\", {\\"contains-unhelpful-word\\":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {
-        \\"contains-unhelpful-word\\": {
-          exclude: [
-            \\"graphic of\\",
-            \\"image of\\",
-            \\"photo of\\",
-            \\"photo:\\",
-            \\"photograph of\\",
-            \\"photographer:\\",
-            \\"picture of\\",
-            \\"screen shot of\\",
-            \\"screenshot of\\",
-          ],
-        },
-      });
+      altText(\\"My alt text.\\", {\\"contains-unhelpful-word\\":{\\"exclude\\":[\\"graphic of\\",\\"image of\\",\\"photo of\\",\\"photo:\\",\\"photograph of\\",\\"photographer:\\",\\"picture of\\",\\"screen shot of\\",\\"screenshot of\\"]}})
       \`\`\`
+      <!-- prettier-ignore-end -->
 
       Sources:
 
