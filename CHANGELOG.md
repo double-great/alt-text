@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0
+
+- Remove prettier as a dependency for generating documention.
+- Switch to use doublegreat.dev for documentation.
+
 ## 3.0.0
 
 - Add configuration options to disable any rule and change the defaults for some rules that check against specific values.
