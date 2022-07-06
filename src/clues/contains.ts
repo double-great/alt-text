@@ -42,7 +42,7 @@ class AltContains extends Clue {
 const altContains = new AltContains({
   id: "contains-unhelpful-word",
   heading: "Alt text contains unhelpful words",
-  docs: "https://tinyurl.com/ydbwu53g",
+  docs: "https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words",
   rationale:
     "Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.",
   source: [

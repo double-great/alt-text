@@ -30,7 +30,7 @@ describe("imageLink", () => {
   });
   it("check", () => {
     expect(imageLink.check()).toMatchInlineSnapshot(
-      `"Images inside a link tag require alt text that describes the purpose of the link (https://tinyurl.com/y7s7je5u)."`
+      `"Images inside a link tag require alt text that describes the purpose of the link (https://doublegreat.dev/alt-text/#image-is-link)."`
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
