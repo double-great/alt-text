@@ -41,7 +41,7 @@ class AltEndsWith extends Clue {
 const altEndsWith = new AltEndsWith({
   id: "should-not-end-with",
   heading: "Alt text should not end with",
-  docs: "https://tinyurl.com/yb5w77fy",
+  docs: "https://doublegreat.dev/alt-text/#alt-text-should-not-end-with",
   rationale: "A file name in alt text does not provide helpful context.",
   source: ["https://axesslab.com/alt-texts/"],
   ok: "A child holding a photograph.",

@@ -42,7 +42,7 @@ class AltStartsWith extends Clue {
 const altStartsWith = new AltStartsWith({
   id: "should-not-start-with",
   heading: "Alt text should not start with",
-  docs: "https://tinyurl.com/y7xq5wbt",
+  docs: "https://doublegreat.dev/alt-text/#alt-text-should-not-start-with",
   rationale:
     "Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.",
   source: [

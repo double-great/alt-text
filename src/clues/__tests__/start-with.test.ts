@@ -34,13 +34,13 @@ describe("altStartsWith", () => {
   it("check", () => {
     expect(altStartsWith.check("spacer image")).toMatchInlineSnapshot(`
       Array [
-        "Alt text should not start with \\"spacer\\" (https://tinyurl.com/y7xq5wbt).",
+        "Alt text should not start with \\"spacer\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
       ]
     `);
     expect(altStartsWith.check("hotdog with bun", { exclude: ["hotdog"] }))
       .toMatchInlineSnapshot(`
       Array [
-        "Alt text should not start with \\"hotdog\\" (https://tinyurl.com/y7xq5wbt).",
+        "Alt text should not start with \\"hotdog\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
       ]
     `);
   });

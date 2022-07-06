@@ -31,7 +31,7 @@ class CharLength extends Clue {
 const charLength = new CharLength({
   id: "character-length",
   heading: "Character length",
-  docs: "https://tinyurl.com/yabhqplx",
+  docs: "https://doublegreat.dev/alt-text/#character-length",
   rationale:
     "Alt text should be less than 125 characters in length. The JAWS screen reader reads alt text in 125 character chunks. Any information about the image, such as copyright information, image source or extra information should be placed in the caption text below the image.",
   source: [

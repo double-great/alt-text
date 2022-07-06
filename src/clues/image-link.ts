@@ -16,7 +16,7 @@ class ImageLink extends Clue {
 const imageLink = new ImageLink({
   id: "image-is-link",
   heading: "Image is link",
-  docs: "https://tinyurl.com/y7s7je5u",
+  docs: "https://doublegreat.dev/alt-text/#image-is-link",
   rationale:
     "Images inside a link tag require alt text that describes the purpose of the link.",
   source: ["https://axesslab.com/alt-texts/#images-in-links"],

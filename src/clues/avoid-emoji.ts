@@ -24,7 +24,7 @@ class AvoidEmoji extends Clue {
 const avoidEmoji = new AvoidEmoji({
   id: "avoid-emoji",
   heading: "Avoid emoji",
-  docs: "https://tinyurl.com/ybhwbyzk",
+  docs: "https://doublegreat.dev/alt-text/#avoid-emoji",
   rationale: `Emoji have their own text descriptions. These descriptions can vary between operating systems and software. The spoken description of the emoji may not match your visual intention.`,
   listen: "https://doublegreat.dev/listen/emoji/",
   source: [

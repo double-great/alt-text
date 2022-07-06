@@ -11,10 +11,10 @@ describe("altText", () => {
 
   test("empty", () => {
     expect(altText()).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/y8mlwswv)."`
+      `"Empty alt text should only be used for decorative images (https://doublegreat.dev/alt-text/#image-is-decorative)."`
     );
     expect(altText("")).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://tinyurl.com/y8mlwswv)."`
+      `"Empty alt text should only be used for decorative images (https://doublegreat.dev/alt-text/#image-is-decorative)."`
     );
   });
 
@@ -24,18 +24,18 @@ describe("altText", () => {
 
   test("return suggestions", () => {
     expect(altText("A SCREENSHOT OF A DOG.")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/ydbwu53g)."`
+      `"Alt text should not contain \\"screenshot of\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words)."`
     );
     expect(altText("A SCREENSHOT OF A DOG")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://tinyurl.com/ydbwu53g). Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
+      `"Alt text should not contain \\"screenshot of\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words). Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation)."`
     );
     expect(
       altText("An inhaler with a spacer connected to the mouthpiece")
     ).toMatchInlineSnapshot(
-      `"Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
+      `"Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation)."`
     );
     expect(altText("😸.")).toMatchInlineSnapshot(
-      `"Replace 😸 in alt text with descriptive text (https://tinyurl.com/ybhwbyzk)."`
+      `"Replace 😸 in alt text with descriptive text (https://doublegreat.dev/alt-text/#avoid-emoji)."`
     );
   });
 
@@ -79,7 +79,7 @@ describe("altText", () => {
     );
 
     expect(altText("icon", { "is-unhelpful": false })).toMatchInlineSnapshot(
-      `"Alt text should end with punctuation (https://tinyurl.com/y9fcquhy)."`
+      `"Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation)."`
     );
 
     expect(

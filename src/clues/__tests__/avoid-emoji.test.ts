@@ -34,7 +34,7 @@ describe("avoidEmoji", () => {
   it("check", () => {
     expect(avoidEmoji.check("An orange 🐈.")).toMatchInlineSnapshot(`
       Array [
-        "Replace 🐈 in alt text with descriptive text (https://tinyurl.com/ybhwbyzk).",
+        "Replace 🐈 in alt text with descriptive text (https://doublegreat.dev/alt-text/#avoid-emoji).",
       ]
     `);
     expect(avoidEmoji.check("An orange cat.")).toMatchInlineSnapshot(

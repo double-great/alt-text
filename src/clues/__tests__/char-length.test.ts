@@ -38,7 +38,7 @@ describe("charLength", () => {
       )
     ).toMatchInlineSnapshot(`
       Array [
-        "Alt text length should be less than 125 characters, it is currently 446 characters (https://tinyurl.com/yabhqplx).",
+        "Alt text length should be less than 125 characters, it is currently 446 characters (https://doublegreat.dev/alt-text/#character-length).",
       ]
     `);
     expect(
@@ -47,7 +47,7 @@ describe("charLength", () => {
     expect(charLength.check("Lorem ipsum dolor sit amet", { length: 10 }))
       .toMatchInlineSnapshot(`
       Array [
-        "Alt text length should be less than 10 characters, it is currently 26 characters (https://tinyurl.com/yabhqplx).",
+        "Alt text length should be less than 10 characters, it is currently 26 characters (https://doublegreat.dev/alt-text/#character-length).",
       ]
     `);
   });
