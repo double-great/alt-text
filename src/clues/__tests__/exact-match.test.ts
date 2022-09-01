@@ -6,7 +6,7 @@ describe("exactMatch", () => {
     expect(exactMatch.document()).toMatchInlineSnapshot(`
       "### Alt text is unhelpful
 
-      Suggestion: \`Alt text should not be \\"*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, screen shot, screenshot, spacer, table, temp\\"\`
+      Suggestion: \`Alt text should not be "*, alt, arrow, artwork, blank, bullet, button, chart, diagram, drawing, empty, graph, graphic, icon, image, logo, more, painting, photo, photograph, placeholder, screen shot, screenshot, spacer, table, temp"\`
 
       Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -18,9 +18,9 @@ describe("exactMatch", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"is-unhelpful\\":false})
+      altText("My alt text.", {"is-unhelpful":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {\\"is-unhelpful\\":{\\"exclude\\":[\\"*\\",\\"alt\\",\\"arrow\\",\\"artwork\\",\\"blank\\",\\"bullet\\",\\"button\\",\\"chart\\",\\"diagram\\",\\"drawing\\",\\"empty\\",\\"graph\\",\\"graphic\\",\\"icon\\",\\"image\\",\\"logo\\",\\"more\\",\\"painting\\",\\"photo\\",\\"photograph\\",\\"placeholder\\",\\"screen shot\\",\\"screenshot\\",\\"spacer\\",\\"table\\",\\"temp\\"]}})
+      altText("My alt text.", {"is-unhelpful":{"exclude":["*","alt","arrow","artwork","blank","bullet","button","chart","diagram","drawing","empty","graph","graphic","icon","image","logo","more","painting","photo","photograph","placeholder","screen shot","screenshot","spacer","table","temp"]}})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -33,14 +33,14 @@ describe("exactMatch", () => {
   });
   it("check", () => {
     expect(exactMatch.check("logo")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not be \\"logo\\" (https://doublegreat.dev/alt-text/#alt-text-is-unhelpful).",
+      [
+        "Alt text should not be "logo" (https://doublegreat.dev/alt-text/#alt-text-is-unhelpful).",
       ]
     `);
     expect(exactMatch.check("hotdog", { exclude: ["hotdog"] }))
       .toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not be \\"hotdog\\" (https://doublegreat.dev/alt-text/#alt-text-is-unhelpful).",
+      [
+        "Alt text should not be "hotdog" (https://doublegreat.dev/alt-text/#alt-text-is-unhelpful).",
       ]
     `);
   });

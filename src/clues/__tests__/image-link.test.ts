@@ -10,15 +10,15 @@ describe("imageLink", () => {
 
       Images inside a link tag require alt text that describes the purpose of the link.
 
-      - ✅ \`<a href=\\"https://github.com/double-great\\"><img src=\\"logo.png\\" alt=\\"double great on GitHub\\"></a>\`
-      - 🚫 \`<a href=\\"https://github.com/double-great\\"><img src=\\"logo.png\\" alt=\\"double great logo\\"></a>\`
+      - ✅ \`<a href="https://github.com/double-great"><img src="logo.png" alt="double great on GitHub"></a>\`
+      - 🚫 \`<a href="https://github.com/double-great"><img src="logo.png" alt="double great logo"></a>\`
 
       Configuration:
 
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"image-is-link\\":false})
+      altText("My alt text.", {"image-is-link":false})
       \`\`\`
       <!-- prettier-ignore-end -->
 

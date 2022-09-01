@@ -6,7 +6,7 @@ describe("altEndsWith", () => {
     expect(altEndsWith.document()).toMatchInlineSnapshot(`
       "### Alt text should not end with
 
-      Suggestion: \`Alt text should not end with \\".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image\\"\`
+      Suggestion: \`Alt text should not end with ".gif, .jpeg, .jpg, .png, .svg, .webp, graphic, image"\`
 
       A file name in alt text does not provide helpful context.
 
@@ -18,9 +18,9 @@ describe("altEndsWith", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"should-not-end-with\\":false})
+      altText("My alt text.", {"should-not-end-with":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {\\"should-not-end-with\\":{\\"exclude\\":[\\".gif\\",\\".jpeg\\",\\".jpg\\",\\".png\\",\\".svg\\",\\".webp\\",\\"graphic\\",\\"image\\"]}})
+      altText("My alt text.", {"should-not-end-with":{"exclude":[".gif",".jpeg",".jpg",".png",".svg",".webp","graphic","image"]}})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -33,18 +33,18 @@ describe("altEndsWith", () => {
   it("check", () => {
     expect(altEndsWith.check("A screenshot of a dog.jpg"))
       .toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not end with \\".jpg\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
+      [
+        "Alt text should not end with ".jpg" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
       ]
     `);
     expect(altEndsWith.check("DSC_0010.jpg")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not end with \\".jpg\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
+      [
+        "Alt text should not end with ".jpg" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
       ]
     `);
     expect(altEndsWith.check("placeholder graphic")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not end with \\"graphic\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
+      [
+        "Alt text should not end with "graphic" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
       ]
     `);
     expect(
@@ -52,8 +52,8 @@ describe("altEndsWith", () => {
         exclude: [".gov"],
       })
     ).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not end with \\".gov\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
+      [
+        "Alt text should not end with ".gov" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
       ]
     `);
   });

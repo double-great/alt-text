@@ -6,19 +6,19 @@ describe("noAlt", () => {
     expect(noAlt.document()).toMatchInlineSnapshot(`
       "### Missing alt attribute
 
-      Suggestion: \`Missing \\"alt\\" attribute\`
+      Suggestion: \`Missing "alt" attribute\`
 
       All images must have alternate text to convey their purpose and meaning to screen reader users.
 
-      - ✅ \`<img src=\\"photograph.jpg\\" alt=\\"A child holding a photograph.\\">\`
-      - 🚫 \`<img src=\\"photograph.jpg\\">\`
+      - ✅ \`<img src="photograph.jpg" alt="A child holding a photograph.">\`
+      - 🚫 \`<img src="photograph.jpg">\`
 
       Configuration:
 
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"no-alt\\":false})
+      altText("My alt text.", {"no-alt":false})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -30,7 +30,7 @@ describe("noAlt", () => {
   });
   it("check", () => {
     expect(noAlt.check()).toMatchInlineSnapshot(
-      `"Missing \\"alt\\" attribute (https://doublegreat.dev/alt-text/#missing-alt-attribute)."`
+      `"Missing "alt" attribute (https://doublegreat.dev/alt-text/#missing-alt-attribute)."`
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {

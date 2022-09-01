@@ -6,7 +6,7 @@ describe("altStartsWith", () => {
     expect(altStartsWith.document()).toMatchInlineSnapshot(`
       "### Alt text should not start with
 
-      Suggestion: \`Alt text should not start with \\"graphic, image, photo, photograph, photographer, picture, screen shot, screenshot, spacer\\"\`
+      Suggestion: \`Alt text should not start with "graphic, image, photo, photograph, photographer, picture, screen shot, screenshot, spacer"\`
 
       Usually, there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image.
 
@@ -18,9 +18,9 @@ describe("altStartsWith", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"should-not-start-with\\":false})
+      altText("My alt text.", {"should-not-start-with":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {\\"should-not-start-with\\":{\\"exclude\\":[\\"graphic\\",\\"image\\",\\"photo\\",\\"photograph\\",\\"photographer\\",\\"picture\\",\\"screen shot\\",\\"screenshot\\",\\"spacer\\"]}})
+      altText("My alt text.", {"should-not-start-with":{"exclude":["graphic","image","photo","photograph","photographer","picture","screen shot","screenshot","spacer"]}})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -33,14 +33,14 @@ describe("altStartsWith", () => {
   });
   it("check", () => {
     expect(altStartsWith.check("spacer image")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not start with \\"spacer\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
+      [
+        "Alt text should not start with "spacer" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
       ]
     `);
     expect(altStartsWith.check("hotdog with bun", { exclude: ["hotdog"] }))
       .toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not start with \\"hotdog\\" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
+      [
+        "Alt text should not start with "hotdog" (https://doublegreat.dev/alt-text/#alt-text-should-not-start-with).",
       ]
     `);
   });

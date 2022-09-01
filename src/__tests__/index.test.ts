@@ -24,10 +24,10 @@ describe("altText", () => {
 
   test("return suggestions", () => {
     expect(altText("A SCREENSHOT OF A DOG.")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words)."`
+      `"Alt text should not contain "screenshot of" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words)."`
     );
     expect(altText("A SCREENSHOT OF A DOG")).toMatchInlineSnapshot(
-      `"Alt text should not contain \\"screenshot of\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words). Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation)."`
+      `"Alt text should not contain "screenshot of" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words). Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation)."`
     );
     expect(
       altText("An inhaler with a spacer connected to the mouthpiece")

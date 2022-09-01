@@ -8,17 +8,17 @@ describe("notOnlySpace", () => {
 
       Suggestion: \`Alt text should not be a single space\`
 
-      If you use null (empty) alt text (\`alt=\\"\\"\`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
+      If you use null (empty) alt text (\`alt=""\`) to hide decorative images, make sure that there is no space character in between the quotes. **If a space character is present, the image may not be effectively hidden from assistive technologies.** For instance, some screen readers will still announce the presence of an image if a space character is put between the quotes.
 
-      - ✅ \`<img src=\\"photo.png\\" alt=\\"\\">\`
-      - 🚫 \`<img src=\\"photo.png\\" alt=\\" \\">\`
+      - ✅ \`<img src="photo.png" alt="">\`
+      - 🚫 \`<img src="photo.png" alt=" ">\`
 
       Configuration:
 
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"empty-alt-text\\":false})
+      altText("My alt text.", {"empty-alt-text":false})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -30,7 +30,7 @@ describe("notOnlySpace", () => {
   });
   it("check", () => {
     expect(notOnlySpace.check(" ")).toMatchInlineSnapshot(`
-      Array [
+      [
         "Alt text should not be a single space (https://doublegreat.dev/alt-text/#empty-alt-text).",
       ]
     `);

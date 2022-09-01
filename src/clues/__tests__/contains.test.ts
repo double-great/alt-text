@@ -6,7 +6,7 @@ describe("altContains", () => {
     expect(altContains.document()).toMatchInlineSnapshot(`
       "### Alt text contains unhelpful words
 
-      Suggestion: \`Alt text should not contain \\"graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screen shot of, screenshot of\\"\`
+      Suggestion: \`Alt text should not contain "graphic of, image of, photo of, photo:, photograph of, photographer:, picture of, screen shot of, screenshot of"\`
 
       Screen readers announce the presence of an image before reading the alt text. Adding “picture of” or “photo of” is redundant in this context.
 
@@ -18,9 +18,9 @@ describe("altContains", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"contains-unhelpful-word\\":false})
+      altText("My alt text.", {"contains-unhelpful-word":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {\\"contains-unhelpful-word\\":{\\"exclude\\":[\\"graphic of\\",\\"image of\\",\\"photo of\\",\\"photo:\\",\\"photograph of\\",\\"photographer:\\",\\"picture of\\",\\"screen shot of\\",\\"screenshot of\\"]}})
+      altText("My alt text.", {"contains-unhelpful-word":{"exclude":["graphic of","image of","photo of","photo:","photograph of","photographer:","picture of","screen shot of","screenshot of"]}})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -33,8 +33,8 @@ describe("altContains", () => {
   });
   it("check", () => {
     expect(altContains.check("A screenshot of a dog.")).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not contain \\"screenshot of\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words).",
+      [
+        "Alt text should not contain "screenshot of" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words).",
       ]
     `);
     expect(
@@ -42,8 +42,8 @@ describe("altContains", () => {
         exclude: ["illustration"],
       })
     ).toMatchInlineSnapshot(`
-      Array [
-        "Alt text should not contain \\"illustration\\" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words).",
+      [
+        "Alt text should not contain "illustration" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words).",
       ]
     `);
   });

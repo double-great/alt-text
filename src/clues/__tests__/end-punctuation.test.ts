@@ -20,7 +20,7 @@ describe("endPunctuation", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"end-with-punctuation\\":false})
+      altText("My alt text.", {"end-with-punctuation":false})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -32,12 +32,12 @@ describe("endPunctuation", () => {
   });
   it("check", () => {
     expect(endPunctuation.check("A large black dog")).toMatchInlineSnapshot(`
-      Array [
+      [
         "Alt text should end with punctuation (https://doublegreat.dev/alt-text/#end-with-punctuation).",
       ]
     `);
     expect(endPunctuation.check("A large block dog?")).toMatchInlineSnapshot(
-      `Array []`
+      `[]`
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {

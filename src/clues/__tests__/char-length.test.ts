@@ -18,9 +18,9 @@ describe("charLength", () => {
       <!-- prettier-ignore-start -->
       \`\`\`js
       // disable the rule:
-      altText(\\"My alt text.\\", {\\"character-length\\":false})
+      altText("My alt text.", {"character-length":false})
       // adjust rule defaults:
-      altText(\\"My alt text.\\", {\\"character-length\\":{\\"length\\":125}})
+      altText("My alt text.", {"character-length":{"length":125}})
       \`\`\`
       <!-- prettier-ignore-end -->
 
@@ -37,16 +37,16 @@ describe("charLength", () => {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       )
     ).toMatchInlineSnapshot(`
-      Array [
+      [
         "Alt text length should be less than 125 characters, it is currently 446 characters (https://doublegreat.dev/alt-text/#character-length).",
       ]
     `);
     expect(
       charLength.check("Lorem ipsum dolor sit amet")
-    ).toMatchInlineSnapshot(`Array []`);
+    ).toMatchInlineSnapshot(`[]`);
     expect(charLength.check("Lorem ipsum dolor sit amet", { length: 10 }))
       .toMatchInlineSnapshot(`
-      Array [
+      [
         "Alt text length should be less than 10 characters, it is currently 26 characters (https://doublegreat.dev/alt-text/#character-length).",
       ]
     `);
