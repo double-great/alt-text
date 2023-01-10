@@ -60,6 +60,9 @@
       "^./clues/(.*).js$": "<rootDir>/src/clues/$1.ts",
       "..?/index.js$": "<rootDir>/src/index.ts"
     },
-    "clearMocks": true
+    "clearMocks": true,
+    "transformIgnorePatterns": [
+      "node_modules/(?!(github-slugger)/)"
+    ]
   }
 }
