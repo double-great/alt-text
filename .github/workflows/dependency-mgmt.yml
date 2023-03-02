@@ -1,0 +1,40 @@
+name: NPM dependency update
+
+on:
+  workflow_dispatch: # enable run button in GitHub UI
+
+jobs:
+  update:
+    name: Update NPM dependencies
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+          cache-dependency-path: "./package-lock.json"
+      - name: Update dependencies
+        run: npx npm-check-updates -u
+      - name: Install dependencies, build, and test
+        run: npm install
+      - name: Build site
+        run: npm run test
+      - name: Remove git hooks (Husky)
+        run: rm -rf .git/hooks
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.PUSH_TOKEN }}
+          commit-message: Update dependencies
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: dependencies
+          delete-branch: true
+          title: "Update NPM dependencies"
+          body: |
+            Updated NPM dependencies via GitHub Action
