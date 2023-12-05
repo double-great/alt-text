@@ -47,7 +47,7 @@ describe("altStartsWith", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(altStartsWith.heading)).resolves.toEqual(
-      altStartsWith.docs
+      altStartsWith.docs,
     );
   });
 });

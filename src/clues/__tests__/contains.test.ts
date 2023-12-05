@@ -40,7 +40,7 @@ describe("altContains", () => {
     expect(
       altContains.check("A photo of a large black dog illustration.", {
         exclude: ["illustration"],
-      })
+      }),
     ).toMatchInlineSnapshot(`
       [
         "Alt text should not contain "illustration" (https://doublegreat.dev/alt-text/#alt-text-contains-unhelpful-words).",
@@ -50,7 +50,7 @@ describe("altContains", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(altContains.heading)).resolves.toEqual(
-      altContains.docs
+      altContains.docs,
     );
   });
 });

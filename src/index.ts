@@ -17,7 +17,7 @@ import altStartsWith from "./clues/start-with.js";
  */
 export default function altText(
   alt: string | undefined,
-  config?: Config
+  config?: Config,
 ): string | undefined {
   // lowercase alt text to improve parsing
   alt = alt?.toLowerCase();
@@ -49,8 +49,8 @@ export default function altText(
   let suggestion: string[] | [] = [];
   for (const rule of rules) {
     // get the rule's id
-    const ruleConfig: ConfigOption = config[rule.id];
-    // skip rule if it is diabled
+    const ruleConfig = config[rule.id as keyof Config];
+    // skip rule if it is disabled
     if (ruleConfig === false) continue;
     // check rule and add any suggestions
     suggestion = [...suggestion, ...rule.check(alt, ruleConfig)];
@@ -76,7 +76,6 @@ export const defaultConfig: Config = {
 export type Alt = string;
 
 export type Config = {
-  [key: string]: any; // TO DO, remove!
   "image-is-decorative"?: boolean;
   "avoid-emoji"?: boolean;
   "contains-unhelpful-word"?: boolean | { exclude: string[] };

@@ -37,13 +37,13 @@ describe("endPunctuation", () => {
       ]
     `);
     expect(endPunctuation.check("A large block dog?")).toMatchInlineSnapshot(
-      `[]`
+      `[]`,
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(endPunctuation.heading)).resolves.toEqual(
-      endPunctuation.docs
+      endPunctuation.docs,
     );
   });
 });

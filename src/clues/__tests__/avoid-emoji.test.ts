@@ -42,7 +42,7 @@ describe("avoidEmoji", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(avoidEmoji.heading)).resolves.toEqual(
-      avoidEmoji.docs
+      avoidEmoji.docs,
     );
   });
 });

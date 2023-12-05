@@ -30,13 +30,13 @@ describe("decorative", () => {
   });
   it("check", () => {
     expect(decorative.check()).toMatchInlineSnapshot(
-      `"Empty alt text should only be used for decorative images (https://doublegreat.dev/alt-text/#image-is-decorative)."`
+      `"Empty alt text should only be used for decorative images (https://doublegreat.dev/alt-text/#image-is-decorative)."`,
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(decorative.heading)).resolves.toEqual(
-      decorative.docs
+      decorative.docs,
     );
   });
 });
