@@ -38,7 +38,7 @@ describe("notOnlySpace", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(notOnlySpace.heading)).resolves.toEqual(
-      notOnlySpace.docs
+      notOnlySpace.docs,
     );
   });
 });

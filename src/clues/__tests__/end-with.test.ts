@@ -50,7 +50,7 @@ describe("altEndsWith", () => {
     expect(
       altEndsWith.check("DSC_0010.gov", {
         exclude: [".gov"],
-      })
+      }),
     ).toMatchInlineSnapshot(`
       [
         "Alt text should not end with ".gov" (https://doublegreat.dev/alt-text/#alt-text-should-not-end-with).",
@@ -60,7 +60,7 @@ describe("altEndsWith", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(altEndsWith.heading)).resolves.toEqual(
-      altEndsWith.docs
+      altEndsWith.docs,
     );
   });
 });

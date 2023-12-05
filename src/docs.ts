@@ -36,7 +36,7 @@ export const formattedDocs = `## Suggestions
 ${allClues
   .map(
     (clue) =>
-      `- [${clue.heading} (\`${clue.id}\`)](#${slugger.slug(clue.heading)})`
+      `- [${clue.heading} (\`${clue.id}\`)](#${slugger.slug(clue.heading)})`,
   )
   .join("\n")}
 

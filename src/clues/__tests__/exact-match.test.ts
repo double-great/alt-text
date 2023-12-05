@@ -47,7 +47,7 @@ describe("exactMatch", () => {
   it("`docs` matches generated GitHub `heading` link", async () => {
     expect.assertions(1);
     await expect(checkDocsLink(exactMatch.heading)).resolves.toEqual(
-      exactMatch.docs
+      exactMatch.docs,
     );
   });
 });

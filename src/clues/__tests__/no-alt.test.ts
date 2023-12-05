@@ -30,7 +30,7 @@ describe("noAlt", () => {
   });
   it("check", () => {
     expect(noAlt.check()).toMatchInlineSnapshot(
-      `"Missing "alt" attribute (https://doublegreat.dev/alt-text/#missing-alt-attribute)."`
+      `"Missing "alt" attribute (https://doublegreat.dev/alt-text/#missing-alt-attribute)."`,
     );
   });
   it("`docs` matches generated GitHub `heading` link", async () => {
