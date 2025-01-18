@@ -8,6 +8,7 @@ import altEndsWith from "./clues/end-with.js";
 import exactMatch from "./clues/exact-match.js";
 import notOnlySpace from "./clues/not-only-space.js";
 import altStartsWith from "./clues/start-with.js";
+import imageLink from "./clues/image-link.js";
 
 /**
  * Check for unhelpful alt text.
@@ -89,3 +90,5 @@ export type Config = {
 };
 
 export type ConfigOption = boolean | { exclude?: string[]; length?: number };
+
+export { imageLink };
