@@ -1,4 +1,4 @@
-import { Alt, ConfigOption } from ".";
+import { Alt, ConfigOption } from "./index.js";
 
 export type ClueProps = {
   id: string;
