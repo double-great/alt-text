@@ -1,9 +1,9 @@
 scripts
 tests
-.eslintrc
+eslint.config.js
 .github
-.husky
 tsconfig.json
-babel.config.cjs
-.eslintignore
+babel.config.json
 src
+.vscode
+.prettierrc
