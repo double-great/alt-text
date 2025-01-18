@@ -1,6 +1,6 @@
 {
   "name": "@double-great/alt-text",
-  "version": "3.1.0",
+  "version": "3.2.1",
   "description": "Check for unhelpful alt text.",
   "exports": {
     ".": "./dist/index.js",
