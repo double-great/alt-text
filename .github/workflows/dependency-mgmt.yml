@@ -11,7 +11,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
